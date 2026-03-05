@@ -195,7 +195,7 @@ const Footer = () => {
             className="text-[15px] text-white text-center hover:text-[#5ec5dc] transition-colors duration-300"
             style={{ fontFamily: 'var(--font-poppins), Poppins, sans-serif' }}
           >
-            &copy; 2025 Onwards Tickets
+            Copyright © {new Date().getFullYear()} Onwards Tickets. All Rights Reserved
           </p>
         </div>
       </div>
