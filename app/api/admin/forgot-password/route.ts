@@ -5,14 +5,19 @@ import dbConnect from '@/lib/mongodb';
 import AdminUser from '@/lib/models/AdminUser';
 
 const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'admin@onwardtickets.com';
-const GENERIC_MESSAGE = 'If this email is associated with an admin account, a reset link has been sent.';
+const EMAIL_SENT_MESSAGE = 'A password reset link has been sent to your email.';
 
 export async function POST(req: NextRequest) {
   try {
     const { email } = await req.json();
 
     if (!email) {
-      return NextResponse.json({ success: true, message: GENERIC_MESSAGE });
+      return NextResponse.json({ success: false, error: 'Email is required' }, { status: 400 });
+    }
+
+    // Basic email format check
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      return NextResponse.json({ success: false, error: 'Invalid email address' }, { status: 400 });
     }
 
     await dbConnect();
@@ -29,8 +34,7 @@ export async function POST(req: NextRequest) {
     }
 
     if (!admin) {
-      // Don't reveal whether email exists
-      return NextResponse.json({ success: true, message: GENERIC_MESSAGE });
+      return NextResponse.json({ success: false, error: 'Admin email not found' }, { status: 404 });
     }
 
     // Generate and save reset token
@@ -43,11 +47,11 @@ export async function POST(req: NextRequest) {
     const resetLink = `${siteUrl}/admin/reset-password?token=${token}`;
 
     // Send email non-blocking (don't hold up the response)
-    sendAdminPasswordResetEmail({ email, resetLink }).catch((err) => {
+    sendAdminPasswordResetEmail({ email: admin.email, resetLink }).catch((err) => {
       console.error('[Email] Failed to send admin reset email:', err);
     });
 
-    return NextResponse.json({ success: true, message: GENERIC_MESSAGE });
+    return NextResponse.json({ success: true, message: EMAIL_SENT_MESSAGE });
   } catch (error) {
     console.error('Admin forgot-password error:', error);
     return NextResponse.json({ success: false, error: 'Something went wrong' }, { status: 500 });

@@ -60,7 +60,7 @@ export default function AdminForgotPasswordPage() {
                 </svg>
               </div>
               <p className="text-white text-[15px] mb-2">Check your email</p>
-              <p className="text-gray-400 text-[13px] mb-6">If this email is associated with an admin account, you&apos;ll receive a password reset link.</p>
+              <p className="text-gray-400 text-[13px] mb-6">We&apos;ve sent a password reset link to your admin email.</p>
               <Link href="/admin/login" className="text-[#5ec5dc] text-[13px] hover:text-[#7dd3e8] transition-colors font-medium">
                 Back to Login
               </Link>
