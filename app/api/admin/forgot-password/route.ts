@@ -39,7 +39,7 @@ export async function POST(req: NextRequest) {
     admin.resetTokenExpiry = new Date(Date.now() + 60 * 60 * 1000); // 1 hour
     await admin.save();
 
-    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:5000';
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:4000';
     const resetLink = `${siteUrl}/admin/reset-password?token=${token}`;
 
     // Send email non-blocking (don't hold up the response)

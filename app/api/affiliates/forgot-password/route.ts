@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
     }
 
     const token = generateResetToken();
-    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:5000';
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:4000';
     const resetLink = `${siteUrl}/affiliate/recover?token=${token}&email=${encodeURIComponent(email)}`;
 
     sendAffiliatePasswordResetEmail({ name: affiliate.name, email, resetLink }).catch(() => {});
