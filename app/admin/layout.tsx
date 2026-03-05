@@ -82,6 +82,8 @@ const serviceFilters = [
   // { label: 'Visa Documents', key: 'visa-documents', color: '#06B6D4' },
 ];
 
+const PUBLIC_ADMIN_PATHS = ['/admin/login', '/admin/forgot-password', '/admin/reset-password'];
+
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const router = useRouter();
@@ -105,7 +107,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
   // Auth check — skip for login page
   useEffect(() => {
-    if (pathname === '/admin/login') {
+    if (PUBLIC_ADMIN_PATHS.includes(pathname)) {
       setAuthChecked(true);
       return;
     }
@@ -148,8 +150,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     router.replace('/admin/login');
   };
 
-  // Login page — render without sidebar
-  if (pathname === '/admin/login') {
+  // Public admin pages — render without sidebar/auth redirect
+  if (PUBLIC_ADMIN_PATHS.includes(pathname)) {
     return <>{children}</>;
   }
 

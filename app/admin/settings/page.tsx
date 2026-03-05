@@ -137,6 +137,8 @@ export default function SettingsPage() {
   const [showAddModal, setShowAddModal] = useState(false);
   const [team, setTeam] = useState(teamMembers);
   const [newMember, setNewMember] = useState({ name: '', email: '', role: 'Viewer' as Admin['role'] });
+  const [inviteLoading, setInviteLoading] = useState(false);
+  const [inviteError, setInviteError] = useState('');
   const [saved, setSaved] = useState(false);
 
   // Notifications state
@@ -264,23 +266,41 @@ export default function SettingsPage() {
     }));
   };
 
-  const handleAddMember = () => {
+  const handleAddMember = async () => {
     if (!newMember.name || !newMember.email) return;
-    const initials = newMember.name.split(' ').map((n) => n[0]).join('').toUpperCase();
-    setTeam([
-      ...team,
-      {
-        id: String(Date.now()),
-        name: newMember.name,
-        email: newMember.email,
-        role: newMember.role,
-        avatar: initials,
-        status: 'invited',
-        lastLogin: 'Never',
-      },
-    ]);
-    setNewMember({ name: '', email: '', role: 'Viewer' });
-    setShowAddModal(false);
+
+    setInviteLoading(true);
+    setInviteError('');
+    try {
+      const res = await fetch('/api/admin/invite', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(newMember),
+      });
+      const data = await res.json();
+      if (!data.success) throw new Error(data.error || 'Failed to send invite');
+
+      const initials = newMember.name.split(' ').map((n) => n[0]).join('').toUpperCase();
+      setTeam((prev) => ([
+        ...prev,
+        {
+          id: String(Date.now()),
+          name: newMember.name,
+          email: newMember.email,
+          role: newMember.role,
+          avatar: initials,
+          status: 'invited',
+          lastLogin: 'Never',
+        },
+      ]));
+
+      setNewMember({ name: '', email: '', role: 'Viewer' });
+      setShowAddModal(false);
+    } catch (err: unknown) {
+      setInviteError(err instanceof Error ? err.message : 'Something went wrong');
+    } finally {
+      setInviteLoading(false);
+    }
   };
 
   const handleRemoveMember = (id: string) => {
@@ -648,7 +668,7 @@ export default function SettingsPage() {
                     <input
                       type="text"
                       value={newMember.name}
-                      onChange={(e) => setNewMember({ ...newMember, name: e.target.value })}
+                      onChange={(e) => { setNewMember({ ...newMember, name: e.target.value }); setInviteError(''); }}
                       placeholder="e.g. John Doe"
                       className="btn-hover-lift w-full px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#2979FF] focus:outline-none"
                     />
@@ -658,7 +678,7 @@ export default function SettingsPage() {
                     <input
                       type="email"
                       value={newMember.email}
-                      onChange={(e) => setNewMember({ ...newMember, email: e.target.value })}
+                      onChange={(e) => { setNewMember({ ...newMember, email: e.target.value }); setInviteError(''); }}
                       placeholder="e.g. john@onwardtickets.com"
                       className="btn-hover-lift w-full px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#2979FF] focus:outline-none"
                     />
@@ -667,7 +687,7 @@ export default function SettingsPage() {
                     <label className="btn-hover-lift block text-[13px] font-medium text-gray-600 mb-1.5">Role</label>
                     <select
                       value={newMember.role}
-                      onChange={(e) => setNewMember({ ...newMember, role: e.target.value as Admin['role'] })}
+                      onChange={(e) => { setNewMember({ ...newMember, role: e.target.value as Admin['role'] }); setInviteError(''); }}
                       className="btn-hover-lift w-full px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#2979FF] focus:outline-none appearance-none"
                     >
                       <option value="Admin">Admin</option>
@@ -680,6 +700,12 @@ export default function SettingsPage() {
                       {newMember.role === 'Viewer' && 'Read-only access to dashboard and submissions.'}
                     </p>
                   </div>
+
+                  {inviteError && (
+                    <div className="btn-hover-lift bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-xl text-[13px]">
+                      {inviteError}
+                    </div>
+                  )}
                 </div>
                 <div className="btn-hover-lift flex items-center justify-end gap-3 px-6 py-4 border-t border-gray-100 bg-[#F8FAFC]">
                   <button
@@ -690,12 +716,13 @@ export default function SettingsPage() {
                   </button>
                   <button
                     onClick={handleAddMember}
+                    disabled={inviteLoading || !newMember.name || !newMember.email}
                     className="btn-hover-lift flex items-center gap-2 bg-[#2979FF] hover:bg-[#1565C0] text-white px-5 py-2 rounded-xl text-[13px] font-semibold transition-colors"
                   >
                     <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
                     </svg>
-                    Send Invite
+                    {inviteLoading ? 'Sending...' : 'Send Invite'}
                   </button>
                 </div>
               </div>

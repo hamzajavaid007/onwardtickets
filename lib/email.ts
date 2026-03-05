@@ -1,5 +1,14 @@
 import nodemailer from 'nodemailer';
 
+function escapeHtml(str: string): string {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST || 'smtp.hostinger.com',
   port: Number(process.env.SMTP_PORT) || 465,
@@ -41,22 +50,22 @@ export async function sendNewOrderNotification(data: SubmissionData) {
           <table style="width: 100%; border-collapse: collapse;">
             <tr>
               <td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; color: #64748b; font-size: 13px; width: 140px;">Service</td>
-              <td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; color: #0B1437; font-size: 13px; font-weight: 600;">${data.service}</td>
+              <td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; color: #0B1437; font-size: 13px; font-weight: 600;">${escapeHtml(data.service)}</td>
             </tr>
             <tr>
               <td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; color: #64748b; font-size: 13px;">Customer Name</td>
-              <td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; color: #0B1437; font-size: 13px; font-weight: 600;">${data.name}</td>
+              <td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; color: #0B1437; font-size: 13px; font-weight: 600;">${escapeHtml(data.name)}</td>
             </tr>
             <tr>
               <td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; color: #64748b; font-size: 13px;">Email</td>
               <td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; color: #0B1437; font-size: 13px;">
-                <a href="mailto:${data.email}" style="color: #2979FF; text-decoration: none;">${data.email}</a>
+                <a href="mailto:${data.email}" style="color: #2979FF; text-decoration: none;">${escapeHtml(data.email)}</a>
               </td>
             </tr>
             ${data.phone ? `
             <tr>
               <td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; color: #64748b; font-size: 13px;">Phone</td>
-              <td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; color: #0B1437; font-size: 13px;">${data.phone}</td>
+              <td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; color: #0B1437; font-size: 13px;">${escapeHtml(data.phone || '')}</td>
             </tr>` : ''}
             <tr>
               <td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; color: #64748b; font-size: 13px;">Travelers</td>
@@ -68,12 +77,12 @@ export async function sendNewOrderNotification(data: SubmissionData) {
             </tr>
             <tr>
               <td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; color: #64748b; font-size: 13px;">Urgency</td>
-              <td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; color: ${data.urgency === 'Super Fast' ? '#ef4444' : data.urgency === 'Urgent' ? '#f97316' : '#0B1437'}; font-size: 13px; font-weight: 600;">${data.urgency || 'Standard'}</td>
+              <td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; color: ${data.urgency === 'Super Fast' ? '#ef4444' : data.urgency === 'Urgent' ? '#f97316' : '#0B1437'}; font-size: 13px; font-weight: 600;">${escapeHtml(data.urgency || 'Standard')}</td>
             </tr>
             ${data.details ? `
             <tr>
               <td style="padding: 10px 0; color: #64748b; font-size: 13px; vertical-align: top;">Details</td>
-              <td style="padding: 10px 0; color: #0B1437; font-size: 13px; line-height: 1.5;">${data.details}</td>
+              <td style="padding: 10px 0; color: #0B1437; font-size: 13px; line-height: 1.5;">${escapeHtml(data.details || '')}</td>
             </tr>` : ''}
           </table>
         </div>
@@ -96,7 +105,7 @@ export async function sendNewOrderNotification(data: SubmissionData) {
     await transporter.sendMail({
       from: `"OnwardTickets" <${process.env.SMTP_USER}>`,
       to: notifyEmail,
-      subject: `New ${data.service} Order — ${data.name} (£${data.amount.toFixed(2)})`,
+      subject: `New ${escapeHtml(data.service)} Order — ${escapeHtml(data.name)} (£${data.amount.toFixed(2)})`,
       html,
     });
     console.log(`[Email] Notification sent to ${notifyEmail}`);
@@ -123,21 +132,21 @@ export async function sendContactNotification(data: { name: string; email: strin
           <table style="width: 100%; border-collapse: collapse;">
             <tr>
               <td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; color: #64748b; font-size: 13px; width: 140px;">Name</td>
-              <td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; color: #0B1437; font-size: 13px; font-weight: 600;">${data.name}</td>
+              <td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; color: #0B1437; font-size: 13px; font-weight: 600;">${escapeHtml(data.name)}</td>
             </tr>
             <tr>
               <td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; color: #64748b; font-size: 13px;">Email</td>
               <td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; color: #0B1437; font-size: 13px;">
-                <a href="mailto:${data.email}" style="color: #2979FF; text-decoration: none;">${data.email}</a>
+                <a href="mailto:${data.email}" style="color: #2979FF; text-decoration: none;">${escapeHtml(data.email)}</a>
               </td>
             </tr>
             <tr>
               <td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; color: #64748b; font-size: 13px;">Phone</td>
-              <td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; color: #0B1437; font-size: 13px;">${data.phone}</td>
+              <td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; color: #0B1437; font-size: 13px;">${escapeHtml(data.phone)}</td>
             </tr>
             <tr>
               <td style="padding: 10px 0; color: #64748b; font-size: 13px; vertical-align: top;">Message</td>
-              <td style="padding: 10px 0; color: #0B1437; font-size: 13px; line-height: 1.5;">${data.message}</td>
+              <td style="padding: 10px 0; color: #0B1437; font-size: 13px; line-height: 1.5;">${escapeHtml(data.message)}</td>
             </tr>
           </table>
         </div>
@@ -153,7 +162,7 @@ export async function sendContactNotification(data: { name: string; email: strin
     await transporter.sendMail({
       from: `"OnwardTickets" <${process.env.SMTP_USER}>`,
       to: notifyEmail,
-      subject: `New Contact Message — ${data.name}`,
+      subject: `New Contact Message — ${escapeHtml(data.name)}`,
       html,
     });
     console.log(`[Email] Contact notification sent to ${notifyEmail}`);
@@ -172,7 +181,7 @@ export async function sendContactConfirmation(data: { name: string; email: strin
       </div>
       <div style="padding: 30px;">
         <div style="background: white; border-radius: 10px; padding: 24px; border: 1px solid #e2e8f0;">
-          <p style="margin: 0 0 16px; font-size: 15px; color: #0B1437;">Hi <strong>${data.name}</strong>,</p>
+          <p style="margin: 0 0 16px; font-size: 15px; color: #0B1437;">Hi <strong>${escapeHtml(data.name)}</strong>,</p>
           <p style="margin: 0 0 16px; font-size: 14px; color: #374151; line-height: 1.6;">
             Thank you for reaching out to us! We&rsquo;ve received your message and our team will get back to you within <strong>24 hours</strong>.
           </p>
@@ -227,7 +236,7 @@ export async function sendOrderConfirmation(data: SubmissionData) {
       </div>
       <div style="padding: 30px;">
         <div style="background: white; border-radius: 10px; padding: 24px; border: 1px solid #e2e8f0;">
-          <p style="margin: 0 0 16px; font-size: 15px; color: #0B1437;">Hi <strong>${data.name}</strong>,</p>
+          <p style="margin: 0 0 16px; font-size: 15px; color: #0B1437;">Hi <strong>${escapeHtml(data.name)}</strong>,</p>
           <p style="margin: 0 0 16px; font-size: 14px; color: #374151; line-height: 1.6;">
             Thank you for your order! We&rsquo;ve received your request and our team is now processing it.
           </p>
@@ -237,7 +246,7 @@ export async function sendOrderConfirmation(data: SubmissionData) {
             <table style="width: 100%; border-collapse: collapse;">
               <tr>
                 <td style="padding: 6px 0; color: #0369A1; font-size: 13px;">Service:</td>
-                <td style="padding: 6px 0; color: #0369A1; font-size: 13px; font-weight: 600;">${serviceName}</td>
+                <td style="padding: 6px 0; color: #0369A1; font-size: 13px; font-weight: 600;">${escapeHtml(serviceName)}</td>
               </tr>
               <tr>
                 <td style="padding: 6px 0; color: #0369A1; font-size: 13px;">Travelers:</td>
@@ -245,7 +254,7 @@ export async function sendOrderConfirmation(data: SubmissionData) {
               </tr>
               <tr>
                 <td style="padding: 6px 0; color: #0369A1; font-size: 13px;">Speed:</td>
-                <td style="padding: 6px 0; color: #0369A1; font-size: 13px; font-weight: 600;">${data.urgency || 'Standard'}</td>
+                <td style="padding: 6px 0; color: #0369A1; font-size: 13px; font-weight: 600;">${escapeHtml(data.urgency || 'Standard')}</td>
               </tr>
               <tr>
                 <td style="padding: 6px 0; color: #0369A1; font-size: 13px;">Amount:</td>
@@ -279,7 +288,7 @@ export async function sendOrderConfirmation(data: SubmissionData) {
     await transporter.sendMail({
       from: `"OnwardTicket.us" <${process.env.SMTP_USER}>`,
       to: data.email,
-      subject: `Order Confirmed — ${serviceName}`,
+      subject: `Order Confirmed — ${escapeHtml(serviceName)}`,
       html,
     });
     console.log(`[Email] Order confirmation sent to ${data.email}`);
@@ -322,7 +331,7 @@ export async function sendAffiliateReferralSaleEmail(data: {
       </div>
       <div style="padding: 30px;">
         <div style="background: white; border-radius: 10px; padding: 24px; border: 1px solid #e2e8f0;">
-          <p style="margin: 0 0 16px; font-size: 15px; color: #0B1437;">Hi <strong>${data.affiliateName}</strong>,</p>
+          <p style="margin: 0 0 16px; font-size: 15px; color: #0B1437;">Hi <strong>${escapeHtml(data.affiliateName)}</strong>,</p>
           <p style="margin: 0 0 16px; font-size: 14px; color: #374151; line-height: 1.6;">
             Great news! Someone purchased through your referral link. Here are the details:
           </p>
@@ -332,11 +341,11 @@ export async function sendAffiliateReferralSaleEmail(data: {
             <table style="width: 100%; border-collapse: collapse;">
               <tr>
                 <td style="padding: 6px 0; color: #065F46; font-size: 13px;">Service:</td>
-                <td style="padding: 6px 0; color: #065F46; font-size: 13px; font-weight: 600;">${serviceName}</td>
+                <td style="padding: 6px 0; color: #065F46; font-size: 13px; font-weight: 600;">${escapeHtml(serviceName)}</td>
               </tr>
               <tr>
                 <td style="padding: 6px 0; color: #065F46; font-size: 13px;">Customer:</td>
-                <td style="padding: 6px 0; color: #065F46; font-size: 13px; font-weight: 600;">${data.customerName}</td>
+                <td style="padding: 6px 0; color: #065F46; font-size: 13px; font-weight: 600;">${escapeHtml(data.customerName)}</td>
               </tr>
               <tr>
                 <td style="padding: 6px 0; color: #065F46; font-size: 13px;">Order Amount:</td>
@@ -402,27 +411,27 @@ export async function sendAffiliateNotification(data: AffiliateData) {
           <table style="width: 100%; border-collapse: collapse;">
             <tr>
               <td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; color: #64748b; font-size: 13px; width: 140px;">Name</td>
-              <td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; color: #0B1437; font-size: 13px; font-weight: 600;">${data.name}</td>
+              <td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; color: #0B1437; font-size: 13px; font-weight: 600;">${escapeHtml(data.name)}</td>
             </tr>
             <tr>
               <td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; color: #64748b; font-size: 13px;">Email</td>
               <td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; color: #0B1437; font-size: 13px;">
-                <a href="mailto:${data.email}" style="color: #2979FF; text-decoration: none;">${data.email}</a>
+                <a href="mailto:${data.email}" style="color: #2979FF; text-decoration: none;">${escapeHtml(data.email)}</a>
               </td>
             </tr>
             <tr>
               <td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; color: #64748b; font-size: 13px;">Phone</td>
-              <td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; color: #0B1437; font-size: 13px;">${data.phone}</td>
+              <td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; color: #0B1437; font-size: 13px;">${escapeHtml(data.phone)}</td>
             </tr>
             <tr>
               <td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; color: #64748b; font-size: 13px;">Platform</td>
-              <td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; color: #0B1437; font-size: 13px; font-weight: 600;">${data.platform}</td>
+              <td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; color: #0B1437; font-size: 13px; font-weight: 600;">${escapeHtml(data.platform)}</td>
             </tr>
             ${data.website ? `
             <tr>
               <td style="padding: 10px 0; color: #64748b; font-size: 13px;">Website</td>
               <td style="padding: 10px 0; color: #0B1437; font-size: 13px;">
-                <a href="${data.website}" style="color: #2979FF; text-decoration: none;">${data.website}</a>
+                <a href="${data.website}" style="color: #2979FF; text-decoration: none;">${escapeHtml(data.website)}</a>
               </td>
             </tr>` : ''}
           </table>
@@ -444,7 +453,7 @@ export async function sendAffiliateNotification(data: AffiliateData) {
     await transporter.sendMail({
       from: `"OnwardTickets" <${process.env.SMTP_USER}>`,
       to: notifyEmail,
-      subject: `New Affiliate Application — ${data.name} (${data.platform})`,
+      subject: `New Affiliate Application — ${escapeHtml(data.name)} (${escapeHtml(data.platform)})`,
       html,
     });
     console.log(`[Email] Affiliate notification sent to ${notifyEmail}`);
@@ -465,7 +474,7 @@ export async function sendAffiliateRegistrationEmail(data: { name: string; email
       </div>
       <div style="padding: 30px;">
         <div style="background: white; border-radius: 10px; padding: 24px; border: 1px solid #e2e8f0;">
-          <p style="margin: 0 0 16px; font-size: 15px; color: #0B1437;">Hi <strong>${data.name}</strong>,</p>
+          <p style="margin: 0 0 16px; font-size: 15px; color: #0B1437;">Hi <strong>${escapeHtml(data.name)}</strong>,</p>
           <p style="margin: 0 0 16px; font-size: 14px; color: #374151; line-height: 1.6;">
             Thank you for applying to the OnwardTickets Affiliate Program! We&rsquo;ve received your application and our team is currently reviewing it.
           </p>
@@ -522,7 +531,7 @@ export async function sendAffiliateStatusEmail(data: { name: string; email: stri
       </div>
       <div style="padding: 30px;">
         <div style="background: white; border-radius: 10px; padding: 24px; border: 1px solid #e2e8f0;">
-          <p style="margin: 0 0 16px; font-size: 15px; color: #0B1437;">Hi <strong>${data.name}</strong>,</p>
+          <p style="margin: 0 0 16px; font-size: 15px; color: #0B1437;">Hi <strong>${escapeHtml(data.name)}</strong>,</p>
           <p style="margin: 0 0 16px; font-size: 14px; color: #374151; line-height: 1.6;">
             Great news! Your affiliate application has been <strong style="color: #059669;">approved</strong>. You can now log in to your affiliate dashboard and start earning commissions.
           </p>
@@ -531,11 +540,11 @@ export async function sendAffiliateStatusEmail(data: { name: string; email: stri
             <table style="width: 100%; border-collapse: collapse;">
               <tr>
                 <td style="padding: 6px 0; color: #065F46; font-size: 13px;">Email:</td>
-                <td style="padding: 6px 0; color: #065F46; font-size: 13px; font-weight: 600;">${data.email}</td>
+                <td style="padding: 6px 0; color: #065F46; font-size: 13px; font-weight: 600;">${escapeHtml(data.email)}</td>
               </tr>
               <tr>
                 <td style="padding: 6px 0; color: #065F46; font-size: 13px;">Referral Code:</td>
-                <td style="padding: 6px 0; color: #065F46; font-size: 13px; font-weight: 600;">${data.referralCode || 'Check your dashboard'}</td>
+                <td style="padding: 6px 0; color: #065F46; font-size: 13px; font-weight: 600;">${escapeHtml(data.referralCode || 'Check your dashboard')}</td>
               </tr>
             </table>
           </div>
@@ -570,7 +579,7 @@ export async function sendAffiliateStatusEmail(data: { name: string; email: stri
       </div>
       <div style="padding: 30px;">
         <div style="background: white; border-radius: 10px; padding: 24px; border: 1px solid #e2e8f0;">
-          <p style="margin: 0 0 16px; font-size: 15px; color: #0B1437;">Hi <strong>${data.name}</strong>,</p>
+          <p style="margin: 0 0 16px; font-size: 15px; color: #0B1437;">Hi <strong>${escapeHtml(data.name)}</strong>,</p>
           <p style="margin: 0 0 16px; font-size: 14px; color: #374151; line-height: 1.6;">
             Thank you for your interest in the OnwardTickets Affiliate Program. After reviewing your application, we&rsquo;re unable to approve it at this time.
           </p>
@@ -626,7 +635,7 @@ export async function sendEmailVerification(data: { name: string; email: string;
       <div style="padding: 30px;">
         <div style="background: white; border-radius: 10px; padding: 24px; border: 1px solid #e2e8f0; text-align: center;">
           <p style="margin: 0 0 20px; color: #64748b; font-size: 15px;">
-            Hello ${data.name},
+            Hello ${escapeHtml(data.name)},
           </p>
           <p style="margin: 0 0 20px; color: #64748b; font-size: 14px; line-height: 1.6;">
             Thank you for your order! Please verify your email address to complete your submission.
@@ -715,6 +724,57 @@ export async function sendAdminPasswordResetEmail(data: { email: string; resetLi
   }
 }
 
+export async function sendAdminInvitationEmail(data: { email: string; resetLink: string; name?: string; role?: string }) {
+  const displayName = data.name?.trim() ? data.name.trim() : 'Admin';
+  const roleText = data.role?.trim() ? data.role.trim() : 'Admin';
+
+  const html = `
+    <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #f8fafc; border-radius: 12px; overflow: hidden;">
+      <div style="background: linear-gradient(135deg, #2979FF, #0052CC); padding: 30px; text-align: center;">
+        <h1 style="color: white; margin: 0; font-size: 22px; font-weight: 700;">You're Invited</h1>
+        <p style="color: #93c5fd; margin: 8px 0 0; font-size: 14px;">OnwardTickets Admin Panel</p>
+      </div>
+      <div style="padding: 30px;">
+        <div style="background: white; border-radius: 10px; padding: 24px; border: 1px solid #e2e8f0;">
+          <p style="margin: 0 0 12px; font-size: 15px; color: #0B1437;">
+            Hi <strong>${displayName}</strong>,
+          </p>
+          <p style="margin: 0 0 12px; font-size: 14px; color: #374151; line-height: 1.6;">
+            You have been invited to join the OnwardTickets admin dashboard as <strong>${roleText}</strong>.
+          </p>
+          <p style="margin: 0 0 18px; font-size: 13px; color: #64748b; line-height: 1.6;">
+            To activate your account, set your password using the link below. This link expires in 1 hour.
+          </p>
+          <div style="text-align: center; margin: 24px 0;">
+            <a href="${data.resetLink}"
+               style="display: inline-block; background: linear-gradient(135deg, #2979FF, #0052CC); color: white; padding: 14px 32px; border-radius: 10px; text-decoration: none; font-size: 15px; font-weight: 700;">
+              Set Password
+            </a>
+          </div>
+          <p style="margin: 10px 0 0; color: #64748b; font-size: 12px;">
+            Or copy and paste this URL:
+          </p>
+          <p style="margin: 10px 0 0; padding: 12px; background: #f1f5f9; border-radius: 8px; color: #0B1437; font-size: 12px; word-break: break-all;">
+            ${data.resetLink}
+          </p>
+        </div>
+      </div>
+      <div style="padding: 16px 30px; background: #f1f5f9; text-align: center; border-top: 1px solid #e2e8f0;">
+        <p style="margin: 0; color: #94a3b8; font-size: 12px;">OnwardTickets &mdash; Admin Panel</p>
+      </div>
+    </div>
+  `;
+
+  const info = await transporter.sendMail({
+    from: `"OnwardTickets" <${process.env.SMTP_USER}>`,
+    to: data.email,
+    subject: 'You are invited — OnwardTickets Admin',
+    html,
+  });
+  console.log(`[Email] Admin invitation email accepted by SMTP for ${data.email}`);
+  return info;
+}
+
 // Email for affiliate password reset
 export async function sendAffiliatePasswordResetEmail(data: { name: string; email: string; resetLink: string }) {
   const html = `
@@ -725,7 +785,7 @@ export async function sendAffiliatePasswordResetEmail(data: { name: string; emai
       </div>
       <div style="padding: 30px;">
         <div style="background: white; border-radius: 10px; padding: 24px; border: 1px solid #e2e8f0;">
-          <p style="margin: 0 0 16px; font-size: 15px; color: #0B1437;">Hi <strong>${data.name}</strong>,</p>
+          <p style="margin: 0 0 16px; font-size: 15px; color: #0B1437;">Hi <strong>${escapeHtml(data.name)}</strong>,</p>
           <p style="margin: 0 0 16px; font-size: 14px; color: #374151; line-height: 1.6;">
             We received a request to recover your affiliate login credentials. Click the button below to view your referral code.
           </p>
