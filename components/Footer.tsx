@@ -132,7 +132,9 @@ const Footer = () => {
                 <div className="flex items-center gap-4">
                   {/* Facebook */}
                   <a
-                    href="#"
+                    href="https://www.facebook.com/onwardtickets"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-[36px] h-[36px] rounded-full bg-[#1D1D1D] hover:bg-[#2979FF] flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-[#2979FF]/30"
                     aria-label="Facebook"
                   >
@@ -142,7 +144,9 @@ const Footer = () => {
                   </a>
                   {/* Twitter */}
                   <a
-                    href="#"
+                    href="https://twitter.com/onwardtickets"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-[36px] h-[36px] rounded-full bg-[#1D1D1D] hover:bg-[#2979FF] flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-[#2979FF]/30"
                     aria-label="Twitter"
                   >
@@ -152,7 +156,9 @@ const Footer = () => {
                   </a>
                   {/* YouTube */}
                   <a
-                    href="#"
+                    href="https://www.youtube.com/@onwardtickets"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-[36px] h-[36px] rounded-full bg-[#1D1D1D] hover:bg-[#FF0000] flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-[#FF0000]/30"
                     aria-label="YouTube"
                   >
@@ -163,7 +169,9 @@ const Footer = () => {
                   </a>
                   {/* Instagram */}
                   <a
-                    href="#"
+                    href="https://www.instagram.com/onwardtickets"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-[36px] h-[36px] rounded-full bg-[#1D1D1D] hover:bg-gradient-to-br hover:from-purple-500 hover:to-pink-500 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/30"
                     aria-label="Instagram"
                   >
