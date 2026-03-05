@@ -83,13 +83,9 @@ const Header = () => {
 
   return (
     <header
-      className={`relative z-[50] w-full transition-all duration-300 ${
-        scrolled ? 'shadow-lg' : ''
+      className={`relative z-[50] w-full bg-white transition-all duration-300 ${
+        scrolled ? 'shadow-lg bg-white/95 backdrop-blur-md' : ''
       }`}
-      style={{
-        background: scrolled ? 'rgba(41, 121, 255, 0.95)' : 'transparent',
-        backdropFilter: scrolled ? 'blur(10px)' : 'none',
-      }}
     >
       <div className="mx-auto max-w-[1240px] px-6 lg:px-0 py-4">
         <div className="flex items-center justify-between">
