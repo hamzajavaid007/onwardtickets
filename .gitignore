@@ -42,5 +42,6 @@ next-env.d.ts
 
 # data storage
 /data
+
 # Local MCP config can contain tokens (e.g. Figma); never commit.
 .mcp.json
