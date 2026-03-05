@@ -1,9 +1,15 @@
 import { NextResponse } from 'next/server';
 import dbConnect from '@/lib/mongodb';
 import Submission from '@/lib/models/Submission';
+import { getSession } from '@/lib/auth';
 
 export async function GET() {
   try {
+    const session = await getSession();
+    if (!session) {
+      return NextResponse.json({ success: false, error: 'Unauthorized' }, { status: 401 });
+    }
+
     await dbConnect();
 
     const now = new Date();
