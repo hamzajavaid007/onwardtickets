@@ -26,6 +26,86 @@ export interface PageDefault {
 }
 
 export const PAGE_DEFAULTS: PageDefault[] = [
+  // ─── GLOBAL (Header, Footer, Marquee, SEO, WhatsApp) ───
+  {
+    slug: 'global',
+    title: 'Global',
+    sections: [
+      {
+        id: 'header',
+        type: 'header',
+        label: 'Header',
+        order: 0,
+        fields: [
+          { key: 'logoUrl', label: 'Logo URL', type: 'image', value: '/logo.png' },
+          { key: 'logoAlt', label: 'Logo Alt Text', type: 'text', value: 'OnwardTickets' },
+          { key: 'bgColor', label: 'Background Color', type: 'text', value: '#ffffff' },
+          { key: 'scrolledBg', label: 'Scrolled Background', type: 'text', value: '#ffffff' },
+          { key: 'ctaText', label: 'CTA Button Text', type: 'text', value: 'BOOK NOW' },
+          { key: 'ctaLink', label: 'CTA Button Link', type: 'url', value: '/#pricing' },
+        ],
+        items: [
+          { id: 'nav-1', fields: [{ key: 'label', label: 'Label', type: 'text', value: 'HOME' }, { key: 'url', label: 'URL', type: 'url', value: '/' }] },
+          { id: 'nav-2', fields: [{ key: 'label', label: 'Label', type: 'text', value: 'PRICING' }, { key: 'url', label: 'URL', type: 'url', value: '/#pricing' }] },
+          { id: 'nav-3', fields: [{ key: 'label', label: 'Label', type: 'text', value: 'SERVICES' }, { key: 'url', label: 'URL', type: 'url', value: '#' }] },
+          { id: 'nav-4', fields: [{ key: 'label', label: 'Label', type: 'text', value: 'BLOGS' }, { key: 'url', label: 'URL', type: 'url', value: '/blog' }] },
+          { id: 'nav-5', fields: [{ key: 'label', label: 'Label', type: 'text', value: 'CONTACT US' }, { key: 'url', label: 'URL', type: 'url', value: '/contact-us' }] },
+        ],
+      },
+      {
+        id: 'footer',
+        type: 'footer',
+        label: 'Footer',
+        order: 1,
+        fields: [
+          { key: 'logoUrl', label: 'Logo URL', type: 'image', value: '/logo.png' },
+          { key: 'description', label: 'Description', type: 'textarea', value: 'The Embassy recommends not purchasing tickets until visa is approved. Why would you risk your time and money?\nWe provide flight and hotel reservations. Perfect solution for digital nomads and travellers who want to extend or apply for visas.' },
+          { key: 'email', label: 'Contact Email', type: 'text', value: 'contact@onwardtickets.com' },
+          { key: 'copyright', label: 'Copyright Text', type: 'text', value: '© 2025 OnwardTickets. All rights reserved.' },
+        ],
+        items: [
+          { id: 'link-1', fields: [{ key: 'label', label: 'Label', type: 'text', value: 'Refund Policy' }, { key: 'url', label: 'URL', type: 'url', value: '/refund_returns' }] },
+          { id: 'link-2', fields: [{ key: 'label', label: 'Label', type: 'text', value: 'Privacy Policy' }, { key: 'url', label: 'URL', type: 'url', value: '/privacy-policy' }] },
+          { id: 'link-3', fields: [{ key: 'label', label: 'Label', type: 'text', value: 'Affiliate Program' }, { key: 'url', label: 'URL', type: 'url', value: '/become-a-partner' }] },
+          { id: 'link-4', fields: [{ key: 'label', label: 'Label', type: 'text', value: 'Terms and conditions' }, { key: 'url', label: 'URL', type: 'url', value: '/terms-conditions' }] },
+        ],
+      },
+      {
+        id: 'marquee-banner',
+        type: 'marquee',
+        label: 'Marquee Banner',
+        order: 2,
+        fields: [
+          { key: 'message', label: 'Banner Message', type: 'text', value: 'Get 10% OFF your first order with code WELCOME10' },
+          { key: 'bgColor', label: 'Background Color', type: 'text', value: '#2979FF' },
+          { key: 'textColor', label: 'Text Color', type: 'text', value: '#ffffff' },
+        ],
+      },
+      {
+        id: 'seo',
+        type: 'seo',
+        label: 'SEO',
+        order: 3,
+        fields: [
+          { key: 'siteTitle', label: 'Site Title', type: 'text', value: 'OnwardTickets - Flight Itinerary & Visa Documents for Visa Applications' },
+          { key: 'siteDescription', label: 'Site Description', type: 'textarea', value: 'Get verified onward tickets, flight itineraries, and visa documents for visa applications. Starting at $10. Accepted by embassies worldwide.' },
+          { key: 'ogImage', label: 'OG Image', type: 'image', value: '/og-image.png' },
+          { key: 'keywords', label: 'Keywords', type: 'textarea', value: 'onward ticket, flight itinerary, visa application, flight reservation, dummy ticket' },
+        ],
+      },
+      {
+        id: 'whatsapp',
+        type: 'whatsapp',
+        label: 'WhatsApp',
+        order: 4,
+        fields: [
+          { key: 'phoneNumber', label: 'Phone Number', type: 'text', value: '4477561525115' },
+          { key: 'defaultMessage', label: 'Default Message', type: 'text', value: 'Hi I need help with my visa application' },
+          { key: 'tooltipText', label: 'Tooltip Text', type: 'text', value: 'Need help? Chat with us!' },
+        ],
+      },
+    ],
+  },
   // ─── HOMEPAGE ───
   {
     slug: 'home',
@@ -333,6 +413,18 @@ export const PAGE_DEFAULTS: PageDefault[] = [
           { id: 'payment-1', fields: [{ key: 'title', label: 'Title', type: 'text', value: 'Credit/Debit Cards' }, { key: 'image', label: 'Image', type: 'image', value: '/credit-cards.png' }] },
           { id: 'payment-2', fields: [{ key: 'title', label: 'Title', type: 'text', value: 'Apple Pay' }, { key: 'image', label: 'Image', type: 'image', value: '/apple-pay.png' }] },
           { id: 'payment-3', fields: [{ key: 'title', label: 'Title', type: 'text', value: 'Google Pay' }, { key: 'image', label: 'Image', type: 'image', value: '/google-pay.png' }] },
+        ],
+      },
+      {
+        id: 'seo',
+        type: 'seo',
+        label: 'SEO',
+        order: 11,
+        fields: [
+          { key: 'metaTitle', label: 'Meta Title', type: 'text', value: 'OnwardTickets - Verified Flight Reservations for Visa Applications | Starting at $10' },
+          { key: 'metaDescription', label: 'Meta Description', type: 'textarea', value: 'Get verified onward tickets and flight itineraries for visa applications. Real airline reservations with valid PNR. Accepted by embassies worldwide. Starting at $10.' },
+          { key: 'ogImage', label: 'OG Image', type: 'image', value: '/og-image.png' },
+          { key: 'keywords', label: 'Keywords', type: 'textarea', value: 'onward ticket, flight itinerary, visa application, flight reservation, dummy ticket, proof of onward travel' },
         ],
       },
     ],
@@ -676,6 +768,18 @@ export const PAGE_DEFAULTS: PageDefault[] = [
           { key: 'ctaLink', label: 'CTA Button Link', type: 'url', value: '/flight-itinerary' },
         ],
       },
+      {
+        id: 'seo',
+        type: 'seo',
+        label: 'SEO',
+        order: 18,
+        fields: [
+          { key: 'metaTitle', label: 'Meta Title', type: 'text', value: 'About OnwardTickets - Trusted Flight Reservation Service Since 2019' },
+          { key: 'metaDescription', label: 'Meta Description', type: 'textarea', value: 'Learn about OnwardTickets - helping 10,000+ travelers worldwide with verified flight reservations for visa applications since 2019.' },
+          { key: 'ogImage', label: 'OG Image', type: 'image', value: '/og-image.png' },
+          { key: 'keywords', label: 'Keywords', type: 'textarea', value: 'about onward tickets, flight reservation service, visa document provider, trusted visa service' },
+        ],
+      },
     ],
   },
 
@@ -785,6 +889,18 @@ export const PAGE_DEFAULTS: PageDefault[] = [
           { id: 'faq-3', fields: [{ key: 'question', label: 'Question', type: 'text', value: 'Is my personal information secure?' }, { key: 'answer', label: 'Answer', type: 'textarea', value: 'Absolutely! We use strict privacy measures to keep your data safe & confidential.' }] },
           { id: 'faq-4', fields: [{ key: 'question', label: 'Question', type: 'text', value: 'Are the flight & hotel reservations verifiable?' }, { key: 'answer', label: 'Answer', type: 'textarea', value: 'Yes! All our reservations are verifiable and valid for visa purposes.' }] },
           { id: 'faq-5', fields: [{ key: 'question', label: 'Question', type: 'text', value: 'What if I need revisions or changes?' }, { key: 'answer', label: 'Answer', type: 'textarea', value: 'No worries! If there\'s any issue with the documents, we offer free corrections.' }] },
+        ],
+      },
+      {
+        id: 'seo',
+        type: 'seo',
+        label: 'SEO',
+        order: 7,
+        fields: [
+          { key: 'metaTitle', label: 'Meta Title', type: 'text', value: 'Visa Assistant - Expert Visa Application Help | OnwardTickets' },
+          { key: 'metaDescription', label: 'Meta Description', type: 'textarea', value: 'Get expert help with your visa application. Our visa assistants handle form filling, document preparation, and more.' },
+          { key: 'ogImage', label: 'OG Image', type: 'image', value: '/og-image.png' },
+          { key: 'keywords', label: 'Keywords', type: 'textarea', value: 'visa assistant, visa application help, visa form filling, visa documents' },
         ],
       },
     ],
@@ -949,6 +1065,18 @@ export const PAGE_DEFAULTS: PageDefault[] = [
           { key: 'phone', label: 'Contact Phone', type: 'text', value: '+44 77561 525115' },
         ],
       },
+      {
+        id: 'seo',
+        type: 'seo',
+        label: 'SEO',
+        order: 10,
+        fields: [
+          { key: 'metaTitle', label: 'Meta Title', type: 'text', value: 'Become a Partner - Affiliate Program | OnwardTickets' },
+          { key: 'metaDescription', label: 'Meta Description', type: 'textarea', value: 'Join the OnwardTickets affiliate program. Earn commissions by referring customers to our flight reservation and visa document services.' },
+          { key: 'ogImage', label: 'OG Image', type: 'image', value: '/og-image.png' },
+          { key: 'keywords', label: 'Keywords', type: 'textarea', value: 'affiliate program, travel affiliate, onward ticket affiliate, earn commissions' },
+        ],
+      },
     ],
   },
 
@@ -1009,6 +1137,18 @@ export const PAGE_DEFAULTS: PageDefault[] = [
           { id: 'social-2', fields: [{ key: 'platform', label: 'Platform', type: 'text', value: 'Twitter' }, { key: 'url', label: 'URL', type: 'url', value: 'https://twitter.com/onwardtickets' }] },
           { id: 'social-3', fields: [{ key: 'platform', label: 'Platform', type: 'text', value: 'YouTube' }, { key: 'url', label: 'URL', type: 'url', value: 'https://www.youtube.com/@onwardtickets' }] },
           { id: 'social-4', fields: [{ key: 'platform', label: 'Platform', type: 'text', value: 'Instagram' }, { key: 'url', label: 'URL', type: 'url', value: 'https://www.instagram.com/onwardtickets' }] },
+        ],
+      },
+      {
+        id: 'seo',
+        type: 'seo',
+        label: 'SEO',
+        order: 4,
+        fields: [
+          { key: 'metaTitle', label: 'Meta Title', type: 'text', value: 'Contact Us - OnwardTickets Support' },
+          { key: 'metaDescription', label: 'Meta Description', type: 'textarea', value: 'Get in touch with OnwardTickets. Contact our support team for help with flight reservations, visa documents, and more.' },
+          { key: 'ogImage', label: 'OG Image', type: 'image', value: '/og-image.png' },
+          { key: 'keywords', label: 'Keywords', type: 'textarea', value: 'contact onward tickets, support, help, customer service' },
         ],
       },
     ],
@@ -1083,6 +1223,18 @@ export const PAGE_DEFAULTS: PageDefault[] = [
           { key: 'footer', label: 'Footer Text', type: 'text', value: 'Last Updated: October 2025 OnwardTickets - Privacy Policy Questions? Contact: contact@onwardtickets.com' },
         ],
       },
+      {
+        id: 'seo',
+        type: 'seo',
+        label: 'SEO',
+        order: 5,
+        fields: [
+          { key: 'metaTitle', label: 'Meta Title', type: 'text', value: 'Privacy Policy - OnwardTickets' },
+          { key: 'metaDescription', label: 'Meta Description', type: 'textarea', value: 'Read our privacy policy. Learn how OnwardTickets collects, uses, and protects your personal information.' },
+          { key: 'ogImage', label: 'OG Image', type: 'image', value: '/og-image.png' },
+          { key: 'keywords', label: 'Keywords', type: 'textarea', value: 'privacy policy, data protection, GDPR, personal information' },
+        ],
+      },
     ],
   },
 
@@ -1147,6 +1299,18 @@ export const PAGE_DEFAULTS: PageDefault[] = [
           { key: 'heading', label: 'Heading', type: 'text', value: 'ACKNOWLEDGMENT' },
           { key: 'body', label: 'Summary Content', type: 'richtext', value: 'Key Points:\n✓ We collect information necessary to provide flight reservation services\n✓ We share data with airlines and essential service providers only\n✓ We do NOT sell your personal information\n✓ We use industry-standard security measures\n✓ You have rights to access, correct, and delete your data\n✓ We comply with GDPR, CCPA, and applicable privacy laws\n✓ Contact us with any privacy concerns\nYour Privacy Matters to Us.' },
           { key: 'footer', label: 'Footer Text', type: 'text', value: 'Last Updated: October 2025 OnwardTickets - Privacy Policy Questions? Contact: contact@onwardtickets.com' },
+        ],
+      },
+      {
+        id: 'seo',
+        type: 'seo',
+        label: 'SEO',
+        order: 4,
+        fields: [
+          { key: 'metaTitle', label: 'Meta Title', type: 'text', value: 'Terms & Conditions - OnwardTickets' },
+          { key: 'metaDescription', label: 'Meta Description', type: 'textarea', value: 'Read the terms and conditions for using OnwardTickets flight reservation and visa document services.' },
+          { key: 'ogImage', label: 'OG Image', type: 'image', value: '/og-image.png' },
+          { key: 'keywords', label: 'Keywords', type: 'textarea', value: 'terms and conditions, terms of service, legal, onward tickets terms' },
         ],
       },
     ],
@@ -1220,6 +1384,18 @@ export const PAGE_DEFAULTS: PageDefault[] = [
           { key: 'noRefunds', label: 'No Refunds Section', type: 'richtext', value: '✗ NO refunds after service is delivered (except specific cases below)\n✗ NO cancellations after payment\n✗ NO refunds for general visa rejection\n✗ NO refunds for customer errors\n✗ NO refunds for changed plans' },
           { key: 'refundsOnly', label: 'Refunds Only Section', type: 'richtext', value: '✓ Refunds ONLY if we fail to deliver\n✓ Refunds ONLY if PNR is completely invalid\n✓ Refunds ONLY for technical errors on our part\n✓ Refunds ONLY if visa rejected SPECIFICALLY because of onward ticket\n✓ Must provide official embassy rejection letter\n✓ Letter must state onward ticket was THE SOLE reason for rejection\n✓ Contact us before filing chargebacks' },
           { key: 'visaCriteria', label: 'Visa Rejection Criteria', type: 'richtext', value: 'Visa Rejection Refund Criteria:\nEmbassy letter REQUIRED stating onward ticket was the problem\nIf rejected for multiple reasons (including onward ticket) = NO refund\nIf rejected for other reasons only = NO refund\nIf embassy accepted ticket but rejected visa = NO refund\nOnly if onward ticket was THE SOLE, EXPLICIT reason = Refund approved\n\nThis is a FINAL SALE service with limited exceptions. Purchase only if you understand and accept this policy' },
+        ],
+      },
+      {
+        id: 'seo',
+        type: 'seo',
+        label: 'SEO',
+        order: 5,
+        fields: [
+          { key: 'metaTitle', label: 'Meta Title', type: 'text', value: 'Refund & Cancellation Policy - OnwardTickets' },
+          { key: 'metaDescription', label: 'Meta Description', type: 'textarea', value: 'Read our refund and cancellation policy. Understand the terms for refunds on OnwardTickets flight reservation services.' },
+          { key: 'ogImage', label: 'OG Image', type: 'image', value: '/og-image.png' },
+          { key: 'keywords', label: 'Keywords', type: 'textarea', value: 'refund policy, cancellation policy, returns, onward tickets refund' },
         ],
       },
     ],

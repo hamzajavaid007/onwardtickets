@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, type ReactNode } from 'react';
 
 interface SectionField {
   key: string;
@@ -36,11 +36,68 @@ interface PageListItem {
   lastEdited: string | null;
 }
 
+// Icons for pages
+const pageIcons: Record<string, ReactNode> = {
+  global: (
+    <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+    </svg>
+  ),
+  home: (
+    <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2z" />
+    </svg>
+  ),
+  about: (
+    <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+    </svg>
+  ),
+  'become-a-partner': (
+    <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+    </svg>
+  ),
+  'visa-assistant': (
+    <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+    </svg>
+  ),
+  'contact-us': (
+    <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+    </svg>
+  ),
+  'privacy-policy': (
+    <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+    </svg>
+  ),
+  'terms-conditions': (
+    <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+    </svg>
+  ),
+  'refund-returns': (
+    <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M16 15v-1a4 4 0 00-4-4H8m0 0l3 3m-3-3l3-3m9 14V5a2 2 0 00-2-2H6a2 2 0 00-2 2v16l4-2 4 2 4-2 4 2z" />
+    </svg>
+  ),
+};
+
+const defaultPageIcon = (
+  <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+  </svg>
+);
+
 export default function PageEditorPage() {
   const [pages, setPages] = useState<PageListItem[]>([]);
   const [selectedSlug, setSelectedSlug] = useState('');
+  const [selectedSectionId, setSelectedSectionId] = useState<string | null>(null);
+  const [expandedPages, setExpandedPages] = useState<Set<string>>(new Set());
   const [pageData, setPageData] = useState<PageData | null>(null);
-  const [expandedSection, setExpandedSection] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
   const [loading, setLoading] = useState(false);
   const [loadingPages, setLoadingPages] = useState(true);
@@ -50,18 +107,14 @@ export default function PageEditorPage() {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const pendingUploadRef = useRef<{ sectionId: string; fieldKey: string; itemId?: string } | null>(null);
 
-  // Fetch page list on mount
-  useEffect(() => {
-    fetchPages();
-  }, []);
+  useEffect(() => { fetchPages(); }, []);
 
-  // Fetch page content when selection changes
   useEffect(() => {
     if (selectedSlug) {
       fetchPageContent(selectedSlug);
     } else {
       setPageData(null);
-      setExpandedSection(null);
+      setSelectedSectionId(null);
     }
   }, [selectedSlug]);
 
@@ -86,13 +139,56 @@ export default function PageEditorPage() {
       const data = await res.json();
       if (data.success) {
         setPageData(data.page);
-        setExpandedSection(null);
       }
     } catch (err) {
       console.error('Failed to fetch page content:', err);
     } finally {
       setLoading(false);
     }
+  }
+
+  function togglePage(slug: string) {
+    const isCurrentlyExpanded = expandedPages.has(slug);
+    setExpandedPages(prev => {
+      const next = new Set(prev);
+      if (next.has(slug)) {
+        next.delete(slug);
+      } else {
+        next.add(slug);
+      }
+      return next;
+    });
+    // Load page data and auto-select first section
+    if (selectedSlug !== slug) {
+      setSelectedSlug(slug);
+      setSelectedSectionId(null);
+    } else if (isCurrentlyExpanded) {
+      // Collapsing - deselect section
+      setSelectedSectionId(null);
+    }
+  }
+
+  // Auto-select first section when page data loads
+  useEffect(() => {
+    if (pageData && !selectedSectionId && expandedPages.has(pageData.slug)) {
+      const sorted = [...pageData.sections].sort((a, b) => a.order - b.order);
+      if (sorted.length > 0) {
+        setSelectedSectionId(sorted[0].id);
+      }
+    }
+  }, [pageData]);
+
+  function selectSection(slug: string, sectionId: string) {
+    if (selectedSlug !== slug) {
+      setSelectedSlug(slug);
+    }
+    setSelectedSectionId(sectionId);
+    // Ensure page is expanded
+    setExpandedPages(prev => {
+      const next = new Set(prev);
+      next.add(slug);
+      return next;
+    });
   }
 
   function updateFieldValue(sectionId: string, fieldKey: string, value: string, itemId?: string) {
@@ -108,21 +204,11 @@ export default function PageEditorPage() {
               ...section,
               items: section.items.map(item => {
                 if (item.id !== itemId) return item;
-                return {
-                  ...item,
-                  fields: item.fields.map(f =>
-                    f.key === fieldKey ? { ...f, value } : f
-                  ),
-                };
+                return { ...item, fields: item.fields.map(f => f.key === fieldKey ? { ...f, value } : f) };
               }),
             };
           }
-          return {
-            ...section,
-            fields: section.fields.map(f =>
-              f.key === fieldKey ? { ...f, value } : f
-            ),
-          };
+          return { ...section, fields: section.fields.map(f => f.key === fieldKey ? { ...f, value } : f) };
         }),
       };
     });
@@ -191,11 +277,9 @@ export default function PageEditorPage() {
   async function handleImageUpload(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0];
     if (!file || !pendingUploadRef.current) return;
-
     const { sectionId, fieldKey, itemId } = pendingUploadRef.current;
     const uploadKey = `${sectionId}-${fieldKey}-${itemId || ''}`;
     setUploadingField(uploadKey);
-
     try {
       const formData = new FormData();
       formData.append('file', file);
@@ -218,6 +302,34 @@ export default function PageEditorPage() {
     fileInputRef.current?.click();
   }
 
+  async function resetToDefaults() {
+    if (!pageData) return;
+    if (!confirm(`Reset "${currentPageTitle}" to default content? This will discard all custom changes.`)) return;
+    setSaving(true);
+    setSaveMessage('');
+    try {
+      const res = await fetch(`/api/pages/${pageData.slug}`, { method: 'DELETE' });
+      const data = await res.json();
+      if (data.success) {
+        setSaveMessage('Reset to defaults!');
+        fetchPages();
+        fetchPageContent(pageData.slug);
+        setTimeout(() => setSaveMessage(''), 3000);
+      } else {
+        // If DELETE not supported, just refetch defaults
+        fetchPageContent(pageData.slug);
+        setSaveMessage('Reset to defaults!');
+        setTimeout(() => setSaveMessage(''), 3000);
+      }
+    } catch {
+      fetchPageContent(pageData.slug);
+      setSaveMessage('Reset to defaults!');
+      setTimeout(() => setSaveMessage(''), 3000);
+    } finally {
+      setSaving(false);
+    }
+  }
+
   async function saveChanges() {
     if (!pageData) return;
     setSaving(true);
@@ -237,12 +349,16 @@ export default function PageEditorPage() {
       } else {
         setSaveMessage('Failed to save changes. Please try again.');
       }
-    } catch (err) {
+    } catch {
       setSaveMessage('Failed to save changes. Please try again.');
     } finally {
       setSaving(false);
     }
   }
+
+  // Get the currently selected section
+  const currentSection = pageData?.sections.find(s => s.id === selectedSectionId) || null;
+  const currentPageTitle = pages.find(p => p.slug === selectedSlug)?.title || '';
 
   function renderField(field: SectionField, sectionId: string, itemId?: string) {
     const uploadKey = `${sectionId}-${field.key}-${itemId || ''}`;
@@ -250,10 +366,10 @@ export default function PageEditorPage() {
 
     if (field.type === 'image') {
       return (
-        <div key={field.key} className="mb-4">
-          <label className="block text-[13px] font-medium text-gray-700 mb-1.5">{field.label}</label>
+        <div key={field.key} className="mb-5">
+          <label className="block text-[13px] font-medium text-gray-600 mb-2">{field.label}</label>
           {field.value && (
-            <div className="mb-2 relative w-[200px] h-[120px] rounded-lg overflow-hidden border border-gray-200">
+            <div className="mb-2.5 relative w-[200px] h-[120px] rounded-lg overflow-hidden border border-gray-200">
               <img src={field.value} alt={field.label} className="w-full h-full object-cover" />
             </div>
           )}
@@ -261,7 +377,7 @@ export default function PageEditorPage() {
             <button
               onClick={() => triggerUpload(sectionId, field.key, itemId)}
               disabled={isUploading}
-              className="px-4 py-2 bg-[#F0F4F8] rounded-lg text-[13px] text-gray-700 hover:bg-gray-200 transition-colors border border-gray-200 disabled:opacity-50"
+              className="px-4 py-2.5 bg-[#F0F4F8] rounded-lg text-[13px] text-gray-700 hover:bg-gray-200 transition-colors border border-gray-200 disabled:opacity-50"
             >
               {isUploading ? 'Uploading...' : 'Upload Image'}
             </button>
@@ -270,7 +386,7 @@ export default function PageEditorPage() {
               value={field.value}
               onChange={(e) => updateFieldValue(sectionId, field.key, e.target.value, itemId)}
               placeholder="Or enter image URL"
-              className="flex-1 px-3 py-2 bg-[#F8FAFC] rounded-lg text-[13px] border border-gray-200 focus:border-[#2979FF] focus:outline-none transition-colors"
+              className="flex-1 px-3.5 py-2.5 bg-[#F8FAFC] rounded-lg text-[14px] border border-gray-200 focus:border-[#1B4F72] focus:outline-none transition-colors"
             />
           </div>
         </div>
@@ -279,256 +395,291 @@ export default function PageEditorPage() {
 
     if (field.type === 'textarea' || field.type === 'richtext') {
       return (
-        <div key={field.key} className="mb-4">
-          <label className="block text-[13px] font-medium text-gray-700 mb-1.5">{field.label}</label>
+        <div key={field.key} className="mb-5">
+          <label className="block text-[13px] font-medium text-gray-600 mb-2">{field.label}</label>
           <textarea
             value={field.value}
             onChange={(e) => updateFieldValue(sectionId, field.key, e.target.value, itemId)}
             rows={field.type === 'richtext' ? 8 : 4}
-            className="w-full px-3 py-2 bg-[#F8FAFC] rounded-lg text-[14px] border border-gray-200 focus:border-[#2979FF] focus:outline-none transition-colors resize-y"
+            className="w-full px-3.5 py-2.5 bg-[#F8FAFC] rounded-lg text-[14px] border border-gray-200 focus:border-[#1B4F72] focus:outline-none transition-colors resize-y"
           />
         </div>
       );
     }
 
     return (
-      <div key={field.key} className="mb-4">
-        <label className="block text-[13px] font-medium text-gray-700 mb-1.5">{field.label}</label>
+      <div key={field.key} className="mb-5">
+        <label className="block text-[13px] font-medium text-gray-600 mb-2">{field.label}</label>
         <input
           type={field.type === 'number' ? 'number' : field.type === 'url' ? 'url' : 'text'}
           value={field.value}
           onChange={(e) => updateFieldValue(sectionId, field.key, e.target.value, itemId)}
-          className="w-full px-3 py-2 bg-[#F8FAFC] rounded-lg text-[14px] border border-gray-200 focus:border-[#2979FF] focus:outline-none transition-colors"
+          className="w-full px-3.5 py-2.5 bg-[#F8FAFC] rounded-lg text-[14px] border border-gray-200 focus:border-[#1B4F72] focus:outline-none transition-colors"
         />
       </div>
     );
   }
 
-  function renderSection(section: Section) {
-    const isExpanded = expandedSection === section.id;
-    return (
-      <div
-        key={section.id}
-        className="bg-white rounded-2xl border border-gray-100 overflow-hidden"
-        style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}
-      >
-        {/* Section Header */}
-        <button
-          onClick={() => setExpandedSection(isExpanded ? null : section.id)}
-          className="w-full flex items-center justify-between px-5 py-4 hover:bg-gray-50 transition-colors"
-        >
-          <div className="flex items-center gap-3">
-            <span className="w-8 h-8 rounded-lg bg-[#E3EDFF] flex items-center justify-center text-[12px] font-semibold text-[#2979FF]">
-              {section.order + 1}
-            </span>
-            <div className="text-left">
-              <span className="text-[14px] font-medium text-[#0B1437]">{section.label}</span>
-              <span className="block text-[11px] text-gray-400 mt-0.5">
-                {section.fields.length} field{section.fields.length !== 1 ? 's' : ''}
-                {section.items && section.items.length > 0 && ` · ${section.items.length} item${section.items.length !== 1 ? 's' : ''}`}
-              </span>
-            </div>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="px-2 py-0.5 rounded-full text-[10px] font-medium bg-gray-100 text-gray-500">{section.type}</span>
-            <svg
-              className={`w-5 h-5 text-gray-400 transition-transform ${isExpanded ? 'rotate-180' : ''}`}
-              fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-            </svg>
-          </div>
-        </button>
+  return (
+    <div className="flex h-[calc(100vh-64px)]">
+      {/* Hidden file input */}
+      <input ref={fileInputRef} type="file" accept="image/*" onChange={handleImageUpload} className="hidden" />
 
-        {/* Section Content */}
-        {isExpanded && (
-          <div className="px-5 pb-5 border-t border-gray-100">
-            {/* Section Fields */}
-            {section.fields.length > 0 && (
-              <div className="pt-4">
-                {section.fields.map(field => renderField(field, section.id))}
+      {/* ─── LEFT SIDEBAR ─── */}
+      <div className="w-[260px] min-w-[260px] bg-white border-r border-gray-200 overflow-y-auto">
+        <div className="p-4 border-b border-gray-100">
+          <h3 className="text-[13px] font-semibold text-gray-400 uppercase tracking-wider">Pages</h3>
+        </div>
+        <nav className="py-2">
+          {loadingPages ? (
+            <div className="px-4 py-8 text-center">
+              <div className="inline-block w-5 h-5 border-2 border-[#1B4F72] border-t-transparent rounded-full animate-spin" />
+            </div>
+          ) : (
+            pages.map(page => {
+              const isExpanded = expandedPages.has(page.slug);
+              const isActivePage = selectedSlug === page.slug;
+              const sections = pageData?.slug === page.slug ? pageData.sections : [];
+              const icon = pageIcons[page.slug] || defaultPageIcon;
+
+              return (
+                <div key={page.slug}>
+                  {/* Page Item */}
+                  <button
+                    onClick={() => togglePage(page.slug)}
+                    className={`w-full flex items-center gap-3 px-4 py-2.5 text-left transition-colors ${
+                      isActivePage ? 'bg-[#1B4F72] text-white' : 'text-[#2D3748] hover:bg-gray-50'
+                    }`}
+                  >
+                    <span className={isActivePage ? 'text-white' : 'text-[#1B4F72]'}>{icon}</span>
+                    <span className="text-[14px] font-medium flex-1">{page.title}</span>
+                    <svg
+                      className={`w-4 h-4 transition-transform ${isExpanded ? 'rotate-180' : ''} ${isActivePage ? 'text-white/70' : 'text-gray-400'}`}
+                      fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+
+                  {/* Section Sub-items */}
+                  {isExpanded && isActivePage && sections.length > 0 && (
+                    <div className="bg-[#F7FAFC]">
+                      {sections
+                        .sort((a, b) => a.order - b.order)
+                        .map(section => {
+                          const isSectionActive = selectedSectionId === section.id;
+                          return (
+                            <button
+                              key={section.id}
+                              onClick={() => selectSection(page.slug, section.id)}
+                              className={`w-full flex items-center gap-2.5 pl-11 pr-4 py-2 text-left transition-colors ${
+                                isSectionActive
+                                  ? 'bg-[#EBF2FA] text-[#1B4F72] font-medium'
+                                  : 'text-gray-500 hover:bg-gray-100 hover:text-gray-700'
+                              }`}
+                            >
+                              <span className={`w-1.5 h-1.5 rounded-full ${isSectionActive ? 'bg-[#1B4F72]' : 'bg-gray-300'}`} />
+                              <span className="text-[13px]">{section.label}</span>
+                            </button>
+                          );
+                        })}
+                    </div>
+                  )}
+
+                  {/* Loading sections placeholder */}
+                  {isExpanded && isActivePage && loading && (
+                    <div className="bg-[#F7FAFC] px-4 py-3 text-center">
+                      <div className="inline-block w-4 h-4 border-2 border-[#1B4F72] border-t-transparent rounded-full animate-spin" />
+                    </div>
+                  )}
+                </div>
+              );
+            })
+          )}
+        </nav>
+      </div>
+
+      {/* ─── RIGHT CONTENT AREA ─── */}
+      <div className="flex-1 overflow-y-auto bg-[#F8FAFC]">
+        {/* Top Header - always visible */}
+        <div className="sticky top-0 z-10 bg-[#F8FAFC] border-b border-gray-200 px-8 py-5">
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="text-[22px] font-bold text-[#0B1437]">Content Management</h1>
+              {currentSection ? (
+                <p className="text-[13px] text-gray-400 mt-0.5">
+                  <span className="text-[#1B4F72] font-medium">{currentPageTitle}</span>
+                  <span className="mx-1.5">&rsaquo;</span>
+                  <span className="text-gray-600">{currentSection.label}</span>
+                </p>
+              ) : (
+                <p className="text-[13px] text-gray-400 mt-0.5">Select a page and section to edit</p>
+              )}
+            </div>
+            {currentSection && (
+              <div className="flex items-center gap-3">
+                {saveMessage && (
+                  <span className={`text-[13px] font-medium ${saveMessage.includes('success') || saveMessage.includes('Reset') ? 'text-green-600' : 'text-red-500'}`}>
+                    {saveMessage}
+                  </span>
+                )}
+                <button
+                  onClick={resetToDefaults}
+                  className="px-4 py-2.5 bg-white border border-gray-200 text-gray-700 rounded-xl text-[13px] font-medium hover:bg-gray-50 transition-colors"
+                >
+                  Reset to Defaults
+                </button>
+                <button
+                  onClick={saveChanges}
+                  disabled={saving || !hasChanges}
+                  className="px-5 py-2.5 bg-[#1B4F72] text-white rounded-xl text-[13px] font-medium hover:bg-[#163d5a] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                >
+                  {saving ? (
+                    <>
+                      <div className="w-3.5 h-3.5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                      Saving...
+                    </>
+                  ) : (
+                    'Save Changes'
+                  )}
+                </button>
               </div>
             )}
+          </div>
+        </div>
 
-            {/* Section Items (FAQ, testimonials, cards, etc.) */}
-            {section.items && section.items.length > 0 && (
-              <div className="pt-4">
-                <div className="flex items-center justify-between mb-3">
-                  <h4 className="text-[13px] font-semibold text-gray-600">Items ({section.items.length})</h4>
-                  <button
-                    onClick={() => addItem(section.id)}
-                    className="px-3 py-1.5 bg-[#2979FF] text-white rounded-lg text-[12px] font-medium hover:bg-[#1565C0] transition-colors flex items-center gap-1"
-                  >
-                    <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
-                    </svg>
-                    Add Item
-                  </button>
-                </div>
+        {/* No Selection State */}
+        {!selectedSectionId && !loading && (
+          <div className="flex items-center justify-center" style={{ height: 'calc(100% - 90px)' }}>
+            <div className="text-center">
+              <svg className="mx-auto mb-4 text-gray-300" width="56" height="56" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+              </svg>
+              <p className="text-[16px] text-gray-400 font-medium">Select a page and section to start editing</p>
+              <p className="text-[13px] text-gray-300 mt-1">Choose from the sidebar on the left</p>
+            </div>
+          </div>
+        )}
 
-                <div className="space-y-3">
-                  {section.items.map((item, idx) => {
-                    const firstField = item.fields[0];
-                    const itemLabel = firstField?.value
-                      ? (firstField.value.length > 50 ? firstField.value.slice(0, 50) + '...' : firstField.value)
-                      : `Item ${idx + 1}`;
-                    return (
-                      <div key={item.id} className="border border-gray-200 rounded-xl p-4 bg-[#FAFBFC]">
-                        <div className="flex items-center justify-between mb-3">
-                          <span className="text-[13px] font-medium text-gray-700">
-                            #{idx + 1}: {itemLabel}
-                          </span>
-                          <div className="flex items-center gap-1">
-                            <button
-                              onClick={() => moveItem(section.id, item.id, 'up')}
-                              disabled={idx === 0}
-                              className="p-1.5 rounded-lg hover:bg-gray-200 transition-colors disabled:opacity-30"
-                              title="Move up"
-                            >
-                              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
-                              </svg>
-                            </button>
-                            <button
-                              onClick={() => moveItem(section.id, item.id, 'down')}
-                              disabled={idx === section.items!.length - 1}
-                              className="p-1.5 rounded-lg hover:bg-gray-200 transition-colors disabled:opacity-30"
-                              title="Move down"
-                            >
-                              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                              </svg>
-                            </button>
-                            <button
-                              onClick={() => removeItem(section.id, item.id)}
-                              className="p-1.5 rounded-lg hover:bg-red-50 text-gray-400 hover:text-red-500 transition-colors"
-                              title="Remove item"
-                            >
-                              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                              </svg>
-                            </button>
+        {/* Section Content */}
+        {currentSection && !loading && (
+          <div className="max-w-[900px]">
+            {/* Section Fields */}
+            <div className="px-8 py-6">
+              <div className="bg-white rounded-2xl border border-gray-100 p-6 mb-4" style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}>
+                {currentSection.fields.map(field => renderField(field, currentSection.id))}
+              </div>
+
+              {/* Section Items (Navigation Links, FAQ, Cards, etc.) */}
+              {currentSection.items && currentSection.items.length > 0 && (
+                <div className="bg-white rounded-2xl border border-gray-100 p-6" style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}>
+                  <div className="flex items-center justify-between mb-4">
+                    <h4 className="text-[14px] font-semibold text-[#0B1437]">
+                      {currentSection.type === 'header' ? 'Navigation Links' :
+                       currentSection.type === 'footer' ? 'Footer Links' :
+                       currentSection.type === 'cards' ? 'Cards' :
+                       currentSection.type === 'faq' ? 'FAQ Items' :
+                       'Items'}
+                    </h4>
+                    <button
+                      onClick={() => addItem(currentSection.id)}
+                      className="px-3 py-1.5 bg-[#1B4F72] text-white rounded-lg text-[12px] font-medium hover:bg-[#163d5a] transition-colors flex items-center gap-1"
+                    >
+                      <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+                      </svg>
+                      Add
+                    </button>
+                  </div>
+
+                  <div className="space-y-3">
+                    {currentSection.items.map((item, idx) => {
+                      const labelField = item.fields[0];
+                      const secondField = item.fields[1];
+                      return (
+                        <div key={item.id} className="border border-gray-200 rounded-xl p-4 bg-[#FAFBFC]">
+                          <div className="flex items-center justify-between mb-3">
+                            <span className="text-[13px] font-semibold text-gray-500">#{idx + 1}</span>
+                            <div className="flex items-center gap-1">
+                              <button
+                                onClick={() => moveItem(currentSection.id, item.id, 'up')}
+                                disabled={idx === 0}
+                                className="p-1.5 rounded-lg hover:bg-gray-200 transition-colors disabled:opacity-30 text-gray-500"
+                                title="Move up"
+                              >
+                                <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
+                                </svg>
+                              </button>
+                              <button
+                                onClick={() => moveItem(currentSection.id, item.id, 'down')}
+                                disabled={idx === currentSection.items!.length - 1}
+                                className="p-1.5 rounded-lg hover:bg-gray-200 transition-colors disabled:opacity-30 text-gray-500"
+                                title="Move down"
+                              >
+                                <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                                </svg>
+                              </button>
+                              <button
+                                onClick={() => removeItem(currentSection.id, item.id)}
+                                className="p-1.5 rounded-lg hover:bg-red-50 text-red-400 hover:text-red-500 transition-colors"
+                                title="Remove"
+                              >
+                                <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                              </button>
+                            </div>
                           </div>
+                          {/* Render item fields side by side if 2 fields, or stacked */}
+                          {item.fields.length === 2 ? (
+                            <div className="grid grid-cols-2 gap-4">
+                              {item.fields.map(field => (
+                                <div key={field.key}>
+                                  <label className="block text-[12px] font-medium text-gray-500 mb-1.5">{field.label}</label>
+                                  <input
+                                    type="text"
+                                    value={field.value}
+                                    onChange={(e) => updateFieldValue(currentSection.id, field.key, e.target.value, item.id)}
+                                    className="w-full px-3 py-2 bg-white rounded-lg text-[13px] border border-gray-200 focus:border-[#1B4F72] focus:outline-none transition-colors"
+                                  />
+                                </div>
+                              ))}
+                            </div>
+                          ) : (
+                            item.fields.map(field => renderField(field, currentSection.id, item.id))
+                          )}
                         </div>
-                        {item.fields.map(field => renderField(field, section.id, item.id))}
-                      </div>
-                    );
-                  })}
+                      );
+                    })}
+                  </div>
                 </div>
+              )}
+            </div>
+
+            {/* Unsaved changes indicator */}
+            {hasChanges && !saveMessage && (
+              <div className="px-8 pb-4">
+                <span className="text-[13px] text-amber-600 font-medium flex items-center gap-1.5">
+                  <span className="w-2 h-2 bg-amber-500 rounded-full" />
+                  You have unsaved changes
+                </span>
               </div>
             )}
           </div>
         )}
-      </div>
-    );
-  }
 
-  return (
-    <div className="p-4 md:p-6 max-w-[900px]">
-      {/* Hidden file input for image uploads */}
-      <input
-        ref={fileInputRef}
-        type="file"
-        accept="image/*"
-        onChange={handleImageUpload}
-        className="hidden"
-      />
-
-      {/* Header */}
-      <div className="mb-6">
-        <h2 className="text-[22px] font-bold text-[#0B1437]">Page Editor</h2>
-        <p className="text-[14px] text-gray-500 mt-1">Manage content on your public pages</p>
-      </div>
-
-      {/* Page Selector */}
-      <div className="bg-white rounded-2xl border border-gray-100 p-5 mb-6" style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}>
-        <label className="block text-[13px] font-medium text-gray-700 mb-2">Select a page to edit</label>
-        <select
-          value={selectedSlug}
-          onChange={(e) => setSelectedSlug(e.target.value)}
-          className="w-full px-4 py-3 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#2979FF] focus:outline-none transition-colors appearance-none cursor-pointer"
-          style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23666' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 16px center' }}
-        >
-          <option value="">-- Choose a page --</option>
-          {pages.map(page => (
-            <option key={page.slug} value={page.slug}>
-              {page.title} {page.hasCustomContent ? '(edited)' : ''}
-            </option>
-          ))}
-        </select>
-      </div>
-
-      {/* Loading State */}
-      {loading && (
-        <div className="text-center py-12">
-          <div className="inline-block w-8 h-8 border-3 border-[#2979FF] border-t-transparent rounded-full animate-spin" />
-          <p className="text-[14px] text-gray-500 mt-3">Loading page content...</p>
-        </div>
-      )}
-
-      {/* No Selection */}
-      {!selectedSlug && !loading && (
-        <div className="text-center py-16 bg-white rounded-2xl border border-gray-100" style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}>
-          <svg className="mx-auto mb-4 text-gray-300" width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-          </svg>
-          <p className="text-[15px] text-gray-400">Select a page from the dropdown above to start editing</p>
-        </div>
-      )}
-
-      {/* Page Content Editor */}
-      {pageData && !loading && (
-        <>
-          {/* Page Title */}
-          <div className="bg-white rounded-2xl border border-gray-100 p-5 mb-4" style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}>
-            <div className="flex items-center justify-between">
-              <div>
-                <h3 className="text-[16px] font-semibold text-[#0B1437]">{pageData.title}</h3>
-                <p className="text-[12px] text-gray-400 mt-0.5">/{pageData.slug === 'home' ? '' : pageData.slug}</p>
-              </div>
-              <span className="text-[12px] text-gray-400">{pageData.sections.length} sections</span>
+        {/* Loading */}
+        {loading && (
+          <div className="flex items-center justify-center h-full">
+            <div className="text-center">
+              <div className="inline-block w-8 h-8 border-3 border-[#1B4F72] border-t-transparent rounded-full animate-spin" />
+              <p className="text-[14px] text-gray-400 mt-3">Loading content...</p>
             </div>
           </div>
-
-          {/* Sections */}
-          <div className="space-y-3 mb-6">
-            {pageData.sections
-              .sort((a, b) => a.order - b.order)
-              .map(section => renderSection(section))}
-          </div>
-
-          {/* Save Bar */}
-          <div className="sticky bottom-4 bg-white rounded-2xl border border-gray-100 p-4 flex items-center justify-between" style={{ boxShadow: '0 4px 20px rgba(0,0,0,0.1)' }}>
-            <div className="flex items-center gap-3">
-              {saveMessage && (
-                <span className={`text-[13px] font-medium ${saveMessage.includes('success') ? 'text-green-600' : 'text-red-500'}`}>
-                  {saveMessage}
-                </span>
-              )}
-              {hasChanges && !saveMessage && (
-                <span className="text-[13px] text-amber-600 font-medium flex items-center gap-1.5">
-                  <span className="w-2 h-2 bg-amber-500 rounded-full" />
-                  Unsaved changes
-                </span>
-              )}
-            </div>
-            <button
-              onClick={saveChanges}
-              disabled={saving || !hasChanges}
-              className="px-6 py-2.5 bg-[#2979FF] text-white rounded-xl text-[14px] font-medium hover:bg-[#1565C0] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
-            >
-              {saving ? (
-                <>
-                  <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                  Saving...
-                </>
-              ) : (
-                'Save Changes'
-              )}
-            </button>
-          </div>
-        </>
-      )}
+        )}
+      </div>
     </div>
   );
 }

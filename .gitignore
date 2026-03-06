@@ -45,3 +45,7 @@ next-env.d.ts
 
 # Local MCP config can contain tokens (e.g. Figma); never commit.
 .mcp.json
+
+# Codex CLI local state
+.codex-dev.log
+.codex-dev.pid
