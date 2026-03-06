@@ -280,7 +280,7 @@ const ContactUs = () => {
                   </span>
                   <a
                     href="mailto:contact@onwardtickets.com"
-                    className="text-[#333333] hover:text-[#2979FF] transition-colors duration-300 link-underline text-lg font-medium block"
+                    className="text-[#333333] hover:text-[#2979FF] transition-colors duration-300 link-underline text-lg font-medium block break-all"
                     style={{ fontFamily: font }}
                   >
                     contact@onwardtickets.com
@@ -304,8 +304,9 @@ const ContactUs = () => {
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      d="M21 10c0 7-9 13-9.5S2 21 5.5 21c-.5 0-1-.5-.1-1.5.1l-5 5a2.5 2.5 0 00-3.54 3.54V17.65L5 5l4 4 1.5 1.5 0 002.12 2.12l4-4V14.54a2.5 2.5 0 003.54-3.54zM11 13a1 1 0 11-2 0 2 0v2a2 2 0 002 2v2a2 2 0 002-2 2 0 01-2-2 0v-2z"
+                      d="M12 21s8-4.5 8-11a8 8 0 10-16 0c0 6.5 8 11 8 11z"
                     />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 11a3 3 0 100-6 3 3 0 000 6z" />
                   </svg>
                 </div>
                 <div>
