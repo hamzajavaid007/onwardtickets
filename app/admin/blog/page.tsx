@@ -213,7 +213,7 @@ const BlogCMSPage = () => {
         </div>
         <button
           onClick={() => openModal()}
-          className="btn-hover-lift flex items-center gap-2 bg-[#2979FF] hover:bg-[#1565C0] text-white px-5 py-2.5 rounded-xl text-[13px] font-semibold transition-colors"
+          className="btn-hover-lift flex items-center gap-2 bg-[#005CFF] hover:bg-[#0047CC] text-white px-5 py-2.5 rounded-xl text-[13px] font-semibold transition-colors"
         >
           <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4m16 0l8.8M12 4l-8.8H4" />
@@ -229,12 +229,12 @@ const BlogCMSPage = () => {
           placeholder="Search posts..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="btn-hover-lift flex-1 px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#2979FF] focus:outline-none"
+          className="btn-hover-lift flex-1 px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#005CFF] focus:outline-none"
         />
         <select
           value={filterStatus}
           onChange={(e) => setFilterStatus(e.target.value as 'all' | 'published')}
-          className="btn-hover-lift px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#2979FF] focus:outline-none"
+          className="btn-hover-lift px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#005CFF] focus:outline-none"
         >
           <option value="all">All Posts</option>
           <option value="published">Published Only</option>
@@ -244,7 +244,7 @@ const BlogCMSPage = () => {
       {/* Posts Table */}
       {loading ? (
         <div className="btn-hover-lift bg-white rounded-2xl p-12 shadow-sm border border-gray-100 text-center">
-          <div className="btn-hover-lift inline-block animate-spin text-[#2979FF]" style={{ width: '32px', height: '32px', border: '3px solid #e5e7eb', borderTopColor: '#2979FF', borderRadius: '50%' }}></div>
+          <div className="btn-hover-lift inline-block animate-spin text-[#005CFF]" style={{ width: '32px', height: '32px', border: '3px solid #e5e7eb', borderTopColor: '#005CFF', borderRadius: '50%' }}></div>
           <p className="btn-hover-lift text-[14px] text-gray-500 mt-4">Loading posts...</p>
         </div>
       ) : filteredPosts.length === 0 ? (
@@ -279,7 +279,7 @@ const BlogCMSPage = () => {
                     )}
                   </td>
                   <td className="btn-hover-lift px-6 py-4">
-                    <Link href={`/blog/${post.slug}`} className="btn-hover-lift text-[13px] font-medium text-[#0B1437] hover:text-[#2979FF]">
+                    <Link href={`/blog/${post.slug}`} className="btn-hover-lift text-[13px] font-medium text-[#0B1437] hover:text-[#005CFF]">
                       {post.title}
                     </Link>
                   </td>
@@ -296,7 +296,7 @@ const BlogCMSPage = () => {
                   </td>
                   <td className="btn-hover-lift px-6 py-4">
                     <div className="btn-hover-lift flex items-center gap-2">
-                      <button onClick={() => openModal(post)} className="btn-hover-lift p-1.5 rounded-lg hover:bg-gray-100 transition-colors text-gray-400 hover:text-[#2979FF]" title="Edit">
+                      <button onClick={() => openModal(post)} className="btn-hover-lift p-1.5 rounded-lg hover:bg-gray-100 transition-colors text-gray-400 hover:text-[#005CFF]" title="Edit">
                         <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002 2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586a2 2 0 012.828-2.828L20 7m-9 9l4 4L5 13" />
                         </svg>
@@ -306,7 +306,7 @@ const BlogCMSPage = () => {
                           <path strokeLinecap="round" strokeLinejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1 10V4a1 1 0 001-1 1v3M4 7h16" />
                         </svg>
                       </button>
-                      <Link href={`/blog/${post.slug}`} target="_blank" className="btn-hover-lift p-1.5 rounded-lg hover:bg-gray-100 transition-colors text-gray-400 hover:text-[#2979FF]" title="View">
+                      <Link href={`/blog/${post.slug}`} target="_blank" className="btn-hover-lift p-1.5 rounded-lg hover:bg-gray-100 transition-colors text-gray-400 hover:text-[#005CFF]" title="View">
                         <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a1 1 0 001-1V7a4 4 0 00-4-4z" />
                           <path strokeLinecap="round" strokeLinejoin="round" d="M2 10h6m4 0h6" />
@@ -344,7 +344,7 @@ const BlogCMSPage = () => {
                   required
                   value={formData.title}
                   onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                  className="btn-hover-lift w-full px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#2979FF] focus:outline-none"
+                  className="btn-hover-lift w-full px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#005CFF] focus:outline-none"
                   placeholder="Enter post title"
                 />
               </div>
@@ -354,7 +354,7 @@ const BlogCMSPage = () => {
                 <textarea
                   value={formData.excerpt}
                   onChange={(e) => setFormData({ ...formData, excerpt: e.target.value })}
-                  className="btn-hover-lift w-full px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#2979FF] focus:outline-none resize-y"
+                  className="btn-hover-lift w-full px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#005CFF] focus:outline-none resize-y"
                   rows={2}
                   placeholder="Short description (shown in list view)"
                 />
@@ -366,7 +366,7 @@ const BlogCMSPage = () => {
                   required
                   value={formData.content}
                   onChange={(e) => setFormData({ ...formData, content: e.target.value })}
-                  className="btn-hover-lift w-full px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#2979FF] focus:outline-none resize-y font-mono"
+                  className="btn-hover-lift w-full px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#005CFF] focus:outline-none resize-y font-mono"
                   rows={15}
                   placeholder="Enter HTML content (supports tags like h2, p, ul, etc.)"
                 />
@@ -387,7 +387,7 @@ const BlogCMSPage = () => {
                       type="button"
                       onClick={() => fileInputRef.current?.click()}
                       disabled={uploading}
-                      className="btn-hover-lift flex-1 px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[13px] border border-dashed border-2 border-gray-300 hover:border-[#2979FF] focus:border-[#2979FF] focus:outline-none transition-colors text-left"
+                      className="btn-hover-lift flex-1 px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[13px] border border-dashed border-2 border-gray-300 hover:border-[#005CFF] focus:border-[#005CFF] focus:outline-none transition-colors text-left"
                     >
                       {uploading ? (
                         <>
@@ -433,7 +433,7 @@ const BlogCMSPage = () => {
                     type="text"
                     value={formData.category}
                     onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                    className="btn-hover-lift w-full px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#2979FF] focus:outline-none"
+                    className="btn-hover-lift w-full px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#005CFF] focus:outline-none"
                     placeholder="e.g. Visa Tips"
                   />
                 </div>
@@ -445,7 +445,7 @@ const BlogCMSPage = () => {
                   type="text"
                   value={formData.tags}
                   onChange={(e) => setFormData({ ...formData, tags: e.target.value })}
-                  className="btn-hover-lift w-full px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#2979FF] focus:outline-none"
+                  className="btn-hover-lift w-full px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#005CFF] focus:outline-none"
                   placeholder="e.g. visa, travel, tips"
                 />
               </div>
@@ -456,7 +456,7 @@ const BlogCMSPage = () => {
                     type="checkbox"
                     checked={formData.published}
                     onChange={(e) => setFormData({ ...formData, published: e.target.checked })}
-                    className="btn-hover-lift w-4 h-4 accent-[#2979FF]"
+                    className="btn-hover-lift w-4 h-4 accent-[#005CFF]"
                   />
                   Published
                 </label>
@@ -474,7 +474,7 @@ const BlogCMSPage = () => {
               <button
                 type="submit"
                 disabled={saving}
-                className="btn-hover-lift flex items-center gap-2 bg-[#2979FF] hover:bg-[#1565C0] disabled:opacity-60 disabled:cursor-not-allowed text-white px-6 py-2.5 rounded-xl text-[13px] font-semibold transition-colors"
+                className="btn-hover-lift flex items-center gap-2 bg-[#005CFF] hover:bg-[#0047CC] disabled:opacity-60 disabled:cursor-not-allowed text-white px-6 py-2.5 rounded-xl text-[13px] font-semibold transition-colors"
               >
                 {saving ? (
                   <>

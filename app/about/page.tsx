@@ -166,7 +166,7 @@ const AboutPage = () => {
                   className="text-[36px] md:text-[48px] lg:text-[60px] font-semibold text-[#161616]"
                   style={{ fontFamily: 'var(--font-poppins), Poppins, sans-serif', lineHeight: '1.3' }}
                 >
-                  About Us &ndash;<br /><span className="text-[#005BFE]">OnwardTicket</span>.us
+                  About Us &ndash;<br /><span className="text-[#005CFF]">OnwardTicket</span>.us
                 </h1>
                 <div className="flex flex-col gap-[8px]">
                   <p
@@ -323,7 +323,7 @@ const AboutPage = () => {
                   <div
                     key={i}
                     className={`w-[39px] h-[39px] rounded-full flex items-center justify-center z-10 ${
-                      item.active ? 'bg-[#005BFE]' : 'bg-[#BEBEBE]'
+                      item.active ? 'bg-[#005CFF]' : 'bg-[#BEBEBE]'
                     }`}
                   >
                     <span
@@ -349,7 +349,7 @@ const AboutPage = () => {
                 <div
                   key={i}
                   className={`flex items-center justify-center rounded-[12px] ${
-                    item.active ? 'bg-[#005BFE] text-white' : 'bg-white text-[#262626] border border-[#E0E0E0]'
+                    item.active ? 'bg-[#005CFF] text-white' : 'bg-white text-[#262626] border border-[#E0E0E0]'
                   }`}
                   style={{ minHeight: '200px', padding: '24px' }}
                 >
@@ -620,7 +620,7 @@ const AboutPage = () => {
                 How We Work
               </h2>
               <h3
-                className="text-[22px] sm:text-[32px] lg:text-[48px] font-normal text-[#005BFE]"
+                className="text-[22px] sm:text-[32px] lg:text-[48px] font-normal text-[#005CFF]"
                 style={{ fontFamily: 'var(--font-poppins), Poppins, sans-serif', lineHeight: '1.3' }}
               >
                 Our Process is Simple and Transparent
@@ -1129,7 +1129,7 @@ const AboutPage = () => {
                       Provide Amount
                     </span>
                     <div className="w-full h-[12px] bg-[#F0F0F0] rounded-full overflow-hidden flex">
-                      <div className="h-full bg-[#005BFE] rounded-full" style={{ width: '45%' }} />
+                      <div className="h-full bg-[#005CFF] rounded-full" style={{ width: '45%' }} />
                       <div className="h-full bg-[#3DD9D6] rounded-full" style={{ width: '20%' }} />
                     </div>
                   </div>
@@ -1158,7 +1158,7 @@ const AboutPage = () => {
                         </span>
                       </div>
                       <div className="w-full h-[3px] bg-[#E0E0E0] rounded-full overflow-hidden">
-                        <div className="h-full bg-[#005BFE] rounded-full" style={{ width: '60%' }} />
+                        <div className="h-full bg-[#005CFF] rounded-full" style={{ width: '60%' }} />
                       </div>
                     </div>
                     <div className="flex-1 bg-[#F9F9F9] rounded-[10px] p-[14px] flex flex-col gap-[4px]">
@@ -1183,7 +1183,7 @@ const AboutPage = () => {
                         </span>
                       </div>
                       <div className="w-full h-[3px] bg-[#E0E0E0] rounded-full overflow-hidden">
-                        <div className="h-full bg-[#005BFE] rounded-full" style={{ width: '45%' }} />
+                        <div className="h-full bg-[#005CFF] rounded-full" style={{ width: '45%' }} />
                       </div>
                     </div>
                   </div>
@@ -1203,7 +1203,7 @@ const AboutPage = () => {
                   { title: 'Continuous Improvement', desc: 'Always working to serve you better' },
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-[12px]">
-                    <div className="w-[24px] h-[24px] rounded-full bg-[#005BFE] flex items-center justify-center flex-shrink-0 mt-[2px]">
+                    <div className="w-[24px] h-[24px] rounded-full bg-[#005CFF] flex items-center justify-center flex-shrink-0 mt-[2px]">
                       <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                         <path d="M3 7L6 10L11 4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
@@ -1440,7 +1440,7 @@ const AboutPage = () => {
             className="text-[36px] lg:text-[40px] font-bold text-[#1D1D1D] text-center"
             style={{ fontFamily: 'var(--font-poppins), Poppins, sans-serif', lineHeight: '55px' }}
           >
-            Join <span className="text-[#005BFE]">Thousands</span> of Successful<br />Travelers
+            Join <span className="text-[#005CFF]">Thousands</span> of Successful<br />Travelers
           </h2>
           <div className="flex flex-col items-center gap-[16px]">
             <h3
@@ -1465,7 +1465,7 @@ const AboutPage = () => {
           </div>
           <a
             href="/flight-itinerary"
-            className="inline-flex items-center justify-center bg-[#005BFE] text-white rounded-full px-[32px] py-[14px] text-[16px] font-medium hover:bg-[#0047CC] transition-colors"
+            className="inline-flex items-center justify-center bg-[#005CFF] text-white rounded-full px-[32px] py-[14px] text-[16px] font-medium hover:bg-[#0047CC] transition-colors"
             style={{ fontFamily: 'var(--font-poppins), Poppins, sans-serif', lineHeight: '24px' }}
           >
             Onward Ticket Now
@@ -1485,7 +1485,7 @@ const AboutPage = () => {
                   className="text-[14px] font-normal text-[#323232]"
                   style={{ fontFamily: 'var(--font-poppins), Poppins, sans-serif', lineHeight: '22px', whiteSpace: 'pre-line' }}
                 >
-                  <span className="text-[#005BFE]">&#10003;</span> {card.text}
+                  <span className="text-[#005CFF]">&#10003;</span> {card.text}
                 </p>
               </div>
             ))}
@@ -1615,7 +1615,7 @@ const AboutPage = () => {
             </div>
 
             {/* Legal Compliance Card - Blue */}
-            <div className="flex-1 bg-[#005BFE] rounded-[12px] p-[30px] flex flex-col gap-[12px]">
+            <div className="flex-1 bg-[#005CFF] rounded-[12px] p-[30px] flex flex-col gap-[12px]">
               <h3
                 className="text-[18px] font-semibold text-white"
                 style={{ fontFamily: 'var(--font-poppins), Poppins, sans-serif', lineHeight: '27px' }}
@@ -1696,7 +1696,7 @@ const AboutPage = () => {
           </p>
           <a
             href="/flight-itinerary"
-            className="inline-flex items-center justify-center bg-[#005BFE] text-white rounded-full hover:bg-[#0047CC] transition-colors w-fit"
+            className="inline-flex items-center justify-center bg-[#005CFF] text-white rounded-full hover:bg-[#0047CC] transition-colors w-fit"
             style={{ fontFamily: 'var(--font-poppins), Poppins, sans-serif', fontSize: '16px', fontWeight: 400, lineHeight: '24px', padding: '16px 40px', gap: '10px' }}
           >
             Start Your Application

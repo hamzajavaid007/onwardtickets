@@ -20,7 +20,7 @@ interface ServicePricing {
 const SectionHeading = ({ children }: { children: React.ReactNode }) => (
   <div className="mb-6 text-center">
     <h2
-      className="text-[#2979FF] mb-2"
+      className="text-[#005CFF] mb-2"
       style={{
         fontFamily: 'var(--font-poppins), Poppins, sans-serif',
         fontSize: '22px',
@@ -128,7 +128,7 @@ const HireExpertVisaConsultant = () => {
   };
 
   const inputClass =
-    'w-full bg-[#EFECEC] border-none rounded-[3px] focus:outline-none focus:ring-2 focus:ring-[#2979FF]';
+    'w-full bg-[#EFECEC] border-none rounded-[3px] focus:outline-none focus:ring-2 focus:ring-[#005CFF]';
   const inputStyle = {
     fontFamily: 'var(--font-poppins), Poppins, sans-serif',
     fontSize: '16px',
@@ -229,7 +229,7 @@ const HireExpertVisaConsultant = () => {
                     onChange={(e) => setEmail(e.target.value)}
                     required
                   />
-                  <span style={{ fontFamily: 'var(--font-poppins), Poppins, sans-serif', fontSize: '13px', color: '#2979FF' }}>Email</span>
+                  <span style={{ fontFamily: 'var(--font-poppins), Poppins, sans-serif', fontSize: '13px', color: '#005CFF' }}>Email</span>
                 </div>
                 <div>
                   <label style={labelStyle}>Phone</label>
@@ -253,7 +253,7 @@ const HireExpertVisaConsultant = () => {
                     value={confirmEmail}
                     onChange={(e) => setConfirmEmail(e.target.value)}
                   />
-                  <span style={{ fontFamily: 'var(--font-poppins), Poppins, sans-serif', fontSize: '13px', color: '#2979FF' }}>Confirm Email</span>
+                  <span style={{ fontFamily: 'var(--font-poppins), Poppins, sans-serif', fontSize: '13px', color: '#005CFF' }}>Confirm Email</span>
                 </div>
                 <div>
                   <label style={labelStyle}>Destination</label>
@@ -378,7 +378,7 @@ const HireExpertVisaConsultant = () => {
                     fontWeight: 600,
                     lineHeight: '22px',
                     height: '52px',
-                    background: '#2979FF',
+                    background: '#005CFF',
                   }}
                 >
                   Proceed to Payment

@@ -17,6 +17,7 @@ const sections = [
 ];
 
 import { getPageContent, getFieldValue } from '@/lib/page-content';
+import LegalPageHero from '@/components/LegalPageHero';
 
 const PrivacyPolicy = async () => {
   const content = await getPageContent('privacy-policy');
@@ -27,53 +28,7 @@ const PrivacyPolicy = async () => {
 
   return (
     <div className="w-full bg-white">
-
-      {/* Hero Section */}
-      <div className="mx-auto max-w-[1240px] px-6 lg:px-0">
-        <div
-          className="relative w-full overflow-hidden"
-          style={{ height: '479px' }}
-        >
-          <div
-            className="absolute inset-0 w-full h-full"
-            style={{
-              background: 'linear-gradient(135deg, #061a2e 0%, #0a2540 50%, #061a2e 100%)',
-            }}
-          />
-          <div
-            className="absolute inset-0"
-            style={{
-              background: 'linear-gradient(319deg, transparent 0%, black 100%)',
-              opacity: 0.8,
-            }}
-          />
-          <div
-            className="absolute inset-0"
-            style={{
-              background: 'linear-gradient(224deg, transparent 0%, black 100%)',
-              opacity: 0.8,
-            }}
-          />
-          <div
-            className="relative h-full flex flex-col justify-center px-4 sm:px-[30px] lg:pr-[270px] py-[50px] sm:py-[70px] lg:py-[90px]"
-          >
-            <div className="flex flex-col gap-[12px]">
-              <h1
-                className="text-[36px] md:text-[48px] lg:text-[60px] font-semibold text-white"
-                style={{ fontFamily: 'var(--font-poppins), Poppins, sans-serif', lineHeight: '1.3' }}
-              >
-                {heroHeading}
-              </h1>
-              <p
-                className="text-[16px] font-normal text-white"
-                style={{ fontFamily: 'var(--font-poppins), Poppins, sans-serif', lineHeight: '24px' }}
-              >
-                {heroLastUpdated}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <LegalPageHero title={heroHeading} subtitle={heroLastUpdated} imageSrc="/banners/legal-hero.jpg" />
 
       {/* Introduction Section */}
       <div className="mx-auto max-w-[1240px] px-6 lg:px-0" style={{ marginTop: '80px' }}>

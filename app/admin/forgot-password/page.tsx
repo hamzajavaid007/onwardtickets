@@ -36,13 +36,13 @@ export default function AdminForgotPasswordPage() {
       style={{ fontFamily: 'var(--font-poppins), Poppins, sans-serif' }}
     >
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-[-20%] right-[-10%] w-[500px] h-[500px] rounded-full bg-[#2979FF]/20 blur-3xl" />
+        <div className="absolute top-[-20%] right-[-10%] w-[500px] h-[500px] rounded-full bg-[#005CFF]/20 blur-3xl" />
         <div className="absolute bottom-[-20%] left-[-10%] w-[400px] h-[400px] rounded-full bg-[#5ec5dc]/10 blur-3xl" />
       </div>
 
       <div className="relative w-full max-w-[440px] mx-4">
         <div className="text-center mb-8">
-          <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-[#2979FF] to-[#5ec5dc] flex items-center justify-center shadow-lg shadow-blue-500/20">
+          <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-[#005CFF] to-[#5ec5dc] flex items-center justify-center shadow-lg shadow-blue-500/20">
             <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="white" strokeWidth={1.8}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
@@ -89,7 +89,7 @@ export default function AdminForgotPasswordPage() {
               <button
                 type="submit"
                 disabled={loading || !email}
-                className="w-full py-3.5 bg-gradient-to-r from-[#2979FF] to-[#0052CC] hover:from-[#1565C0] hover:to-[#004099] text-white rounded-xl text-[14px] font-semibold disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-blue-500/20"
+                className="w-full py-3.5 bg-gradient-to-r from-[#005CFF] to-[#0052CC] hover:from-[#0047CC] hover:to-[#004099] text-white rounded-xl text-[14px] font-semibold disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-blue-500/20"
               >
                 {loading ? 'Sending...' : 'Send Reset Link'}
               </button>

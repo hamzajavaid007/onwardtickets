@@ -35,7 +35,7 @@ export default function BecomeAPartnerPage() {
           </p>
           <Link
             href="/affiliate/register"
-            className="btn-hover-lift inline-flex items-center gap-[16px] bg-[#2979FF] text-white rounded-[15px] px-[16px] py-[16px] text-[16px] font-bold capitalize hover:bg-[#1565C0] transition-colors"
+            className="btn-hover-lift inline-flex items-center gap-[16px] bg-[#005CFF] text-white rounded-[15px] px-[16px] py-[16px] text-[16px] font-bold capitalize hover:bg-[#0047CC] transition-colors"
           >
             REGISTER NOW
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -76,7 +76,7 @@ export default function BecomeAPartnerPage() {
             </p>
             <Link
               href="/affiliate/register"
-              className="btn-hover-lift inline-flex items-center gap-[16px] bg-[#2979FF] text-white rounded-[15px] px-[16px] py-[16px] text-[16px] font-bold capitalize hover:bg-[#1565C0] transition-colors self-start"
+              className="btn-hover-lift inline-flex items-center gap-[16px] bg-[#005CFF] text-white rounded-[15px] px-[16px] py-[16px] text-[16px] font-bold capitalize hover:bg-[#0047CC] transition-colors self-start"
             >
               APPLY NOW
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -116,7 +116,7 @@ export default function BecomeAPartnerPage() {
                 }}
               >
                 <h3
-                  className="reveal btn-hover-lift text-[24px] font-extrabold text-[#2979FF]"
+                  className="reveal btn-hover-lift text-[24px] font-extrabold text-[#005CFF]"
                   style={{ lineHeight: '45px' }}
                 >
                   {card.title}
@@ -159,7 +159,7 @@ export default function BecomeAPartnerPage() {
                   className="btn-hover-lift flex items-center gap-[16px] p-[20px] rounded-[12px]"
                   style={{ background: '#F1FAFF' }}
                 >
-                  <div className="btn-hover-lift w-[48px] h-[48px] rounded-full bg-[#2979FF] flex items-center justify-center flex-shrink-0">
+                  <div className="btn-hover-lift w-[48px] h-[48px] rounded-full bg-[#005CFF] flex items-center justify-center flex-shrink-0">
                     <img src={item.icon} alt="" className="btn-hover-lift w-[24px] h-[24px]" style={{ filter: 'brightness(0) invert(1)' }} />
                   </div>
                   <span className="btn-hover-lift text-[18px] font-normal text-black" style={{ lineHeight: '1.5' }}>
@@ -183,7 +183,7 @@ export default function BecomeAPartnerPage() {
           </h2>
           <div className="btn-hover-lift mx-auto overflow-x-auto" style={{ maxWidth: '750px' }}>
             <div className="btn-hover-lift rounded-[16px] overflow-hidden">
-              <div className="btn-hover-lift flex bg-[#2979FF]">
+              <div className="btn-hover-lift flex bg-[#005CFF]">
                 <div className="btn-hover-lift w-[33.33%] py-[12px] sm:py-[16px] px-[10px] sm:px-[20px]">
                   <span className="btn-hover-lift text-[14px] sm:text-[18px] lg:text-[20px] font-bold text-white">Service / Product</span>
                 </div>
@@ -233,7 +233,7 @@ export default function BecomeAPartnerPage() {
         <div className="btn-hover-lift mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-0 flex flex-col lg:flex-row gap-[40px] items-center">
           <div className="btn-hover-lift lg:w-[50%] flex flex-col gap-[16px]">
             <h2
-              className="reveal btn-hover-lift text-[30px] lg:text-[36px] font-bold text-[#2979FF] text-left"
+              className="reveal btn-hover-lift text-[30px] lg:text-[36px] font-bold text-[#005CFF] text-left"
               style={{ lineHeight: '62px' }}
             >
               What We Provide You
@@ -267,7 +267,7 @@ export default function BecomeAPartnerPage() {
           </div>
           <div className="btn-hover-lift lg:w-[50%] flex flex-col gap-[16px]">
             <h2
-              className="reveal btn-hover-lift text-[30px] lg:text-[36px] font-bold text-[#2979FF] text-left"
+              className="reveal btn-hover-lift text-[30px] lg:text-[36px] font-bold text-[#005CFF] text-left"
               style={{ lineHeight: '62px' }}
             >
               Affiliate Terms (Simplified)
@@ -318,7 +318,7 @@ export default function BecomeAPartnerPage() {
       <section className="btn-hover-lift w-full py-[60px] sm:py-[80px] lg:py-[100px]" style={{ background: '#F5F9FE' }}>
         <div className="btn-hover-lift mx-auto max-w-[800px] px-4 sm:px-6 lg:px-0 text-center">
           <h2
-            className="reveal btn-hover-lift text-[30px] lg:text-[36px] font-bold text-[#2979FF]"
+            className="reveal btn-hover-lift text-[30px] lg:text-[36px] font-bold text-[#005CFF]"
             style={{ lineHeight: '1.3' }}
           >
             Ready to Start Earning?
@@ -328,7 +328,7 @@ export default function BecomeAPartnerPage() {
           </p>
           <Link
             href="/affiliate/register"
-            className="btn-hover-lift inline-flex items-center gap-[16px] bg-[#2979FF] text-white rounded-[15px] px-[32px] py-[18px] text-[18px] font-bold capitalize hover:bg-[#1565C0] transition-colors"
+            className="btn-hover-lift inline-flex items-center gap-[16px] bg-[#005CFF] text-white rounded-[15px] px-[32px] py-[18px] text-[18px] font-bold capitalize hover:bg-[#0047CC] transition-colors"
           >
             APPLY NOW
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -337,7 +337,7 @@ export default function BecomeAPartnerPage() {
           </Link>
           <p className="btn-hover-lift text-[14px] text-[#54595F] mt-[16px]">
             Already an affiliate?{' '}
-            <Link href="/affiliate/login" className="btn-hover-lift text-[#2979FF] font-semibold hover:underline">
+            <Link href="/affiliate/login" className="btn-hover-lift text-[#005CFF] font-semibold hover:underline">
               Log in to your dashboard
             </Link>
           </p>
@@ -345,7 +345,7 @@ export default function BecomeAPartnerPage() {
       </section>
 
       {/* ===== FINAL CTA ===== */}
-      <section className="btn-hover-lift w-full bg-[#2979FF] py-[40px] sm:py-[60px]">
+      <section className="btn-hover-lift w-full bg-[#005CFF] py-[40px] sm:py-[60px]">
         <div className="btn-hover-lift mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-0 flex flex-col items-center text-center gap-[16px]">
           <h2
             className="reveal btn-hover-lift text-[24px] lg:text-[30px] font-normal text-white"

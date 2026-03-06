@@ -38,7 +38,7 @@ export async function sendNewOrderNotification(data: SubmissionData) {
 
   const html = `
     <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #f8fafc; border-radius: 12px; overflow: hidden;">
-      <div style="background: linear-gradient(135deg, #2979FF, #0052CC); padding: 30px; text-align: center;">
+      <div style="background: linear-gradient(135deg, #005CFF, #0052CC); padding: 30px; text-align: center;">
         <h1 style="color: white; margin: 0; font-size: 22px; font-weight: 700;">New Order Received</h1>
         <p style="color: #93c5fd; margin: 8px 0 0; font-size: 14px;">OnwardTickets Admin</p>
       </div>
@@ -59,7 +59,7 @@ export async function sendNewOrderNotification(data: SubmissionData) {
             <tr>
               <td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; color: #64748b; font-size: 13px;">Email</td>
               <td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; color: #0B1437; font-size: 13px;">
-                <a href="mailto:${data.email}" style="color: #2979FF; text-decoration: none;">${escapeHtml(data.email)}</a>
+                <a href="mailto:${data.email}" style="color: #005CFF; text-decoration: none;">${escapeHtml(data.email)}</a>
               </td>
             </tr>
             ${data.phone ? `
@@ -89,7 +89,7 @@ export async function sendNewOrderNotification(data: SubmissionData) {
 
         <div style="text-align: center; margin-top: 24px;">
           <a href="${process.env.NEXT_PUBLIC_SITE_URL || 'https://onwardticket.us'}/admin/submissions"
-             style="display: inline-block; background: linear-gradient(135deg, #2979FF, #0052CC); color: white; padding: 12px 28px; border-radius: 10px; text-decoration: none; font-size: 14px; font-weight: 600;">
+             style="display: inline-block; background: linear-gradient(135deg, #005CFF, #0052CC); color: white; padding: 12px 28px; border-radius: 10px; text-decoration: none; font-size: 14px; font-weight: 600;">
             View in Dashboard
           </a>
         </div>
@@ -120,7 +120,7 @@ export async function sendContactNotification(data: { name: string; email: strin
 
   const html = `
     <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #f8fafc; border-radius: 12px; overflow: hidden;">
-      <div style="background: linear-gradient(135deg, #2979FF, #0052CC); padding: 30px; text-align: center;">
+      <div style="background: linear-gradient(135deg, #005CFF, #0052CC); padding: 30px; text-align: center;">
         <h1 style="color: white; margin: 0; font-size: 22px; font-weight: 700;">New Contact Message</h1>
         <p style="color: #93c5fd; margin: 8px 0 0; font-size: 14px;">OnwardTickets Admin</p>
       </div>
@@ -137,7 +137,7 @@ export async function sendContactNotification(data: { name: string; email: strin
             <tr>
               <td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; color: #64748b; font-size: 13px;">Email</td>
               <td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; color: #0B1437; font-size: 13px;">
-                <a href="mailto:${data.email}" style="color: #2979FF; text-decoration: none;">${escapeHtml(data.email)}</a>
+                <a href="mailto:${data.email}" style="color: #005CFF; text-decoration: none;">${escapeHtml(data.email)}</a>
               </td>
             </tr>
             <tr>
@@ -175,7 +175,7 @@ export async function sendContactNotification(data: { name: string; email: strin
 export async function sendContactConfirmation(data: { name: string; email: string }) {
   const html = `
     <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #f8fafc; border-radius: 12px; overflow: hidden;">
-      <div style="background: linear-gradient(135deg, #2979FF, #0052CC); padding: 30px; text-align: center;">
+      <div style="background: linear-gradient(135deg, #005CFF, #0052CC); padding: 30px; text-align: center;">
         <h1 style="color: white; margin: 0; font-size: 22px; font-weight: 700;">Message Received!</h1>
         <p style="color: #93c5fd; margin: 8px 0 0; font-size: 14px;">OnwardTicket.us</p>
       </div>
@@ -187,7 +187,7 @@ export async function sendContactConfirmation(data: { name: string; email: strin
           </p>
           <p style="margin: 0; font-size: 14px; color: #374151; line-height: 1.6;">
             If your inquiry is urgent, you can also email us directly at
-            <a href="mailto:contact@onwardtickets.com" style="color: #2979FF; text-decoration: none; font-weight: 600;">contact@onwardtickets.com</a>.
+            <a href="mailto:contact@onwardtickets.com" style="color: #005CFF; text-decoration: none; font-weight: 600;">contact@onwardtickets.com</a>.
           </p>
         </div>
       </div>
@@ -230,7 +230,7 @@ export async function sendOrderConfirmation(data: SubmissionData) {
 
   const html = `
     <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #f8fafc; border-radius: 12px; overflow: hidden;">
-      <div style="background: linear-gradient(135deg, #2979FF, #0052CC); padding: 30px; text-align: center;">
+      <div style="background: linear-gradient(135deg, #005CFF, #0052CC); padding: 30px; text-align: center;">
         <h1 style="color: white; margin: 0; font-size: 22px; font-weight: 700;">Order Confirmed!</h1>
         <p style="color: #93c5fd; margin: 8px 0 0; font-size: 14px;">OnwardTicket.us</p>
       </div>
@@ -274,7 +274,7 @@ export async function sendOrderConfirmation(data: SubmissionData) {
 
           <p style="margin: 16px 0 0; font-size: 14px; color: #374151; line-height: 1.6;">
             If you have any questions, contact us at
-            <a href="mailto:contact@onwardtickets.com" style="color: #2979FF; text-decoration: none; font-weight: 600;">contact@onwardtickets.com</a>.
+            <a href="mailto:contact@onwardtickets.com" style="color: #005CFF; text-decoration: none; font-weight: 600;">contact@onwardtickets.com</a>.
           </p>
         </div>
       </div>
@@ -401,7 +401,7 @@ export async function sendAffiliateNotification(data: AffiliateData) {
 
   const html = `
     <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #f8fafc; border-radius: 12px; overflow: hidden;">
-      <div style="background: linear-gradient(135deg, #2979FF, #0052CC); padding: 30px; text-align: center;">
+      <div style="background: linear-gradient(135deg, #005CFF, #0052CC); padding: 30px; text-align: center;">
         <h1 style="color: white; margin: 0; font-size: 22px; font-weight: 700;">New Affiliate Application</h1>
         <p style="color: #93c5fd; margin: 8px 0 0; font-size: 14px;">OnwardTickets Affiliate Program</p>
       </div>
@@ -416,7 +416,7 @@ export async function sendAffiliateNotification(data: AffiliateData) {
             <tr>
               <td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; color: #64748b; font-size: 13px;">Email</td>
               <td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; color: #0B1437; font-size: 13px;">
-                <a href="mailto:${data.email}" style="color: #2979FF; text-decoration: none;">${escapeHtml(data.email)}</a>
+                <a href="mailto:${data.email}" style="color: #005CFF; text-decoration: none;">${escapeHtml(data.email)}</a>
               </td>
             </tr>
             <tr>
@@ -431,14 +431,14 @@ export async function sendAffiliateNotification(data: AffiliateData) {
             <tr>
               <td style="padding: 10px 0; color: #64748b; font-size: 13px;">Website</td>
               <td style="padding: 10px 0; color: #0B1437; font-size: 13px;">
-                <a href="${data.website}" style="color: #2979FF; text-decoration: none;">${escapeHtml(data.website)}</a>
+                <a href="${data.website}" style="color: #005CFF; text-decoration: none;">${escapeHtml(data.website)}</a>
               </td>
             </tr>` : ''}
           </table>
         </div>
         <div style="text-align: center; margin-top: 24px;">
           <a href="${process.env.NEXT_PUBLIC_SITE_URL || 'https://onwardticket.us'}/admin/affiliates"
-             style="display: inline-block; background: linear-gradient(135deg, #2979FF, #0052CC); color: white; padding: 12px 28px; border-radius: 10px; text-decoration: none; font-size: 14px; font-weight: 600;">
+             style="display: inline-block; background: linear-gradient(135deg, #005CFF, #0052CC); color: white; padding: 12px 28px; border-radius: 10px; text-decoration: none; font-size: 14px; font-weight: 600;">
             Review in Dashboard
           </a>
         </div>
@@ -468,7 +468,7 @@ export async function sendAffiliateRegistrationEmail(data: { name: string; email
 
   const html = `
     <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #f8fafc; border-radius: 12px; overflow: hidden;">
-      <div style="background: linear-gradient(135deg, #2979FF, #0052CC); padding: 30px; text-align: center;">
+      <div style="background: linear-gradient(135deg, #005CFF, #0052CC); padding: 30px; text-align: center;">
         <h1 style="color: white; margin: 0; font-size: 22px; font-weight: 700;">Application Received!</h1>
         <p style="color: #93c5fd; margin: 8px 0 0; font-size: 14px;">OnwardTickets Affiliate Program</p>
       </div>
@@ -488,12 +488,12 @@ export async function sendAffiliateRegistrationEmail(data: { name: string; email
           </div>
           <p style="margin: 16px 0 0; font-size: 14px; color: #374151; line-height: 1.6;">
             If you have any questions in the meantime, feel free to reach out to us at
-            <a href="mailto:contact@onwardtickets.com" style="color: #2979FF; text-decoration: none; font-weight: 600;">contact@onwardtickets.com</a>.
+            <a href="mailto:contact@onwardtickets.com" style="color: #005CFF; text-decoration: none; font-weight: 600;">contact@onwardtickets.com</a>.
           </p>
         </div>
         <div style="text-align: center; margin-top: 24px;">
           <a href="${siteUrl}/become-a-partner"
-             style="display: inline-block; background: linear-gradient(135deg, #2979FF, #0052CC); color: white; padding: 12px 28px; border-radius: 10px; text-decoration: none; font-size: 14px; font-weight: 600;">
+             style="display: inline-block; background: linear-gradient(135deg, #005CFF, #0052CC); color: white; padding: 12px 28px; border-radius: 10px; text-decoration: none; font-size: 14px; font-weight: 600;">
             Learn More About Our Program
           </a>
         </div>
@@ -573,7 +573,7 @@ export async function sendAffiliateStatusEmail(data: { name: string; email: stri
 
   const rejectedHtml = `
     <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #f8fafc; border-radius: 12px; overflow: hidden;">
-      <div style="background: linear-gradient(135deg, #2979FF, #0052CC); padding: 30px; text-align: center;">
+      <div style="background: linear-gradient(135deg, #005CFF, #0052CC); padding: 30px; text-align: center;">
         <h1 style="color: white; margin: 0; font-size: 22px; font-weight: 700;">Application Update</h1>
         <p style="color: #93c5fd; margin: 8px 0 0; font-size: 14px;">OnwardTickets Affiliate Program</p>
       </div>
@@ -588,12 +588,12 @@ export async function sendAffiliateStatusEmail(data: { name: string; email: stri
           </p>
           <p style="margin: 16px 0 0; font-size: 14px; color: #374151; line-height: 1.6;">
             If you have any questions, please contact us at
-            <a href="mailto:contact@onwardtickets.com" style="color: #2979FF; text-decoration: none; font-weight: 600;">contact@onwardtickets.com</a>.
+            <a href="mailto:contact@onwardtickets.com" style="color: #005CFF; text-decoration: none; font-weight: 600;">contact@onwardtickets.com</a>.
           </p>
         </div>
         <div style="text-align: center; margin-top: 24px;">
           <a href="${siteUrl}/affiliate/register"
-             style="display: inline-block; background: linear-gradient(135deg, #2979FF, #0052CC); color: white; padding: 12px 28px; border-radius: 10px; text-decoration: none; font-size: 14px; font-weight: 600;">
+             style="display: inline-block; background: linear-gradient(135deg, #005CFF, #0052CC); color: white; padding: 12px 28px; border-radius: 10px; text-decoration: none; font-size: 14px; font-weight: 600;">
             Reapply
           </a>
         </div>
@@ -627,7 +627,7 @@ export async function sendEmailVerification(data: { name: string; email: string;
 
   const html = `
     <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #f8fafc; border-radius: 12px; overflow: hidden;">
-      <div style="background: linear-gradient(135deg, #2979FF, #0052CC); padding: 30px; text-align: center;">
+      <div style="background: linear-gradient(135deg, #005CFF, #0052CC); padding: 30px; text-align: center;">
         <h1 style="color: white; margin: 0; font-size: 22px; font-weight: 700;">Verify Your Email</h1>
         <p style="color: #93c5fd; margin: 8px 0 0; font-size: 14px;">OnwardTickets</p>
       </div>
@@ -642,7 +642,7 @@ export async function sendEmailVerification(data: { name: string; email: string;
           </p>
           <div style="margin: 30px 0;">
             <a href="${verificationLink}"
-               style="display: inline-block; background: linear-gradient(135deg, #2979FF, #0052CC); color: white; padding: 14px 32px; border-radius: 10px; text-decoration: none; font-size: 15px; font-weight: 700;">
+               style="display: inline-block; background: linear-gradient(135deg, #005CFF, #0052CC); color: white; padding: 14px 32px; border-radius: 10px; text-decoration: none; font-size: 15px; font-weight: 700;">
               Verify Email
             </a>
           </div>
@@ -681,7 +681,7 @@ export async function sendEmailVerification(data: { name: string; email: string;
 export async function sendAdminPasswordResetEmail(data: { email: string; resetLink: string }) {
   const html = `
     <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #f8fafc; border-radius: 12px; overflow: hidden;">
-      <div style="background: linear-gradient(135deg, #2979FF, #0052CC); padding: 30px; text-align: center;">
+      <div style="background: linear-gradient(135deg, #005CFF, #0052CC); padding: 30px; text-align: center;">
         <h1 style="color: white; margin: 0; font-size: 22px; font-weight: 700;">Password Reset</h1>
         <p style="color: #93c5fd; margin: 8px 0 0; font-size: 14px;">OnwardTickets Admin</p>
       </div>
@@ -693,7 +693,7 @@ export async function sendAdminPasswordResetEmail(data: { email: string; resetLi
           </p>
           <div style="text-align: center; margin: 24px 0;">
             <a href="${data.resetLink}"
-               style="display: inline-block; background: linear-gradient(135deg, #2979FF, #0052CC); color: white; padding: 14px 32px; border-radius: 10px; text-decoration: none; font-size: 15px; font-weight: 700;">
+               style="display: inline-block; background: linear-gradient(135deg, #005CFF, #0052CC); color: white; padding: 14px 32px; border-radius: 10px; text-decoration: none; font-size: 15px; font-weight: 700;">
               Reset Password
             </a>
           </div>
@@ -730,7 +730,7 @@ export async function sendAdminInvitationEmail(data: { email: string; resetLink:
 
   const html = `
     <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #f8fafc; border-radius: 12px; overflow: hidden;">
-      <div style="background: linear-gradient(135deg, #2979FF, #0052CC); padding: 30px; text-align: center;">
+      <div style="background: linear-gradient(135deg, #005CFF, #0052CC); padding: 30px; text-align: center;">
         <h1 style="color: white; margin: 0; font-size: 22px; font-weight: 700;">You're Invited</h1>
         <p style="color: #93c5fd; margin: 8px 0 0; font-size: 14px;">OnwardTickets Admin Panel</p>
       </div>
@@ -747,7 +747,7 @@ export async function sendAdminInvitationEmail(data: { email: string; resetLink:
           </p>
           <div style="text-align: center; margin: 24px 0;">
             <a href="${data.resetLink}"
-               style="display: inline-block; background: linear-gradient(135deg, #2979FF, #0052CC); color: white; padding: 14px 32px; border-radius: 10px; text-decoration: none; font-size: 15px; font-weight: 700;">
+               style="display: inline-block; background: linear-gradient(135deg, #005CFF, #0052CC); color: white; padding: 14px 32px; border-radius: 10px; text-decoration: none; font-size: 15px; font-weight: 700;">
               Set Password
             </a>
           </div>
@@ -779,7 +779,7 @@ export async function sendAdminInvitationEmail(data: { email: string; resetLink:
 export async function sendAffiliatePasswordResetEmail(data: { name: string; email: string; resetLink: string }) {
   const html = `
     <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #f8fafc; border-radius: 12px; overflow: hidden;">
-      <div style="background: linear-gradient(135deg, #2979FF, #0052CC); padding: 30px; text-align: center;">
+      <div style="background: linear-gradient(135deg, #005CFF, #0052CC); padding: 30px; text-align: center;">
         <h1 style="color: white; margin: 0; font-size: 22px; font-weight: 700;">Referral Code Reminder</h1>
         <p style="color: #93c5fd; margin: 8px 0 0; font-size: 14px;">OnwardTickets Affiliate Program</p>
       </div>
@@ -791,7 +791,7 @@ export async function sendAffiliatePasswordResetEmail(data: { name: string; emai
           </p>
           <div style="text-align: center; margin: 24px 0;">
             <a href="${data.resetLink}"
-               style="display: inline-block; background: linear-gradient(135deg, #2979FF, #0052CC); color: white; padding: 14px 32px; border-radius: 10px; text-decoration: none; font-size: 15px; font-weight: 700;">
+               style="display: inline-block; background: linear-gradient(135deg, #005CFF, #0052CC); color: white; padding: 14px 32px; border-radius: 10px; text-decoration: none; font-size: 15px; font-weight: 700;">
               Recover My Credentials
             </a>
           </div>

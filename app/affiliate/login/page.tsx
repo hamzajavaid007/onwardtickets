@@ -34,10 +34,10 @@ export default function AffiliateLoginPage() {
   };
 
   return (
-    <div className="btn-hover-lift min-h-screen bg-gradient-to-br from-[#0B1437] via-[#0B1437] to-[#2979FF] flex items-center justify-center p-6" style={{ fontFamily: 'var(--font-poppins), Poppins, sans-serif' }}>
+    <div className="btn-hover-lift min-h-screen bg-gradient-to-br from-[#0B1437] via-[#0B1437] to-[#005CFF] flex items-center justify-center p-6" style={{ fontFamily: 'var(--font-poppins), Poppins, sans-serif' }}>
       {/* Background decoration */}
       <div className="btn-hover-lift absolute inset-0 overflow-hidden">
-        <div className="btn-hover-lift absolute -top-40 -right-40 w-80 h-80 bg-[#2979FF]/30 rounded-full blur-3xl" />
+        <div className="btn-hover-lift absolute -top-40 -right-40 w-80 h-80 bg-[#005CFF]/30 rounded-full blur-3xl" />
         <div className="btn-hover-lift absolute -bottom-40 -left-40 w-80 h-80 bg-[#5ec5dc]/20 rounded-full blur-3xl" />
       </div>
 
@@ -120,7 +120,7 @@ export default function AffiliateLoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="btn-hover-lift w-full py-3 bg-gradient-to-r from-[#2979FF] to-[#0052CC] text-white rounded-xl text-[14px] font-semibold hover:from-[#1565C0] hover:to-[#2979FF] transition-all disabled:opacity-50 flex items-center justify-center gap-2"
+              className="btn-hover-lift w-full py-3 bg-gradient-to-r from-[#005CFF] to-[#0052CC] text-white rounded-xl text-[14px] font-semibold hover:from-[#0047CC] hover:to-[#005CFF] transition-all disabled:opacity-50 flex items-center justify-center gap-2"
             >
               {loading ? (
                 <>

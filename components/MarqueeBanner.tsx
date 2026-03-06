@@ -6,7 +6,7 @@ const MarqueeBanner = () => {
   ];
 
   return (
-    <div className="w-full bg-[#2979FF] py-2.5 text-center">
+    <div className="w-full bg-[#005CFF] py-2.5 text-center">
       <span
         className="text-white text-sm font-medium"
         style={{ fontFamily: 'var(--font-poppins), Poppins, sans-serif' }}

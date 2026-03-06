@@ -56,14 +56,14 @@ export default function AdminLoginPage() {
     >
       {/* Background decoration */}
       <div className="btn-hover-lift absolute inset-0 pointer-events-none">
-        <div className="btn-hover-lift absolute top-[-20%] right-[-10%] w-[500px] h-[500px] rounded-full bg-[#2979FF]/20 blur-3xl" />
+        <div className="btn-hover-lift absolute top-[-20%] right-[-10%] w-[500px] h-[500px] rounded-full bg-[#005CFF]/20 blur-3xl" />
         <div className="btn-hover-lift absolute bottom-[-20%] left-[-10%] w-[400px] h-[400px] rounded-full bg-[#5ec5dc]/10 blur-3xl" />
       </div>
 
       <div className="btn-hover-lift relative w-full max-w-[440px] mx-4">
         {/* Logo / Brand */}
         <div className="btn-hover-lift text-center mb-8">
-          <div className="btn-hover-lift w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-[#2979FF] to-[#5ec5dc] flex items-center justify-center shadow-lg shadow-blue-500/20">
+          <div className="btn-hover-lift w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-[#005CFF] to-[#5ec5dc] flex items-center justify-center shadow-lg shadow-blue-500/20">
             <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="white" strokeWidth={1.8}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
             </svg>
@@ -138,7 +138,7 @@ export default function AdminLoginPage() {
                     onChange={(e) => setRememberMe(e.target.checked)}
                     className="btn-hover-lift sr-only peer"
                   />
-                  <div className="btn-hover-lift w-4 h-4 rounded border border-white/20 bg-white/5 peer-checked:bg-[#2979FF] peer-checked:border-[#2979FF] transition-all flex items-center justify-center">
+                  <div className="btn-hover-lift w-4 h-4 rounded border border-white/20 bg-white/5 peer-checked:bg-[#005CFF] peer-checked:border-[#005CFF] transition-all flex items-center justify-center">
                     {rememberMe && (
                       <svg width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="white" strokeWidth={3}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
@@ -170,7 +170,7 @@ export default function AdminLoginPage() {
             <button
               type="submit"
               disabled={loading || !email || !password}
-              className="btn-hover-lift w-full py-3.5 bg-gradient-to-r from-[#2979FF] to-[#0052CC] hover:from-[#1565C0] hover:to-[#004099] text-white rounded-xl text-[14px] font-semibold disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-blue-500/20"
+              className="btn-hover-lift w-full py-3.5 bg-gradient-to-r from-[#005CFF] to-[#0052CC] hover:from-[#0047CC] hover:to-[#004099] text-white rounded-xl text-[14px] font-semibold disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-blue-500/20"
             >
               {loading ? (
                 <span className="btn-hover-lift flex items-center justify-center gap-2">

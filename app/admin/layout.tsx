@@ -209,7 +209,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                 href={item.href}
                 className={`flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all text-[14px] font-medium ${
                   isActive
-                    ? 'bg-gradient-to-r from-[#2979FF] to-[#0052CC] text-white shadow-lg shadow-blue-500/20'
+                    ? 'bg-gradient-to-r from-[#005CFF] to-[#0052CC] text-white shadow-lg shadow-blue-500/20'
                     : 'text-gray-400 hover:text-white hover:bg-white/5'
                 }`}
               >
@@ -298,7 +298,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               <input
                 type="text"
                 placeholder="Search..."
-                className="btn-hover-lift pl-9 pr-4 py-2 bg-[#F0F4F8] rounded-xl text-[13px] w-[200px] border border-transparent focus:border-[#2979FF] focus:outline-none transition-colors"
+                className="btn-hover-lift pl-9 pr-4 py-2 bg-[#F0F4F8] rounded-xl text-[13px] w-[200px] border border-transparent focus:border-[#005CFF] focus:outline-none transition-colors"
               />
             </div>
             {/* Notification bell */}
@@ -324,7 +324,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                     {unreadCount > 0 && (
                       <button
                         onClick={markAllRead}
-                        className="btn-hover-lift text-[12px] text-[#2979FF] hover:text-[#0052CC] font-medium transition-colors"
+                        className="btn-hover-lift text-[12px] text-[#005CFF] hover:text-[#0052CC] font-medium transition-colors"
                       >
                         Mark all as read
                       </button>
@@ -353,7 +353,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                           <p className="btn-hover-lift text-[11px] text-gray-400 mt-1">{notif.time}</p>
                         </div>
                         {!notif.read && (
-                          <span className="btn-hover-lift w-2 h-2 rounded-full bg-[#2979FF] flex-shrink-0 mt-2" />
+                          <span className="btn-hover-lift w-2 h-2 rounded-full bg-[#005CFF] flex-shrink-0 mt-2" />
                         )}
                       </button>
                     ))}
@@ -362,7 +362,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                     <Link
                       href="/admin/notifications"
                       onClick={() => setNotifOpen(false)}
-                      className="btn-hover-lift block w-full text-center text-[13px] text-[#2979FF] hover:text-[#0052CC] font-medium transition-colors"
+                      className="btn-hover-lift block w-full text-center text-[13px] text-[#005CFF] hover:text-[#0052CC] font-medium transition-colors"
                     >
                       View All Notifications
                     </Link>
@@ -376,7 +376,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                 onClick={() => setProfileOpen(!profileOpen)}
                 className="btn-hover-lift flex items-center gap-2 p-1 rounded-xl hover:bg-[#F0F4F8] transition-colors"
               >
-                <div className="btn-hover-lift w-8 h-8 md:w-9 md:h-9 rounded-full bg-gradient-to-br from-[#2979FF] to-[#5ec5dc] flex items-center justify-center text-white text-[12px] md:text-[13px] font-semibold">
+                <div className="btn-hover-lift w-8 h-8 md:w-9 md:h-9 rounded-full bg-gradient-to-br from-[#005CFF] to-[#5ec5dc] flex items-center justify-center text-white text-[12px] md:text-[13px] font-semibold">
                   A
                 </div>
                 <svg className={`w-4 h-4 text-gray-400 transition-transform hidden md:block ${profileOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

@@ -40,7 +40,7 @@ export default function AffiliateDashboardPage() {
   return (
     <div className="btn-hover-lift space-y-6">
       {/* Welcome */}
-      <div className="btn-hover-lift bg-gradient-to-r from-[#2979FF] to-[#0052CC] rounded-2xl p-6 lg:p-8 text-white">
+      <div className="btn-hover-lift bg-gradient-to-r from-[#005CFF] to-[#0052CC] rounded-2xl p-6 lg:p-8 text-white">
         <h2 className="btn-hover-lift text-[22px] font-bold">Welcome back, {affiliate.name.split(' ')[0]}!</h2>
         <p className="btn-hover-lift text-[14px] text-white/70 mt-1">Here&apos;s your affiliate program overview</p>
       </div>
@@ -50,7 +50,7 @@ export default function AffiliateDashboardPage() {
         {[
           { label: 'Commission Rate', value: `${affiliate.commissionRate}%`, icon: '💰', color: '#059669' },
           { label: 'Cookie Duration', value: '30 Days', icon: '🍪', color: '#D97706' },
-          { label: 'Payout Method', value: 'Bank Transfer', icon: '🏦', color: '#2979FF' },
+          { label: 'Payout Method', value: 'Bank Transfer', icon: '🏦', color: '#005CFF' },
           { label: 'Min. Payout', value: '£25', icon: '📊', color: '#7C3AED' },
         ].map((stat) => (
           <div key={stat.label} className="btn-hover-lift bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
@@ -66,8 +66,8 @@ export default function AffiliateDashboardPage() {
       {/* Referral Link Card */}
       <div className="btn-hover-lift bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
         <div className="btn-hover-lift flex items-center gap-3 mb-4">
-          <div className="btn-hover-lift w-10 h-10 rounded-xl bg-[#2979FF]/10 flex items-center justify-center">
-            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#2979FF" strokeWidth={2}>
+          <div className="btn-hover-lift w-10 h-10 rounded-xl bg-[#005CFF]/10 flex items-center justify-center">
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#005CFF" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
             </svg>
           </div>
@@ -81,27 +81,27 @@ export default function AffiliateDashboardPage() {
           <span className="btn-hover-lift text-[12px] text-gray-500">Format:</span>
           <button
             onClick={() => setLinkMode('id')}
-            className={`px-3 py-1 rounded-lg text-[12px] font-medium transition-all ${linkMode === 'id' ? 'bg-[#2979FF] text-white' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'}`}
+            className={`px-3 py-1 rounded-lg text-[12px] font-medium transition-all ${linkMode === 'id' ? 'bg-[#005CFF] text-white' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'}`}
           >
             By ID (?ref={affiliate.affiliateId})
           </button>
           <button
             onClick={() => setLinkMode('username')}
-            className={`px-3 py-1 rounded-lg text-[12px] font-medium transition-all ${linkMode === 'username' ? 'bg-[#2979FF] text-white' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'}`}
+            className={`px-3 py-1 rounded-lg text-[12px] font-medium transition-all ${linkMode === 'username' ? 'bg-[#005CFF] text-white' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'}`}
           >
             By Username (?ref={affiliate.referralCode})
           </button>
         </div>
         <div className="btn-hover-lift flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
           <div className="btn-hover-lift flex-1 bg-[#F0F4F8] rounded-xl px-4 py-3 border border-gray-200 min-w-0">
-            <code className="btn-hover-lift text-[12px] sm:text-[13px] text-[#2979FF] font-mono break-all">{referralLink}</code>
+            <code className="btn-hover-lift text-[12px] sm:text-[13px] text-[#005CFF] font-mono break-all">{referralLink}</code>
           </div>
           <button
             onClick={copyLink}
             className={`px-5 py-3 rounded-xl text-[13px] font-semibold transition-all flex-shrink-0 ${
               copied
                 ? 'bg-emerald-600 text-white'
-                : 'bg-[#2979FF] text-white hover:bg-[#1565C0]'
+                : 'bg-[#005CFF] text-white hover:bg-[#0047CC]'
             }`}
           >
             {copied ? 'Copied!' : 'Copy Link'}
@@ -133,7 +133,7 @@ export default function AffiliateDashboardPage() {
               <div className="btn-hover-lift w-14 h-14 rounded-2xl bg-[#F0F4F8] flex items-center justify-center mx-auto mb-3">
                 <span className="btn-hover-lift text-[28px]">{item.icon}</span>
               </div>
-              <div className="btn-hover-lift text-[11px] font-bold text-[#2979FF] uppercase tracking-wider mb-1">Step {item.step}</div>
+              <div className="btn-hover-lift text-[11px] font-bold text-[#005CFF] uppercase tracking-wider mb-1">Step {item.step}</div>
               <h4 className="btn-hover-lift text-[14px] font-semibold text-[#0B1437] mb-1">{item.title}</h4>
               <p className="btn-hover-lift text-[12px] text-gray-500 leading-relaxed">{item.desc}</p>
             </div>
@@ -152,7 +152,7 @@ export default function AffiliateDashboardPage() {
                 &quot;Need a flight itinerary for your visa application? I use OnwardTickets — they deliver verified documents starting at just £5. Use my link to get started: {referralLink}&quot;
               </p>
             </div>
-            <button onClick={() => { navigator.clipboard.writeText(`Need a flight itinerary for your visa application? I use OnwardTickets — they deliver verified documents starting at just £5. Use my link to get started: ${referralLink}`); }} className="btn-hover-lift mt-2 text-[12px] text-[#2979FF] font-medium hover:text-[#1565C0]">
+            <button onClick={() => { navigator.clipboard.writeText(`Need a flight itinerary for your visa application? I use OnwardTickets — they deliver verified documents starting at just £5. Use my link to get started: ${referralLink}`); }} className="btn-hover-lift mt-2 text-[12px] text-[#005CFF] font-medium hover:text-[#0047CC]">
               Copy Text
             </button>
           </div>
@@ -163,7 +163,7 @@ export default function AffiliateDashboardPage() {
                 &quot;Applying for a visa? Don&apos;t buy actual flights yet! Get verified flight & hotel reservations from OnwardTickets — starts at £5 and delivered instantly. Check it out 👇 {referralLink}&quot;
               </p>
             </div>
-            <button onClick={() => { navigator.clipboard.writeText(`Applying for a visa? Don't buy actual flights yet! Get verified flight & hotel reservations from OnwardTickets — starts at £5 and delivered instantly. Check it out 👇 ${referralLink}`); }} className="btn-hover-lift mt-2 text-[12px] text-[#2979FF] font-medium hover:text-[#1565C0]">
+            <button onClick={() => { navigator.clipboard.writeText(`Applying for a visa? Don't buy actual flights yet! Get verified flight & hotel reservations from OnwardTickets — starts at £5 and delivered instantly. Check it out 👇 ${referralLink}`); }} className="btn-hover-lift mt-2 text-[12px] text-[#005CFF] font-medium hover:text-[#0047CC]">
               Copy Text
             </button>
           </div>
@@ -195,9 +195,9 @@ export default function AffiliateDashboardPage() {
       <div className="btn-hover-lift bg-[#F8FAFC] rounded-2xl p-6 border border-gray-100 text-center">
         <p className="btn-hover-lift text-[14px] text-gray-500">
           Need help? Contact us at{' '}
-          <a href="mailto:contact@onwardtickets.com" className="btn-hover-lift text-[#2979FF] font-medium">contact@onwardtickets.com</a>
+          <a href="mailto:contact@onwardtickets.com" className="btn-hover-lift text-[#005CFF] font-medium">contact@onwardtickets.com</a>
           {' '}or call{' '}
-          <a href="tel:+4477561525115" className="btn-hover-lift text-[#2979FF] font-medium">+44 77561 525115</a>
+          <a href="tel:+4477561525115" className="btn-hover-lift text-[#005CFF] font-medium">+44 77561 525115</a>
         </p>
       </div>
     </div>

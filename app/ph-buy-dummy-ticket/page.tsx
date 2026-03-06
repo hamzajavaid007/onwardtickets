@@ -27,7 +27,7 @@ interface TravelerInfo {
 const SectionHeading = ({ children }: { children: React.ReactNode }) => (
   <div className="mb-6 text-center">
     <h2
-      className="text-[#2979FF] mb-2"
+      className="text-[#005CFF] mb-2"
       style={{
         fontFamily: 'var(--font-poppins), Poppins, sans-serif',
         fontSize: '22px',
@@ -220,7 +220,7 @@ const PhBuyDummyTicket = () => {
   };
 
   const inputClass =
-    'w-full bg-[#EFECEC] border-none rounded-[3px] focus:outline-none focus:ring-2 focus:ring-[#2979FF]';
+    'w-full bg-[#EFECEC] border-none rounded-[3px] focus:outline-none focus:ring-2 focus:ring-[#005CFF]';
   const inputStyle = {
     fontFamily: 'var(--font-poppins), Poppins, sans-serif',
     fontSize: '16px',
@@ -238,7 +238,7 @@ const PhBuyDummyTicket = () => {
   const sublabelStyle = {
     fontFamily: 'var(--font-poppins), Poppins, sans-serif',
     fontSize: '13px',
-    color: '#2979FF',
+    color: '#005CFF',
   };
 
   return (
@@ -392,7 +392,7 @@ const PhBuyDummyTicket = () => {
                       </label>
                       <div className="flex items-center gap-2">
                         <div
-                          className="flex items-center justify-center rounded-full bg-[#2979FF] text-white"
+                          className="flex items-center justify-center rounded-full bg-[#005CFF] text-white"
                           style={{ width: '28px', height: '28px', fontSize: '14px', fontWeight: 600 }}
                         >
                           {index + 1}
@@ -400,7 +400,7 @@ const PhBuyDummyTicket = () => {
                         <select
                           value={traveler.salutation}
                           onChange={(e) => updateTraveler(index, 'salutation', e.target.value)}
-                          className="bg-[#EFECEC] border-none rounded-[3px] focus:outline-none focus:ring-2 focus:ring-[#2979FF]"
+                          className="bg-[#EFECEC] border-none rounded-[3px] focus:outline-none focus:ring-2 focus:ring-[#005CFF]"
                           style={{ ...inputStyle, width: '70px' }}
                         >
                           <option value="Mr.">Mr.</option>
@@ -479,7 +479,7 @@ const PhBuyDummyTicket = () => {
                   </label>
                   <div
                     className={`border-2 border-dashed rounded-[3px] flex flex-col items-center justify-center cursor-pointer transition-colors ${
-                      dragOver ? 'border-[#2979FF] bg-blue-50' : 'border-gray-300'
+                      dragOver ? 'border-[#005CFF] bg-blue-50' : 'border-gray-300'
                     }`}
                     style={{ height: '140px' }}
                     onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
@@ -490,7 +490,7 @@ const PhBuyDummyTicket = () => {
                     <svg className="w-8 h-8 text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
                     </svg>
-                    <p className="text-sm text-gray-500">Drag & Drop or <span className="text-[#2979FF] font-medium">Choose Files</span></p>
+                    <p className="text-sm text-gray-500">Drag & Drop or <span className="text-[#005CFF] font-medium">Choose Files</span></p>
                     <p className="text-xs text-gray-400 mt-1">Max 4 files</p>
                     <input
                       ref={fileInputRef}
@@ -560,7 +560,7 @@ const PhBuyDummyTicket = () => {
                       value="oneway"
                       checked={ticketType === 'oneway'}
                       onChange={(e) => setTicketType(e.target.value)}
-                      style={{ width: '18px', height: '18px', accentColor: '#2979FF' }}
+                      style={{ width: '18px', height: '18px', accentColor: '#005CFF' }}
                     />
                     <span style={{ ...labelStyle, fontWeight: 400 }}>One-Way</span>
                   </label>
@@ -571,7 +571,7 @@ const PhBuyDummyTicket = () => {
                       value="Return"
                       checked={ticketType === 'Return'}
                       onChange={(e) => setTicketType(e.target.value)}
-                      style={{ width: '18px', height: '18px', accentColor: '#2979FF' }}
+                      style={{ width: '18px', height: '18px', accentColor: '#005CFF' }}
                     />
                     <span style={{ ...labelStyle, fontWeight: 400 }}>Return</span>
                   </label>
@@ -582,7 +582,7 @@ const PhBuyDummyTicket = () => {
                       value="multicity"
                       checked={ticketType === 'multicity'}
                       onChange={(e) => setTicketType(e.target.value)}
-                      style={{ width: '18px', height: '18px', accentColor: '#2979FF' }}
+                      style={{ width: '18px', height: '18px', accentColor: '#005CFF' }}
                     />
                     <span style={{ ...labelStyle, fontWeight: 400 }}>Multi City (+₱{MULTI_CITY_PRICE})</span>
                   </label>
@@ -605,13 +605,13 @@ const PhBuyDummyTicket = () => {
                     type="checkbox"
                     checked={urgentService === 'urgent'}
                     onChange={() => setUrgentService(urgentService === 'urgent' ? '' : 'urgent')}
-                    style={{ width: '18px', height: '18px', accentColor: '#2979FF' }}
+                    style={{ width: '18px', height: '18px', accentColor: '#005CFF' }}
                   />
                   <div>
-                    <span style={{ ...labelStyle, color: '#2979FF', fontWeight: 500 }}>
+                    <span style={{ ...labelStyle, color: '#005CFF', fontWeight: 500 }}>
                       Urgent Services - ₱{URGENT_PRICE}
                     </span>
-                    <p style={{ ...sublabelStyle, color: '#2979FF', fontSize: '12px' }}>
+                    <p style={{ ...sublabelStyle, color: '#005CFF', fontSize: '12px' }}>
                       Get your Dummy Ticket in 8-10 Hours
                     </p>
                   </div>
@@ -622,13 +622,13 @@ const PhBuyDummyTicket = () => {
                     type="checkbox"
                     checked={urgentService === 'superfast'}
                     onChange={() => setUrgentService(urgentService === 'superfast' ? '' : 'superfast')}
-                    style={{ width: '18px', height: '18px', accentColor: '#2979FF' }}
+                    style={{ width: '18px', height: '18px', accentColor: '#005CFF' }}
                   />
                   <div>
-                    <span style={{ ...labelStyle, color: '#2979FF', fontWeight: 500 }}>
+                    <span style={{ ...labelStyle, color: '#005CFF', fontWeight: 500 }}>
                       Super Fast Services - ₱{SUPERFAST_PRICE}
                     </span>
-                    <p style={{ ...sublabelStyle, color: '#2979FF', fontSize: '12px' }}>
+                    <p style={{ ...sublabelStyle, color: '#005CFF', fontSize: '12px' }}>
                       Get your Dummy Ticket in 1-2 Hours
                     </p>
                   </div>
@@ -717,7 +717,7 @@ const PhBuyDummyTicket = () => {
                   onPaymentSuccess={handlePaymentSuccess}
                   onPaymentError={handlePaymentError}
                   buttonText="Pay Now"
-                  buttonClassName="bg-[#005CFF] text-white font-semibold text-[16px] rounded-[16px] hover:bg-[#0048d4] transition-colors disabled:opacity-50"
+                  buttonClassName="bg-[#005CFF] text-white font-semibold text-[16px] rounded-[16px] hover:bg-[#0047CC] transition-colors disabled:opacity-50"
                   buttonStyle={{
                     fontFamily: 'var(--font-plus-jakarta), Plus Jakarta Sans, sans-serif',
                     padding: '17px 30px',
@@ -742,7 +742,7 @@ const PhBuyDummyTicket = () => {
                 <div className="flex items-center justify-end">
                   <button
                     type="submit"
-                    className="bg-[#005CFF] text-white font-semibold text-[16px] rounded-[16px] hover:bg-[#0048d4] transition-colors disabled:opacity-50"
+                    className="bg-[#005CFF] text-white font-semibold text-[16px] rounded-[16px] hover:bg-[#0047CC] transition-colors disabled:opacity-50"
                     style={{
                       fontFamily: 'var(--font-plus-jakarta), Plus Jakarta Sans, sans-serif',
                       padding: '17px 30px',

@@ -107,7 +107,7 @@ function ResetPasswordForm() {
       <button
         type="submit"
         disabled={loading || !password || !confirmPassword}
-        className="w-full py-3.5 bg-gradient-to-r from-[#2979FF] to-[#0052CC] hover:from-[#1565C0] hover:to-[#004099] text-white rounded-xl text-[14px] font-semibold disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-blue-500/20"
+        className="w-full py-3.5 bg-gradient-to-r from-[#005CFF] to-[#0052CC] hover:from-[#0047CC] hover:to-[#004099] text-white rounded-xl text-[14px] font-semibold disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-blue-500/20"
       >
         {loading ? 'Resetting...' : 'Reset Password'}
       </button>
@@ -122,7 +122,7 @@ export default function AdminResetPasswordPage() {
       style={{ fontFamily: 'var(--font-poppins), Poppins, sans-serif' }}
     >
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-[-20%] right-[-10%] w-[500px] h-[500px] rounded-full bg-[#2979FF]/20 blur-3xl" />
+        <div className="absolute top-[-20%] right-[-10%] w-[500px] h-[500px] rounded-full bg-[#005CFF]/20 blur-3xl" />
         <div className="absolute bottom-[-20%] left-[-10%] w-[400px] h-[400px] rounded-full bg-[#5ec5dc]/10 blur-3xl" />
       </div>
 

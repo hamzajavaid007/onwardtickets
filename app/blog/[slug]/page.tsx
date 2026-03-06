@@ -60,7 +60,7 @@ const BlogPostPage = () => {
     return (
       <div className="btn-hover-lift w-full bg-white min-h-[60vh] flex items-center justify-center">
         <div className="btn-hover-lift text-center">
-          <div className="btn-hover-lift text-[#2979FF] animate-pulse-slow">Loading post...</div>
+          <div className="btn-hover-lift text-[#005CFF] animate-pulse-slow">Loading post...</div>
         </div>
       </div>
     );
@@ -71,7 +71,7 @@ const BlogPostPage = () => {
       <div className="btn-hover-lift w-full bg-white min-h-[60vh] flex items-center justify-center">
         <div className="btn-hover-lift text-center reveal-scale">
           <h1
-            className="btn-hover-lift text-[#2979FF] mb-4 glow-text"
+            className="btn-hover-lift text-[#005CFF] mb-4 glow-text"
             style={{ fontFamily: font, fontSize: '32px', fontWeight: 700 }}
           >
             Post Not Found
@@ -81,7 +81,7 @@ const BlogPostPage = () => {
           </p>
           <Link
             href="/blog"
-            className="btn-hover-lift inline-block mt-6 px-6 py-3 bg-[#2979FF] text-white rounded-md hover:bg-[#1e3a5f] transition-all"
+            className="btn-hover-lift inline-block mt-6 px-6 py-3 bg-[#005CFF] text-white rounded-md hover:bg-[#1e3a5f] transition-all"
             style={{ fontFamily: font, fontSize: '14px', fontWeight: 600 }}
           >
             Back to Blog
@@ -113,11 +113,11 @@ const BlogPostPage = () => {
             className="btn-hover-lift flex items-center gap-2"
             style={{ fontFamily: font, fontSize: '13px', color: '#999' }}
           >
-            <Link href="/" className="btn-hover-lift hover:text-[#2979FF] transition-colors duration-300 link-underline">
+            <Link href="/" className="btn-hover-lift hover:text-[#005CFF] transition-colors duration-300 link-underline">
               Home
             </Link>
             <span>/</span>
-            <Link href="/blog" className="btn-hover-lift hover:text-[#2979FF] transition-colors duration-300 link-underline">
+            <Link href="/blog" className="btn-hover-lift hover:text-[#005CFF] transition-colors duration-300 link-underline">
               Blog
             </Link>
             <span>/</span>
@@ -153,7 +153,7 @@ const BlogPostPage = () => {
                 const target = e.target as HTMLImageElement;
                 target.style.display = 'none';
                 target.parentElement!.innerHTML =
-                  '<div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#2979FF] to-[#1e3a5f]"><svg class="w-16 h-16 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>';
+                  '<div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#005CFF] to-[#1e3a5f]"><svg class="w-16 h-16 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>';
               }}
             />
           </div>
@@ -161,7 +161,7 @@ const BlogPostPage = () => {
 
         {/* Category Tag */}
         {post.category && (
-          <span className="btn-hover-lift reveal inline-block mb-4 px-3 py-1 text-sm font-medium rounded-full transition-all duration-300 hover:scale-105" style={{ background: '#EDF3FF', color: '#2979FF', fontFamily: font }}>
+          <span className="btn-hover-lift reveal inline-block mb-4 px-3 py-1 text-sm font-medium rounded-full transition-all duration-300 hover:scale-105" style={{ background: '#EDF3FF', color: '#005CFF', fontFamily: font }}>
             {post.category}
           </span>
         )}
@@ -181,7 +181,7 @@ const BlogPostPage = () => {
         >
           <span>{formattedDate}</span>
           <span>•</span>
-          <span className="btn-hover-lift hover:text-[#2979FF] transition-colors duration-300">
+          <span className="btn-hover-lift hover:text-[#005CFF] transition-colors duration-300">
             {post.author || 'OnwardTickets'}
           </span>
           {post.comments !== undefined && (
@@ -219,7 +219,7 @@ const BlogPostPage = () => {
               {post.tags.map((tag: string, index: number) => (
                 <span
                   key={tag}
-                  className="btn-hover-lift px-3 py-1 text-sm rounded-full transition-all duration-300 hover:scale-105 hover:bg-[#EDF3FF] hover:text-[#2979FF]"
+                  className="btn-hover-lift px-3 py-1 text-sm rounded-full transition-all duration-300 hover:scale-105 hover:bg-[#EDF3FF] hover:text-[#005CFF]"
                   style={{ background: '#f5f5f5', color: '#666', fontFamily: font, animationDelay: `${index * 0.05}s` }}
                 >
                   {tag}
@@ -236,7 +236,7 @@ const BlogPostPage = () => {
           {prevPost && (
             <Link
               href={`/blog/${prevPost.slug}`}
-              className="btn-hover-lift card-hover-lift reveal-left group p-6 border border-gray-200 rounded-lg hover:border-[#2979FF] transition-all"
+              className="btn-hover-lift card-hover-lift reveal-left group p-6 border border-gray-200 rounded-lg hover:border-[#005CFF] transition-all"
             >
               <div style={{ fontFamily: font, fontSize: '13px', color: '#999', marginBottom: '8px' }}>
                 ← Previous Post
@@ -252,7 +252,7 @@ const BlogPostPage = () => {
                   WebkitBoxOrient: 'vertical',
                   overflow: 'hidden',
                 }}
-                className="btn-hover-lift group-hover:text-[#2979FF] transition-colors"
+                className="btn-hover-lift group-hover:text-[#005CFF] transition-colors"
               >
                 {prevPost.title}
               </div>
@@ -261,7 +261,7 @@ const BlogPostPage = () => {
           {nextPost && (
             <Link
               href={`/blog/${nextPost.slug}`}
-              className="btn-hover-lift card-hover-lift reveal-right group p-6 border border-gray-200 rounded-lg hover:border-[#2979FF] transition-all md:text-right"
+              className="btn-hover-lift card-hover-lift reveal-right group p-6 border border-gray-200 rounded-lg hover:border-[#005CFF] transition-all md:text-right"
               style={prevPost ? { marginLeft: 'auto' } : {}}
             >
               <div style={{ fontFamily: font, fontSize: '13px', color: '#999', marginBottom: '8px' }}>
@@ -278,7 +278,7 @@ const BlogPostPage = () => {
                   WebkitBoxOrient: 'vertical',
                   overflow: 'hidden',
                 }}
-                className="btn-hover-lift group-hover:text-[#2979FF] transition-colors"
+                className="btn-hover-lift group-hover:text-[#005CFF] transition-colors"
               >
                 {nextPost.title}
               </div>
@@ -291,7 +291,7 @@ const BlogPostPage = () => {
       <div className="btn-hover-lift mx-auto max-w-[1240px] px-6 pb-10">
         <Link
           href="/blog"
-          className="btn-hover-lift inline-flex items-center gap-2 text-[#2979FF] hover:text-[#1e3a5f] transition-all duration-300 link-underline"
+          className="btn-hover-lift inline-flex items-center gap-2 text-[#005CFF] hover:text-[#1e3a5f] transition-all duration-300 link-underline"
           style={{ fontFamily: font, fontSize: '15px', fontWeight: 500 }}
         >
           <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

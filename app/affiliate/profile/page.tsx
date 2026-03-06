@@ -29,9 +29,9 @@ export default function AffiliateProfilePage() {
     <div className="space-y-6 max-w-[800px]">
       {/* Profile Card */}
       <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-        <div className="h-24 bg-gradient-to-r from-[#2979FF] to-[#0052CC]" />
+        <div className="h-24 bg-gradient-to-r from-[#005CFF] to-[#0052CC]" />
         <div className="px-6 pb-6 -mt-10">
-          <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#2979FF] to-[#5ec5dc] flex items-center justify-center text-white text-[24px] font-bold border-4 border-white shadow-lg">
+          <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#005CFF] to-[#5ec5dc] flex items-center justify-center text-white text-[24px] font-bold border-4 border-white shadow-lg">
             {initials}
           </div>
           <h3 className="text-[18px] font-bold text-[#0B1437] mt-4">{affiliate.name}</h3>
@@ -90,7 +90,7 @@ export default function AffiliateProfilePage() {
         <h3 className="text-[14px] font-semibold text-[#0B1437] mb-2">Need to update your details?</h3>
         <p className="text-[13px] text-gray-500">
           To update your profile or bank details, please contact us at{' '}
-          <a href="mailto:contact@onwardtickets.com" className="text-[#2979FF] font-medium">contact@onwardtickets.com</a>
+          <a href="mailto:contact@onwardtickets.com" className="text-[#005CFF] font-medium">contact@onwardtickets.com</a>
         </p>
       </div>
     </div>

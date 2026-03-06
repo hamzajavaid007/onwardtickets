@@ -82,13 +82,13 @@ export default function AffiliateRegisterPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <h3 className="btn-hover-lift text-[24px] font-bold text-[#2979FF] mb-[12px]">Application Submitted!</h3>
+              <h3 className="btn-hover-lift text-[24px] font-bold text-[#005CFF] mb-[12px]">Application Submitted!</h3>
               <p className="btn-hover-lift text-[16px] text-[#2B2B2B]" style={{ lineHeight: '1.6' }}>
                 Thank you for applying to our affiliate program. We&apos;ll review your application and get back to you within 24&ndash;48 hours at the email address you provided.
               </p>
               <Link
                 href="/become-a-partner"
-                className="btn-hover-lift inline-flex items-center gap-[8px] mt-[24px] text-[#2979FF] font-semibold text-[15px] hover:underline"
+                className="btn-hover-lift inline-flex items-center gap-[8px] mt-[24px] text-[#005CFF] font-semibold text-[15px] hover:underline"
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="19" y1="12" x2="5" y2="12" /><polyline points="12 19 5 12 12 5" />
@@ -113,7 +113,7 @@ export default function AffiliateRegisterPage() {
                     onChange={handleChange}
                     required
                     placeholder="John Doe"
-                    className="btn-hover-lift w-full bg-[#EFECEC] rounded-[3px] px-[14px] py-[12px] text-[14px] text-[#333] focus:outline-none focus:ring-2 focus:ring-[#2979FF] border-none"
+                    className="btn-hover-lift w-full bg-[#EFECEC] rounded-[3px] px-[14px] py-[12px] text-[14px] text-[#333] focus:outline-none focus:ring-2 focus:ring-[#005CFF] border-none"
                   />
                 </div>
                 {/* Email */}
@@ -126,7 +126,7 @@ export default function AffiliateRegisterPage() {
                     onChange={handleChange}
                     required
                     placeholder="john@example.com"
-                    className="btn-hover-lift w-full bg-[#EFECEC] rounded-[3px] px-[14px] py-[12px] text-[14px] text-[#333] focus:outline-none focus:ring-2 focus:ring-[#2979FF] border-none"
+                    className="btn-hover-lift w-full bg-[#EFECEC] rounded-[3px] px-[14px] py-[12px] text-[14px] text-[#333] focus:outline-none focus:ring-2 focus:ring-[#005CFF] border-none"
                   />
                 </div>
                 {/* Phone */}
@@ -139,7 +139,7 @@ export default function AffiliateRegisterPage() {
                     onChange={handleChange}
                     required
                     placeholder="+44 77561 525115"
-                    className="btn-hover-lift w-full bg-[#EFECEC] rounded-[3px] px-[14px] py-[12px] text-[14px] text-[#333] focus:outline-none focus:ring-2 focus:ring-[#2979FF] border-none"
+                    className="btn-hover-lift w-full bg-[#EFECEC] rounded-[3px] px-[14px] py-[12px] text-[14px] text-[#333] focus:outline-none focus:ring-2 focus:ring-[#005CFF] border-none"
                   />
                 </div>
                 {/* Website */}
@@ -151,7 +151,7 @@ export default function AffiliateRegisterPage() {
                     value={formData.website}
                     onChange={handleChange}
                     placeholder="https://yourblog.com"
-                    className="btn-hover-lift w-full bg-[#EFECEC] rounded-[3px] px-[14px] py-[12px] text-[14px] text-[#333] focus:outline-none focus:ring-2 focus:ring-[#2979FF] border-none"
+                    className="btn-hover-lift w-full bg-[#EFECEC] rounded-[3px] px-[14px] py-[12px] text-[14px] text-[#333] focus:outline-none focus:ring-2 focus:ring-[#005CFF] border-none"
                   />
                 </div>
                 {/* Platform */}
@@ -162,7 +162,7 @@ export default function AffiliateRegisterPage() {
                     value={formData.platform}
                     onChange={handleChange}
                     required
-                    className="btn-hover-lift w-full bg-[#EFECEC] rounded-[3px] px-[14px] py-[12px] text-[14px] text-[#333] focus:outline-none focus:ring-2 focus:ring-[#2979FF] border-none appearance-none"
+                    className="btn-hover-lift w-full bg-[#EFECEC] rounded-[3px] px-[14px] py-[12px] text-[14px] text-[#333] focus:outline-none focus:ring-2 focus:ring-[#005CFF] border-none appearance-none"
                   >
                     <option value="">Select your platform</option>
                     <option value="Blog">Blog / Website</option>
@@ -181,7 +181,7 @@ export default function AffiliateRegisterPage() {
                     name="audience"
                     value={formData.audience}
                     onChange={handleChange}
-                    className="btn-hover-lift w-full bg-[#EFECEC] rounded-[3px] px-[14px] py-[12px] text-[14px] text-[#333] focus:outline-none focus:ring-2 focus:ring-[#2979FF] border-none appearance-none"
+                    className="btn-hover-lift w-full bg-[#EFECEC] rounded-[3px] px-[14px] py-[12px] text-[14px] text-[#333] focus:outline-none focus:ring-2 focus:ring-[#005CFF] border-none appearance-none"
                   >
                     <option value="">Select audience size</option>
                     <option value="Under 1K">Under 1,000</option>
@@ -203,7 +203,7 @@ export default function AffiliateRegisterPage() {
                   onChange={handleChange}
                   rows={4}
                   placeholder="Tell us about your content strategy, audience demographics, and how you plan to promote our services..."
-                  className="btn-hover-lift w-full bg-[#EFECEC] rounded-[3px] px-[14px] py-[12px] text-[14px] text-[#333] focus:outline-none focus:ring-2 focus:ring-[#2979FF] border-none resize-none"
+                  className="btn-hover-lift w-full bg-[#EFECEC] rounded-[3px] px-[14px] py-[12px] text-[14px] text-[#333] focus:outline-none focus:ring-2 focus:ring-[#005CFF] border-none resize-none"
                 />
               </div>
 
@@ -216,13 +216,13 @@ export default function AffiliateRegisterPage() {
                   onChange={handleChange}
                   rows={3}
                   placeholder="Account holder name, bank name, sort code, account number (or IBAN for international transfers)"
-                  className="btn-hover-lift w-full bg-[#EFECEC] rounded-[3px] px-[14px] py-[12px] text-[14px] text-[#333] focus:outline-none focus:ring-2 focus:ring-[#2979FF] border-none resize-none"
+                  className="btn-hover-lift w-full bg-[#EFECEC] rounded-[3px] px-[14px] py-[12px] text-[14px] text-[#333] focus:outline-none focus:ring-2 focus:ring-[#005CFF] border-none resize-none"
                 />
               </div>
 
               {/* Terms checkbox */}
               <div className="btn-hover-lift mt-[20px] flex items-start gap-[10px]">
-                <input type="checkbox" required id="terms" className="btn-hover-lift mt-1 accent-[#2979FF]" />
+                <input type="checkbox" required id="terms" className="btn-hover-lift mt-1 accent-[#005CFF]" />
                 <label htmlFor="terms" className="btn-hover-lift text-[13px] text-[#54595F]">
                   I agree to the affiliate program terms and conditions. I understand that my application will be reviewed and I will be notified via email.
                 </label>
@@ -239,7 +239,7 @@ export default function AffiliateRegisterPage() {
               <button
                 type="submit"
                 disabled={submitting}
-                className="btn-hover-lift mt-[24px] w-full bg-[#2979FF] text-white rounded-[15px] px-[16px] py-[16px] text-[16px] font-bold hover:bg-[#1565C0] transition-colors disabled:opacity-50"
+                className="btn-hover-lift mt-[24px] w-full bg-[#005CFF] text-white rounded-[15px] px-[16px] py-[16px] text-[16px] font-bold hover:bg-[#0047CC] transition-colors disabled:opacity-50"
               >
                 {submitting ? 'Submitting Application...' : 'Submit Application'}
               </button>
@@ -250,7 +250,7 @@ export default function AffiliateRegisterPage() {
           <div className="btn-hover-lift text-center mt-[24px]">
             <p className="btn-hover-lift text-[14px] text-[#54595F]">
               Already an affiliate?{' '}
-              <Link href="/affiliate/login" className="btn-hover-lift text-[#2979FF] font-semibold hover:underline">
+              <Link href="/affiliate/login" className="btn-hover-lift text-[#005CFF] font-semibold hover:underline">
                 Log in to your dashboard
               </Link>
             </p>

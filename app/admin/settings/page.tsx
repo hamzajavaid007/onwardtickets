@@ -380,7 +380,7 @@ export default function SettingsPage() {
             onClick={() => setActiveTab(tab.key)}
             className={`flex items-center gap-2 px-4 py-2 rounded-xl text-[13px] font-medium transition-all whitespace-nowrap ${
               activeTab === tab.key
-                ? 'bg-[#2979FF] text-white shadow-sm'
+                ? 'bg-[#005CFF] text-white shadow-sm'
                 : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50'
             }`}
           >
@@ -395,9 +395,9 @@ export default function SettingsPage() {
         <div className="btn-hover-lift grid grid-cols-1 xl:grid-cols-3 gap-6">
           {/* Profile Card */}
           <div className="btn-hover-lift bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-            <div className="btn-hover-lift h-24 bg-gradient-to-r from-[#2979FF] to-[#0052CC]" />
+            <div className="btn-hover-lift h-24 bg-gradient-to-r from-[#005CFF] to-[#0052CC]" />
             <div className="btn-hover-lift px-6 pb-6 -mt-10">
-              <div className="btn-hover-lift w-20 h-20 rounded-2xl bg-gradient-to-br from-[#2979FF] to-[#5ec5dc] flex items-center justify-center text-white text-[24px] font-bold border-4 border-white shadow-lg">
+              <div className="btn-hover-lift w-20 h-20 rounded-2xl bg-gradient-to-br from-[#005CFF] to-[#5ec5dc] flex items-center justify-center text-white text-[24px] font-bold border-4 border-white shadow-lg">
                 {profile.avatar}
               </div>
               <h3 className="btn-hover-lift text-[18px] font-bold text-[#0B1437] mt-4">{profile.firstName} {profile.lastName}</h3>
@@ -441,7 +441,7 @@ export default function SettingsPage() {
                   type="text"
                   value={profile.firstName}
                   onChange={(e) => setProfile({ ...profile, firstName: e.target.value })}
-                  className="btn-hover-lift w-full px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#2979FF] focus:outline-none transition-colors"
+                  className="btn-hover-lift w-full px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#005CFF] focus:outline-none transition-colors"
                 />
               </div>
               <div>
@@ -450,7 +450,7 @@ export default function SettingsPage() {
                   type="text"
                   value={profile.lastName}
                   onChange={(e) => setProfile({ ...profile, lastName: e.target.value })}
-                  className="btn-hover-lift w-full px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#2979FF] focus:outline-none transition-colors"
+                  className="btn-hover-lift w-full px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#005CFF] focus:outline-none transition-colors"
                 />
               </div>
               <div>
@@ -459,7 +459,7 @@ export default function SettingsPage() {
                   type="email"
                   value={profile.email}
                   onChange={(e) => setProfile({ ...profile, email: e.target.value })}
-                  className="btn-hover-lift w-full px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#2979FF] focus:outline-none transition-colors"
+                  className="btn-hover-lift w-full px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#005CFF] focus:outline-none transition-colors"
                 />
               </div>
               <div>
@@ -468,7 +468,7 @@ export default function SettingsPage() {
                   type="tel"
                   value={profile.phone}
                   onChange={(e) => setProfile({ ...profile, phone: e.target.value })}
-                  className="btn-hover-lift w-full px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#2979FF] focus:outline-none transition-colors"
+                  className="btn-hover-lift w-full px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#005CFF] focus:outline-none transition-colors"
                 />
               </div>
               <div>
@@ -476,7 +476,7 @@ export default function SettingsPage() {
                 <select
                   value={profile.timezone}
                   onChange={(e) => setProfile({ ...profile, timezone: e.target.value })}
-                  className="btn-hover-lift w-full px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#2979FF] focus:outline-none transition-colors appearance-none"
+                  className="btn-hover-lift w-full px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#005CFF] focus:outline-none transition-colors appearance-none"
                 >
                   <option value="Europe/London">Europe/London (GMT+0)</option>
                   <option value="America/New_York">America/New York (EST)</option>
@@ -489,7 +489,7 @@ export default function SettingsPage() {
                 <select
                   value={profile.language}
                   onChange={(e) => setProfile({ ...profile, language: e.target.value })}
-                  className="btn-hover-lift w-full px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#2979FF] focus:outline-none transition-colors appearance-none"
+                  className="btn-hover-lift w-full px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#005CFF] focus:outline-none transition-colors appearance-none"
                 >
                   <option>English</option>
                   <option>Urdu</option>
@@ -501,7 +501,7 @@ export default function SettingsPage() {
             <div className="btn-hover-lift flex items-center gap-3 mt-6 pt-5 border-t border-gray-100">
               <button
                 onClick={handleSave}
-                className="btn-hover-lift flex items-center gap-2 bg-[#2979FF] hover:bg-[#1565C0] text-white px-6 py-2.5 rounded-xl text-[13px] font-semibold transition-colors"
+                className="btn-hover-lift flex items-center gap-2 bg-[#005CFF] hover:bg-[#0047CC] text-white px-6 py-2.5 rounded-xl text-[13px] font-semibold transition-colors"
               >
                 {saved ? (
                   <>
@@ -533,7 +533,7 @@ export default function SettingsPage() {
             </div>
             <button
               onClick={() => setShowAddModal(true)}
-              className="btn-hover-lift flex items-center gap-2 bg-[#2979FF] hover:bg-[#1565C0] text-white px-5 py-2.5 rounded-xl text-[13px] font-semibold transition-colors"
+              className="btn-hover-lift flex items-center gap-2 bg-[#005CFF] hover:bg-[#0047CC] text-white px-5 py-2.5 rounded-xl text-[13px] font-semibold transition-colors"
             >
               <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
@@ -596,7 +596,7 @@ export default function SettingsPage() {
                       <tr key={member.id} className="btn-hover-lift hover:bg-[#F8FAFC] transition-colors">
                         <td className="btn-hover-lift px-6 py-4">
                           <div className="btn-hover-lift flex items-center gap-3">
-                            <div className="btn-hover-lift w-9 h-9 rounded-full bg-gradient-to-br from-[#2979FF] to-[#5ec5dc] flex items-center justify-center text-white text-[12px] font-bold flex-shrink-0">
+                            <div className="btn-hover-lift w-9 h-9 rounded-full bg-gradient-to-br from-[#005CFF] to-[#5ec5dc] flex items-center justify-center text-white text-[12px] font-bold flex-shrink-0">
                               {member.avatar}
                             </div>
                             <div>
@@ -624,7 +624,7 @@ export default function SettingsPage() {
                         <td className="btn-hover-lift px-6 py-4 text-[13px] text-gray-500">{member.lastLogin}</td>
                         <td className="btn-hover-lift px-6 py-4">
                           <div className="btn-hover-lift flex items-center gap-2">
-                            <button className="btn-hover-lift p-1.5 rounded-lg hover:bg-gray-100 transition-colors text-gray-400 hover:text-[#2979FF]" title="Edit">
+                            <button className="btn-hover-lift p-1.5 rounded-lg hover:bg-gray-100 transition-colors text-gray-400 hover:text-[#005CFF]" title="Edit">
                               <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                               </svg>
@@ -670,7 +670,7 @@ export default function SettingsPage() {
                       value={newMember.name}
                       onChange={(e) => { setNewMember({ ...newMember, name: e.target.value }); setInviteError(''); }}
                       placeholder="e.g. John Doe"
-                      className="btn-hover-lift w-full px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#2979FF] focus:outline-none"
+                      className="btn-hover-lift w-full px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#005CFF] focus:outline-none"
                     />
                   </div>
                   <div>
@@ -680,7 +680,7 @@ export default function SettingsPage() {
                       value={newMember.email}
                       onChange={(e) => { setNewMember({ ...newMember, email: e.target.value }); setInviteError(''); }}
                       placeholder="e.g. john@onwardtickets.com"
-                      className="btn-hover-lift w-full px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#2979FF] focus:outline-none"
+                      className="btn-hover-lift w-full px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#005CFF] focus:outline-none"
                     />
                   </div>
                   <div>
@@ -688,7 +688,7 @@ export default function SettingsPage() {
                     <select
                       value={newMember.role}
                       onChange={(e) => { setNewMember({ ...newMember, role: e.target.value as Admin['role'] }); setInviteError(''); }}
-                      className="btn-hover-lift w-full px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#2979FF] focus:outline-none appearance-none"
+                      className="btn-hover-lift w-full px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#005CFF] focus:outline-none appearance-none"
                     >
                       <option value="Admin">Admin</option>
                       <option value="Editor">Editor</option>
@@ -717,7 +717,7 @@ export default function SettingsPage() {
                   <button
                     onClick={handleAddMember}
                     disabled={inviteLoading || !newMember.name || !newMember.email}
-                    className="btn-hover-lift flex items-center gap-2 bg-[#2979FF] hover:bg-[#1565C0] text-white px-5 py-2 rounded-xl text-[13px] font-semibold transition-colors"
+                    className="btn-hover-lift flex items-center gap-2 bg-[#005CFF] hover:bg-[#0047CC] text-white px-5 py-2 rounded-xl text-[13px] font-semibold transition-colors"
                   >
                     <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
@@ -743,7 +743,7 @@ export default function SettingsPage() {
                 <input
                   type="password"
                   placeholder="Enter current password"
-                  className="btn-hover-lift w-full px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#2979FF] focus:outline-none"
+                  className="btn-hover-lift w-full px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#005CFF] focus:outline-none"
                 />
               </div>
               <div>
@@ -751,7 +751,7 @@ export default function SettingsPage() {
                 <input
                   type="password"
                   placeholder="Enter new password"
-                  className="btn-hover-lift w-full px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#2979FF] focus:outline-none"
+                  className="btn-hover-lift w-full px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#005CFF] focus:outline-none"
                 />
               </div>
               <div>
@@ -759,10 +759,10 @@ export default function SettingsPage() {
                 <input
                   type="password"
                   placeholder="Confirm new password"
-                  className="btn-hover-lift w-full px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#2979FF] focus:outline-none"
+                  className="btn-hover-lift w-full px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#005CFF] focus:outline-none"
                 />
               </div>
-              <button className="btn-hover-lift bg-[#2979FF] hover:bg-[#1565C0] text-white px-6 py-2.5 rounded-xl text-[13px] font-semibold transition-colors mt-2">
+              <button className="btn-hover-lift bg-[#005CFF] hover:bg-[#0047CC] text-white px-6 py-2.5 rounded-xl text-[13px] font-semibold transition-colors mt-2">
                 Update Password
               </button>
             </div>
@@ -839,7 +839,7 @@ export default function SettingsPage() {
                     <button
                       onClick={() => setNotifications({ ...notifications, [item.key]: !notifications[item.key] })}
                       className={`relative w-11 h-6 rounded-full transition-colors ${
-                        notifications[item.key] ? 'bg-[#2979FF]' : 'bg-gray-200'
+                        notifications[item.key] ? 'bg-[#005CFF]' : 'bg-gray-200'
                       }`}
                     >
                       <span
@@ -875,7 +875,7 @@ export default function SettingsPage() {
                     <button
                       onClick={() => setNotifications({ ...notifications, [item.key]: !notifications[item.key] })}
                       className={`relative w-11 h-6 rounded-full transition-colors ${
-                        notifications[item.key] ? 'bg-[#2979FF]' : 'bg-gray-200'
+                        notifications[item.key] ? 'bg-[#005CFF]' : 'bg-gray-200'
                       }`}
                     >
                       <span
@@ -893,7 +893,7 @@ export default function SettingsPage() {
           <div className="btn-hover-lift mt-6 pt-5 border-t border-gray-100">
             <button
               onClick={handleSave}
-              className="btn-hover-lift bg-[#2979FF] hover:bg-[#1565C0] text-white px-6 py-2.5 rounded-xl text-[13px] font-semibold transition-colors"
+              className="btn-hover-lift bg-[#005CFF] hover:bg-[#0047CC] text-white px-6 py-2.5 rounded-xl text-[13px] font-semibold transition-colors"
             >
               {saved ? 'Saved!' : 'Save Preferences'}
             </button>
@@ -913,7 +913,7 @@ export default function SettingsPage() {
             <button
               onClick={handlePricingSave}
               disabled={pricingSaving}
-              className="btn-hover-lift flex items-center gap-2 bg-[#2979FF] hover:bg-[#1565C0] disabled:opacity-60 text-white px-6 py-2.5 rounded-xl text-[13px] font-semibold transition-colors"
+              className="btn-hover-lift flex items-center gap-2 bg-[#005CFF] hover:bg-[#0047CC] disabled:opacity-60 text-white px-6 py-2.5 rounded-xl text-[13px] font-semibold transition-colors"
             >
               {pricingSaving ? (
                 <>
@@ -953,7 +953,7 @@ export default function SettingsPage() {
           {/* Loading State */}
           {pricingLoading ? (
             <div className="btn-hover-lift bg-white rounded-2xl p-12 shadow-sm border border-gray-100 flex flex-col items-center justify-center">
-              <svg className="btn-hover-lift animate-spin text-[#2979FF] mb-3" width="32" height="32" viewBox="0 0 24 24" fill="none">
+              <svg className="btn-hover-lift animate-spin text-[#005CFF] mb-3" width="32" height="32" viewBox="0 0 24 24" fill="none">
                 <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3" strokeDasharray="31.42" strokeDashoffset="10" />
               </svg>
               <p className="btn-hover-lift text-[14px] text-gray-500">Loading pricing data...</p>
@@ -1012,7 +1012,7 @@ export default function SettingsPage() {
                                   min="0"
                                   value={servicePricing[field] as number}
                                   onChange={(e) => updateServicePrice(serviceKey, field, e.target.value)}
-                                  className="btn-hover-lift w-full pl-8 pr-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#2979FF] focus:outline-none transition-colors"
+                                  className="btn-hover-lift w-full pl-8 pr-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#005CFF] focus:outline-none transition-colors"
                                 />
                               </div>
                             </div>
@@ -1031,7 +1031,7 @@ export default function SettingsPage() {
                                     [serviceKey]: { ...prev[serviceKey], currency: e.target.value },
                                   }))
                                 }
-                                className="btn-hover-lift px-3 py-1.5 bg-[#F8FAFC] rounded-lg text-[13px] border border-gray-200 focus:border-[#2979FF] focus:outline-none appearance-none"
+                                className="btn-hover-lift px-3 py-1.5 bg-[#F8FAFC] rounded-lg text-[13px] border border-gray-200 focus:border-[#005CFF] focus:outline-none appearance-none"
                               >
                                 <option value="₱">₱ Philippine Peso</option>
                                 <option value="£">£ British Pound</option>
@@ -1075,7 +1075,7 @@ export default function SettingsPage() {
             <button
               onClick={handleServicesSave}
               disabled={servicesSaving}
-              className="flex items-center gap-2 bg-[#2979FF] hover:bg-[#1565C0] disabled:opacity-60 text-white px-6 py-2.5 rounded-xl text-[13px] font-semibold transition-colors"
+              className="flex items-center gap-2 bg-[#005CFF] hover:bg-[#0047CC] disabled:opacity-60 text-white px-6 py-2.5 rounded-xl text-[13px] font-semibold transition-colors"
             >
               {servicesSaving ? (
                 <>
@@ -1108,7 +1108,7 @@ export default function SettingsPage() {
 
           {servicesLoading ? (
             <div className="bg-white rounded-2xl p-12 shadow-sm border border-gray-100 flex flex-col items-center justify-center">
-              <svg className="animate-spin text-[#2979FF] mb-3" width="32" height="32" viewBox="0 0 24 24" fill="none">
+              <svg className="animate-spin text-[#005CFF] mb-3" width="32" height="32" viewBox="0 0 24 24" fill="none">
                 <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3" strokeDasharray="31.42" strokeDashoffset="10" />
               </svg>
               <p className="text-[14px] text-gray-500">Loading services...</p>

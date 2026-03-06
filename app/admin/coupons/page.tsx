@@ -148,7 +148,7 @@ export default function AdminCouponsPage() {
   const expiredCoupons = coupons.filter(c => c.expiresAt && new Date(c.expiresAt) < new Date());
   const totalUses = coupons.reduce((sum, c) => sum + c.usedCount, 0);
 
-  const inputClass = 'w-full px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#2979FF] focus:outline-none transition-colors';
+  const inputClass = 'w-full px-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[14px] border border-gray-200 focus:border-[#005CFF] focus:outline-none transition-colors';
 
   return (
     <div className="btn-hover-lift space-y-6">
@@ -160,7 +160,7 @@ export default function AdminCouponsPage() {
         </div>
         <button
           onClick={() => { setEditingId(null); setForm(defaultForm); setError(''); setShowModal(true); }}
-          className="btn-hover-lift flex items-center gap-2 bg-[#2979FF] hover:bg-[#1565C0] text-white px-5 py-2.5 rounded-xl text-[13px] font-semibold transition-colors"
+          className="btn-hover-lift flex items-center gap-2 bg-[#005CFF] hover:bg-[#0047CC] text-white px-5 py-2.5 rounded-xl text-[13px] font-semibold transition-colors"
         >
           <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
@@ -172,7 +172,7 @@ export default function AdminCouponsPage() {
       {/* Stats */}
       <div className="btn-hover-lift grid grid-cols-2 md:grid-cols-4 gap-4">
         {[
-          { label: 'Total Coupons', value: coupons.length, color: '#2979FF' },
+          { label: 'Total Coupons', value: coupons.length, color: '#005CFF' },
           { label: 'Active', value: activeCoupons.length, color: '#059669' },
           { label: 'Expired', value: expiredCoupons.length, color: '#DC2626' },
           { label: 'Total Uses', value: totalUses, color: '#7C3AED' },
@@ -210,7 +210,7 @@ export default function AdminCouponsPage() {
                 return (
                   <tr key={coupon._id} className="btn-hover-lift hover:bg-[#F8FAFC] transition-colors">
                     <td className="btn-hover-lift px-6 py-4">
-                      <code className="btn-hover-lift text-[14px] font-mono font-bold text-[#2979FF] bg-[#EFF6FF] px-2.5 py-1 rounded-lg">{coupon.code}</code>
+                      <code className="btn-hover-lift text-[14px] font-mono font-bold text-[#005CFF] bg-[#EFF6FF] px-2.5 py-1 rounded-lg">{coupon.code}</code>
                     </td>
                     <td className="btn-hover-lift px-6 py-4 text-[14px] font-semibold text-[#0B1437]">
                       {coupon.discountType === 'percentage' ? `${coupon.discountValue}%` : `£${coupon.discountValue.toFixed(2)}`}
@@ -242,7 +242,7 @@ export default function AdminCouponsPage() {
                     </td>
                     <td className="btn-hover-lift px-6 py-4">
                       <div className="btn-hover-lift flex items-center gap-2">
-                        <button onClick={() => handleEdit(coupon)} className="btn-hover-lift p-1.5 rounded-lg hover:bg-gray-100 transition-colors text-gray-400 hover:text-[#2979FF]" title="Edit">
+                        <button onClick={() => handleEdit(coupon)} className="btn-hover-lift p-1.5 rounded-lg hover:bg-gray-100 transition-colors text-gray-400 hover:text-[#005CFF]" title="Edit">
                           <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                           </svg>
@@ -355,7 +355,7 @@ export default function AdminCouponsPage() {
                         type="checkbox"
                         checked={form.services.includes(svc.key)}
                         onChange={() => toggleService(svc.key)}
-                        className="btn-hover-lift w-4 h-4 rounded border-gray-300 text-[#2979FF] focus:ring-[#2979FF]"
+                        className="btn-hover-lift w-4 h-4 rounded border-gray-300 text-[#005CFF] focus:ring-[#005CFF]"
                       />
                       {svc.label}
                     </label>
@@ -371,7 +371,7 @@ export default function AdminCouponsPage() {
                 </div>
                 <button
                   onClick={() => setForm({ ...form, isActive: !form.isActive })}
-                  className={`relative w-11 h-6 rounded-full transition-colors ${form.isActive ? 'bg-[#2979FF]' : 'bg-gray-200'}`}
+                  className={`relative w-11 h-6 rounded-full transition-colors ${form.isActive ? 'bg-[#005CFF]' : 'bg-gray-200'}`}
                 >
                   <span className={`absolute top-0.5 w-5 h-5 bg-white rounded-full shadow transition-transform ${form.isActive ? 'left-[22px]' : 'left-0.5'}`} />
                 </button>
@@ -388,7 +388,7 @@ export default function AdminCouponsPage() {
               <button
                 onClick={handleSave}
                 disabled={saving}
-                className="btn-hover-lift bg-[#2979FF] hover:bg-[#1565C0] text-white px-5 py-2 rounded-xl text-[13px] font-semibold transition-colors disabled:opacity-50"
+                className="btn-hover-lift bg-[#005CFF] hover:bg-[#0047CC] text-white px-5 py-2 rounded-xl text-[13px] font-semibold transition-colors disabled:opacity-50"
               >
                 {saving ? 'Saving...' : editingId ? 'Update Coupon' : 'Create Coupon'}
               </button>

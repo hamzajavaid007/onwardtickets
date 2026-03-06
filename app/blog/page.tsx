@@ -64,8 +64,8 @@ const Blogs = () => {
               xmlns="http://www.w3.org/2000/svg"
               style={{ opacity: 0.1 }}
             >
-              <circle cx="350" cy="50" r="200" stroke="#2979FF" strokeWidth="2" />
-              <circle cx="350" cy="50" r="150" stroke="#2979FF" strokeWidth="2" />
+              <circle cx="350" cy="50" r="200" stroke="#005CFF" strokeWidth="2" />
+              <circle cx="350" cy="50" r="150" stroke="#005CFF" strokeWidth="2" />
             </svg>
           </div>
 
@@ -80,7 +80,7 @@ const Blogs = () => {
                 lineHeight: '1.3',
               }}
             >
-              Travel Tips &<br /><span className="text-[#005BFE]">Visa Guides</span>
+              Travel Tips &<br /><span className="text-[#005CFF]">Visa Guides</span>
             </h1>
             <p
               className="mt-4 text-[#54595F]"
@@ -95,7 +95,7 @@ const Blogs = () => {
             </p>
             <div
               className="mt-6 animate-gradient"
-              style={{ width: '80px', height: '4px', background: 'linear-gradient(90deg, #2979FF, #005BFE, #2979FF)' }}
+              style={{ width: '80px', height: '4px', background: 'linear-gradient(90deg, #005CFF, #005CFF, #005CFF)' }}
             />
           </div>
         </div>
@@ -105,7 +105,7 @@ const Blogs = () => {
       <div className="mx-auto max-w-[1240px] px-6 py-12">
         {loading && blogPosts.length === 0 ? (
           <div className="text-center py-16">
-            <div className="text-[#2979FF] animate-pulse-slow">Loading posts...</div>
+            <div className="text-[#005CFF] animate-pulse-slow">Loading posts...</div>
           </div>
         ) : blogPosts.length === 0 ? (
           <div className="text-center py-16 reveal">
@@ -139,7 +139,7 @@ const Blogs = () => {
                           const target = e.target as HTMLImageElement;
                           target.style.display = 'none';
                           target.parentElement!.innerHTML =
-                            '<div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#2979FF] to-[#1e3a5f]"><svg class="w-12 h-12 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>';
+                            '<div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#005CFF] to-[#1e3a5f]"><svg class="w-12 h-12 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>';
                         }}
                       />
                     )}
@@ -149,7 +149,7 @@ const Blogs = () => {
                 {/* Author Avatar */}
                 <div className="flex items-center gap-3 mt-4 mb-3">
                   <div
-                    className="rounded-full bg-[#2979FF] text-white flex items-center justify-center flex-shrink-0 transition-all duration-300 hover:scale-110 hover:shadow-lg"
+                    className="rounded-full bg-[#005CFF] text-white flex items-center justify-center flex-shrink-0 transition-all duration-300 hover:scale-110 hover:shadow-lg"
                     style={{ width: '32px', height: '32px', fontSize: '13px', fontWeight: 600 }}
                   >
                     {(post.author || 'Admin')
@@ -163,7 +163,7 @@ const Blogs = () => {
                       fontSize: '13px',
                       color: '#54595F',
                     }}
-                    className="hover:text-[#2979FF] transition-colors duration-300"
+                    className="hover:text-[#005CFF] transition-colors duration-300"
                   >
                     {post.author || 'Admin'}
                   </span>
@@ -173,7 +173,7 @@ const Blogs = () => {
                 <h3>
                   <Link
                     href={`/blog/${post.slug}`}
-                    className="text-[#2979FF] hover:text-[#1e3a5f] transition-all duration-300 hover:translate-x-1"
+                    className="text-[#005CFF] hover:text-[#1e3a5f] transition-all duration-300 hover:translate-x-1"
                     style={{
                       fontFamily: font,
                       fontSize: '17px',
@@ -212,7 +212,7 @@ const Blogs = () => {
                 {/* Read More */}
                 <Link
                   href={`/blog/${post.slug}`}
-                  className="inline-block mt-3 text-[#2979FF] hover:text-[#1e3a5f] transition-all duration-300 hover:translate-x-1 link-underline"
+                  className="inline-block mt-3 text-[#005CFF] hover:text-[#1e3a5f] transition-all duration-300 hover:translate-x-1 link-underline"
                   style={{
                     fontFamily: font,
                     fontSize: '14px',
@@ -232,7 +232,7 @@ const Blogs = () => {
             {currentPage > 1 && (
               <button
                 onClick={() => { setCurrentPage(currentPage - 1); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-                className="btn-hover-lift px-3 py-2 text-[#2979FF] hover:bg-gray-100 rounded transition-colors"
+                className="btn-hover-lift px-3 py-2 text-[#005CFF] hover:bg-gray-100 rounded transition-colors"
                 style={{ fontFamily: font, fontSize: '14px' }}
               >
                 &larr; Previous
@@ -245,8 +245,8 @@ const Blogs = () => {
                 onClick={() => { setCurrentPage(page); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
                 className={`btn-hover-scale w-10 h-10 rounded flex items-center justify-center transition-all duration-300 ${
                   page === currentPage
-                    ? 'bg-[#2979FF] text-white shadow-lg shadow-[#2979FF]/30'
-                    : 'text-[#2979FF] hover:bg-gray-100'
+                    ? 'bg-[#005CFF] text-white shadow-lg shadow-[#005CFF]/30'
+                    : 'text-[#005CFF] hover:bg-gray-100'
                 }`}
                 style={{ fontFamily: font, fontSize: '14px', fontWeight: 600 }}
               >
@@ -257,7 +257,7 @@ const Blogs = () => {
             {currentPage < totalPages && (
               <button
                 onClick={() => { setCurrentPage(currentPage + 1); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-                className="btn-hover-lift px-3 py-2 text-[#2979FF] hover:bg-gray-100 rounded transition-colors"
+                className="btn-hover-lift px-3 py-2 text-[#005CFF] hover:bg-gray-100 rounded transition-colors"
                 style={{ fontFamily: font, fontSize: '14px' }}
               >
                 Next &rarr;

@@ -94,7 +94,7 @@ const VisaAssistant = () => {
             {/* Left Content */}
             <div className="flex-1 text-center lg:text-left">
               <h1
-                className="text-[#2979FF] mb-5"
+                className="text-[#005CFF] mb-5"
                 style={{
                   fontFamily: 'var(--font-plus-jakarta), Plus Jakarta Sans, sans-serif',
                   fontSize: 'clamp(34px, 5vw, 64px)',
@@ -118,7 +118,7 @@ const VisaAssistant = () => {
               </p>
               <a
                 href="#services"
-                className="inline-flex items-center gap-3 bg-[#005CFF] text-white font-semibold text-[16px] rounded-[16px] hover:bg-[#0048d4] transition-colors"
+                className="inline-flex items-center gap-3 bg-[#005CFF] text-white font-semibold text-[16px] rounded-[16px] hover:bg-[#0047CC] transition-colors"
                 style={{
                   fontFamily: 'var(--font-plus-jakarta), Plus Jakarta Sans, sans-serif',
                   padding: '17px 30px',
@@ -162,7 +162,7 @@ const VisaAssistant = () => {
         <div className="relative z-10 mx-auto max-w-[1240px] px-6 lg:px-0">
           <div className="flex flex-col md:flex-row items-start gap-12 md:gap-[100px]">
             {/* Stat 1 */}
-            <div className="flex-1 md:border-r-2 md:border-[#2979FF] text-center md:text-left">
+            <div className="flex-1 md:border-r-2 md:border-[#005CFF] text-center md:text-left">
               <h3
                 className="text-[#1D1D1D]"
                 style={{
@@ -174,7 +174,7 @@ const VisaAssistant = () => {
                 10,000+
               </h3>
               <p
-                className="text-[#2979FF] md:max-w-[67%]"
+                className="text-[#005CFF] md:max-w-[67%]"
                 style={{
                   fontFamily: 'var(--font-plus-jakarta), Plus Jakarta Sans, sans-serif',
                   fontSize: '16px',
@@ -186,7 +186,7 @@ const VisaAssistant = () => {
               </p>
             </div>
             {/* Stat 2 */}
-            <div className="flex-1 md:border-r-2 md:border-[#2979FF] text-center md:text-left">
+            <div className="flex-1 md:border-r-2 md:border-[#005CFF] text-center md:text-left">
               <h3
                 className="text-[#1D1D1D]"
                 style={{
@@ -198,7 +198,7 @@ const VisaAssistant = () => {
                 100+
               </h3>
               <p
-                className="text-[#2979FF] md:max-w-[81%]"
+                className="text-[#005CFF] md:max-w-[81%]"
                 style={{
                   fontFamily: 'var(--font-plus-jakarta), Plus Jakarta Sans, sans-serif',
                   fontSize: '16px',
@@ -210,7 +210,7 @@ const VisaAssistant = () => {
               </p>
             </div>
             {/* Stat 3 */}
-            <div className="flex-1 md:border-r-2 md:border-[#2979FF] text-center md:text-left">
+            <div className="flex-1 md:border-r-2 md:border-[#005CFF] text-center md:text-left">
               <h3
                 className="text-[#1D1D1D]"
                 style={{
@@ -222,7 +222,7 @@ const VisaAssistant = () => {
                 5+
               </h3>
               <p
-                className="text-[#2979FF] md:max-w-[83%]"
+                className="text-[#005CFF] md:max-w-[83%]"
                 style={{
                   fontFamily: 'var(--font-plus-jakarta), Plus Jakarta Sans, sans-serif',
                   fontSize: '16px',
@@ -313,7 +313,7 @@ const VisaAssistant = () => {
                 >
                   {step.title}
                 </h3>
-                <div className="w-[50%] h-[2px] bg-[#2979FF] mb-3" />
+                <div className="w-[50%] h-[2px] bg-[#005CFF] mb-3" />
                 <p
                   className="text-[#54595F]"
                   style={{
@@ -348,7 +348,7 @@ const VisaAssistant = () => {
               <div key={i} className="rounded-[20px] border border-[#E3E3E3] bg-white flex flex-col overflow-hidden">
                 <div className="pt-[28px] px-[24px] pb-[20px] flex flex-col h-full">
                   {/* Icon */}
-                  <div className="w-[56px] h-[56px] rounded-full bg-[#2979FF] flex items-center justify-center mb-[16px]">
+                  <div className="w-[56px] h-[56px] rounded-full bg-[#005CFF] flex items-center justify-center mb-[16px]">
                     <Image src={service.icon} alt="" width={28} height={28} />
                   </div>
                   {/* Title */}
@@ -370,7 +370,7 @@ const VisaAssistant = () => {
                     {service.features.map((feature, j) => (
                       <div key={j} className="flex items-start gap-[8px]">
                         <svg className="w-[18px] h-[18px] flex-shrink-0 mt-[2px]" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <circle cx="9" cy="9" r="9" fill="#2979FF"/>
+                          <circle cx="9" cy="9" r="9" fill="#005CFF"/>
                           <path d="M5.5 9L8 11.5L12.5 7" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                         <span
@@ -392,7 +392,7 @@ const VisaAssistant = () => {
                   {/* Button */}
                   <a
                     href={service.href}
-                    className="inline-block text-center bg-[#005CFF] text-white font-semibold text-[16px] rounded-[16px] hover:bg-[#0048d4] transition-colors mt-auto"
+                    className="inline-block text-center bg-[#005CFF] text-white font-semibold text-[16px] rounded-[16px] hover:bg-[#0047CC] transition-colors mt-auto"
                     style={{ fontFamily: 'var(--font-plus-jakarta), Plus Jakarta Sans, sans-serif', padding: '17px 30px', lineHeight: '24px' }}
                   >
                     Order Now
@@ -455,7 +455,7 @@ const VisaAssistant = () => {
       </section>
 
       {/* ===== TESTIMONIALS ===== */}
-      <section style={{ background: '#2979FF', padding: '64px 10px' }}>
+      <section style={{ background: '#005CFF', padding: '64px 10px' }}>
         <div className="mx-auto max-w-[1240px] px-6 lg:px-0">
           <h2
             className="text-white text-center"

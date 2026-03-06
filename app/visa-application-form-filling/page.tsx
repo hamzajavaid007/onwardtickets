@@ -20,7 +20,7 @@ interface ServicePricing {
 const SectionHeading = ({ children }: { children: React.ReactNode }) => (
   <div className="mb-6 text-center">
     <h2
-      className="text-[#2979FF] mb-2"
+      className="text-[#005CFF] mb-2"
       style={{
         fontFamily: 'var(--font-poppins), Poppins, sans-serif',
         fontSize: '22px',
@@ -165,7 +165,7 @@ const VisaApplicationFormFilling = () => {
   };
 
   const inputClass =
-    'w-full bg-[#EFECEC] border-none rounded-[3px] focus:outline-none focus:ring-2 focus:ring-[#2979FF]';
+    'w-full bg-[#EFECEC] border-none rounded-[3px] focus:outline-none focus:ring-2 focus:ring-[#005CFF]';
   const inputStyle = {
     fontFamily: 'var(--font-poppins), Poppins, sans-serif',
     fontSize: '16px',
@@ -285,7 +285,7 @@ const VisaApplicationFormFilling = () => {
                           value={type}
                           checked={visaType === type}
                           onChange={(e) => setVisaType(e.target.value)}
-                          style={{ width: '18px', height: '18px', accentColor: '#2979FF' }}
+                          style={{ width: '18px', height: '18px', accentColor: '#005CFF' }}
                         />
                         <span style={{ ...labelStyle, fontWeight: 400 }}>{type}</span>
                       </label>
@@ -306,7 +306,7 @@ const VisaApplicationFormFilling = () => {
                           value={type}
                           checked={entryType === type}
                           onChange={(e) => setEntryType(e.target.value)}
-                          style={{ width: '18px', height: '18px', accentColor: '#2979FF' }}
+                          style={{ width: '18px', height: '18px', accentColor: '#005CFF' }}
                         />
                         <span style={{ ...labelStyle, fontWeight: 400 }}>{type}</span>
                       </label>
@@ -488,7 +488,7 @@ const VisaApplicationFormFilling = () => {
                     fontFamily: 'var(--font-poppins), Poppins, sans-serif',
                     fontSize: '14px',
                     fontWeight: 600,
-                    background: '#2979FF',
+                    background: '#005CFF',
                     height: '40px',
                     padding: '0 30px',
                     borderRadius: '3px',
@@ -518,7 +518,7 @@ const VisaApplicationFormFilling = () => {
                       fontFamily: 'var(--font-poppins), Poppins, sans-serif',
                       fontSize: '14px',
                       fontWeight: 600,
-                      background: '#2979FF',
+                      background: '#005CFF',
                       height: '40px',
                       padding: '0 30px',
                       borderRadius: '3px',

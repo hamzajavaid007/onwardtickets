@@ -119,7 +119,7 @@ const Header = () => {
                       {link.label}
                       <svg
                         className={`w-3.5 h-3.5 transition-all duration-300 ${
-                          isServicesOpen ? 'rotate-180 text-[#2979FF]' : ''
+                          isServicesOpen ? 'rotate-180 text-[#005CFF]' : ''
                         }`}
                         fill="none"
                         viewBox="0 0 24 24"

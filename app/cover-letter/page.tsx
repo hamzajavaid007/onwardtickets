@@ -30,7 +30,7 @@ interface TravelerInfo {
 const SectionHeading = ({ children }: { children: React.ReactNode }) => (
   <div className="mb-6 text-center">
     <h2
-      className="text-[#2979FF] mb-2"
+      className="text-[#005CFF] mb-2"
       style={{
         fontFamily: 'var(--font-poppins), Poppins, sans-serif',
         fontSize: '22px',
@@ -236,7 +236,7 @@ const CoverLetter = () => {
   };
 
   const inputClass =
-    'w-full bg-[#EFECEC] border-none rounded-[3px] focus:outline-none focus:ring-2 focus:ring-[#2979FF]';
+    'w-full bg-[#EFECEC] border-none rounded-[3px] focus:outline-none focus:ring-2 focus:ring-[#005CFF]';
   const inputStyle = {
     fontFamily: 'var(--font-poppins), Poppins, sans-serif',
     fontSize: '16px',
@@ -254,7 +254,7 @@ const CoverLetter = () => {
   const sublabelStyle = {
     fontFamily: 'var(--font-poppins), Poppins, sans-serif',
     fontSize: '13px',
-    color: '#2979FF',
+    color: '#005CFF',
   };
 
   return (
@@ -322,7 +322,7 @@ const CoverLetter = () => {
 
               {/* Trip Details Sub-heading */}
               <h3
-                className="text-[#2979FF] mb-4"
+                className="text-[#005CFF] mb-4"
                 style={{
                   fontFamily: 'var(--font-poppins), Poppins, sans-serif',
                   fontSize: '18px',
@@ -433,7 +433,7 @@ const CoverLetter = () => {
                 <div key={i} className="mb-5">
                   <div className="flex items-start gap-3">
                     <div
-                      className="flex-shrink-0 flex items-center justify-center rounded-full bg-[#2979FF] text-white"
+                      className="flex-shrink-0 flex items-center justify-center rounded-full bg-[#005CFF] text-white"
                       style={{
                         width: '28px',
                         height: '28px',
@@ -533,7 +533,7 @@ const CoverLetter = () => {
 
               {/* General Information Sub-heading */}
               <h3
-                className="text-[#2979FF] mt-6 mb-4"
+                className="text-[#005CFF] mt-6 mb-4"
                 style={{
                   fontFamily: 'var(--font-poppins), Poppins, sans-serif',
                   fontSize: '18px',
@@ -603,7 +603,7 @@ const CoverLetter = () => {
                 <label style={labelStyle}>Attachments</label>
                 <div
                   className={`border-2 border-dashed rounded-[3px] flex flex-col items-center justify-center cursor-pointer transition-colors ${
-                    dragOver ? 'border-[#2979FF] bg-blue-50' : 'border-[#ccc] bg-[#EFECEC]'
+                    dragOver ? 'border-[#005CFF] bg-blue-50' : 'border-[#ccc] bg-[#EFECEC]'
                   }`}
                   style={{ height: '140px' }}
                   onDragOver={(e) => {
@@ -622,7 +622,7 @@ const CoverLetter = () => {
                     onChange={handleFileSelect}
                     accept=".jpg,.jpeg,.png,.gif,.pdf,.doc,.docx"
                   />
-                  <svg className="w-8 h-8 mb-2 text-[#2979FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-8 h-8 mb-2 text-[#005CFF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
                   </svg>
                   <p style={{ fontFamily: 'var(--font-poppins), Poppins, sans-serif', fontSize: '13px', color: '#54595F' }}>
@@ -771,7 +771,7 @@ const CoverLetter = () => {
                 <label className="flex items-center gap-2 cursor-pointer">
                   <input
                     type="checkbox"
-                    className="w-4 h-4 accent-[#2979FF]"
+                    className="w-4 h-4 accent-[#005CFF]"
                     checked={urgentService === 'urgent'}
                     onChange={() => setUrgentService(urgentService === 'urgent' ? '' : 'urgent')}
                   />
@@ -782,7 +782,7 @@ const CoverLetter = () => {
                 <label className="flex items-center gap-2 cursor-pointer">
                   <input
                     type="checkbox"
-                    className="w-4 h-4 accent-[#2979FF]"
+                    className="w-4 h-4 accent-[#005CFF]"
                     checked={urgentService === 'superfast'}
                     onChange={() => setUrgentService(urgentService === 'superfast' ? '' : 'superfast')}
                   />
@@ -891,7 +891,7 @@ const CoverLetter = () => {
                     fontWeight: 600,
                     lineHeight: '22px',
                     height: '52px',
-                    background: '#2979FF',
+                    background: '#005CFF',
                   }}
                 >
                   Proceed to Payment

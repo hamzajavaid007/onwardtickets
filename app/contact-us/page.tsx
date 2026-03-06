@@ -45,7 +45,7 @@ const ContactUs = () => {
   };
 
   const inputClass =
-    'w-full bg-[#EFECEC] border-none rounded-[3px] focus:outline-none focus:ring-2 focus:ring-[#2979FF] transition-all duration-300 focus:shadow-lg focus:shadow-[#2979FF]/20';
+    'w-full bg-[#EFECEC] border-none rounded-[3px] focus:outline-none focus:ring-2 focus:ring-[#005CFF] transition-all duration-300 focus:shadow-lg focus:shadow-[#005CFF]/20';
   const inputStyle = {
     fontFamily: font,
     fontSize: '16px',
@@ -68,7 +68,7 @@ const ContactUs = () => {
         {/* Heading */}
         <div className="mb-8 text-center reveal">
           <h1
-            className="text-[#2979FF] glow-text mb-2"
+            className="text-[#005CFF] glow-text mb-2"
             style={{
               fontFamily: font,
               fontSize: '42px',
@@ -90,7 +90,7 @@ const ContactUs = () => {
           </p>
           <div
             className="mx-auto mt-6 animate-gradient"
-            style={{ width: '100px', height: '4px', background: 'linear-gradient(90deg, #2979FF, #005BFE, #2979FF)' }}
+            style={{ width: '100px', height: '4px', background: 'linear-gradient(90deg, #005CFF, #005CFF, #005CFF)' }}
           />
         </div>
 
@@ -156,7 +156,7 @@ const ContactUs = () => {
                   onChange={handleChange}
                   required
                   rows={6}
-                  className={`${inputClass} resize-vertical transition-all duration-300 focus:shadow-lg focus:shadow-[#2979FF]/20`}
+                  className={`${inputClass} resize-vertical transition-all duration-300 focus:shadow-lg focus:shadow-[#005CFF]/20`}
                   style={{ ...inputStyle, height: 'auto', padding: '12px 14px' }}
                   placeholder="How can we help you?"
                 />
@@ -182,7 +182,7 @@ const ContactUs = () => {
                   fontFamily: font,
                   fontSize: '15px',
                   fontWeight: 600,
-                  background: '#2979FF',
+                  background: '#005CFF',
                   height: '50px',
                   borderRadius: '8px',
                   border: 'none',
@@ -203,7 +203,7 @@ const ContactUs = () => {
               }}
             >
               <h2
-                className="text-[#2979FF] mb-6"
+                className="text-[#005CFF] mb-6"
                 style={{
                   fontFamily: font,
                   fontSize: '24px',
@@ -217,7 +217,7 @@ const ContactUs = () => {
               {/* Phone */}
               <div className="flex items-start gap-4 mb-5">
                 <div
-                  className="w-12 h-12 rounded-full bg-[#2979FF] text-white flex items-center justify-center flex-shrink-0 transition-all duration-300 hover:scale-110"
+                  className="w-12 h-12 rounded-full bg-[#005CFF] text-white flex items-center justify-center flex-shrink-0 transition-all duration-300 hover:scale-110"
                 >
                   <svg
                     width="20"
@@ -243,7 +243,7 @@ const ContactUs = () => {
                   </span>
                   <a
                     href="tel:+447763055200"
-                    className="text-[#333333] hover:text-[#2979FF] transition-colors duration-300 link-underline text-lg font-medium"
+                    className="text-[#333333] hover:text-[#005CFF] transition-colors duration-300 link-underline text-lg font-medium"
                     style={{ fontFamily: font }}
                   >
                     +44 7763 055200
@@ -254,7 +254,7 @@ const ContactUs = () => {
               {/* Email */}
               <div className="flex items-start gap-4 mb-5">
                 <div
-                  className="w-12 h-12 rounded-full bg-[#2979FF] text-white flex items-center justify-center flex-shrink-0 transition-all duration-300 hover:scale-110"
+                  className="w-12 h-12 rounded-full bg-[#005CFF] text-white flex items-center justify-center flex-shrink-0 transition-all duration-300 hover:scale-110"
                 >
                   <svg
                     width="20"
@@ -280,7 +280,7 @@ const ContactUs = () => {
                   </span>
                   <a
                     href="mailto:contact@onwardtickets.com"
-                    className="text-[#333333] hover:text-[#2979FF] transition-colors duration-300 link-underline text-lg font-medium block break-all"
+                    className="text-[#333333] hover:text-[#005CFF] transition-colors duration-300 link-underline text-lg font-medium block break-all"
                     style={{ fontFamily: font }}
                   >
                     contact@onwardtickets.com
@@ -291,7 +291,7 @@ const ContactUs = () => {
               {/* Address */}
               <div className="flex items-start gap-4 mb-6">
                 <div
-                  className="w-12 h-12 rounded-full bg-[#2979FF] text-white flex items-center justify-center flex-shrink-0 transition-all duration-300 hover:scale-110"
+                  className="w-12 h-12 rounded-full bg-[#005CFF] text-white flex items-center justify-center flex-shrink-0 transition-all duration-300 hover:scale-110"
                 >
                   <svg
                     width="20"
@@ -344,7 +344,7 @@ const ContactUs = () => {
                     href="https://www.facebook.com/onwardtickets"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-[#2979FF] text-white flex items-center justify-center hover:bg-[#1e3a5f] hover:scale-110 transition-all duration-300"
+                    className="w-10 h-10 rounded-full bg-[#005CFF] text-white flex items-center justify-center hover:bg-[#1e3a5f] hover:scale-110 transition-all duration-300"
                     aria-label="Facebook"
                   >
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -356,7 +356,7 @@ const ContactUs = () => {
                     href="https://twitter.com/onwardtickets"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-[#2979FF] text-white flex items-center justify-center hover:bg-[#1e3a5f] hover:scale-110 transition-all duration-300"
+                    className="w-10 h-10 rounded-full bg-[#005CFF] text-white flex items-center justify-center hover:bg-[#1e3a5f] hover:scale-110 transition-all duration-300"
                     aria-label="Twitter"
                   >
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">

@@ -118,7 +118,7 @@ export default function AdminAffiliatesPage() {
       {/* Stats Cards */}
       <div className="btn-hover-lift grid grid-cols-2 lg:grid-cols-4 gap-4">
         {[
-          { label: 'Total Affiliates', value: counts.all, color: '#2979FF', icon: '👥' },
+          { label: 'Total Affiliates', value: counts.all, color: '#005CFF', icon: '👥' },
           { label: 'Pending Review', value: counts.pending, color: '#D97706', icon: '⏳' },
           { label: 'Approved', value: counts.approved, color: '#059669', icon: '✅' },
           { label: 'Rejected', value: counts.rejected, color: '#DC2626', icon: '❌' },
@@ -142,7 +142,7 @@ export default function AdminAffiliatesPage() {
               onClick={() => setFilter(f)}
               className={`px-4 py-2 rounded-xl text-[13px] font-medium transition-all capitalize ${
                 filter === f
-                  ? 'bg-[#2979FF] text-white shadow-sm'
+                  ? 'bg-[#005CFF] text-white shadow-sm'
                   : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50'
               }`}
             >
@@ -159,7 +159,7 @@ export default function AdminAffiliatesPage() {
             placeholder="Search affiliates..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="btn-hover-lift w-full pl-9 pr-4 py-2.5 bg-white rounded-xl text-[13px] border border-gray-200 focus:border-[#2979FF] focus:outline-none transition-colors"
+            className="btn-hover-lift w-full pl-9 pr-4 py-2.5 bg-white rounded-xl text-[13px] border border-gray-200 focus:border-[#005CFF] focus:outline-none transition-colors"
           />
         </div>
       </div>
@@ -168,7 +168,7 @@ export default function AdminAffiliatesPage() {
       <div className="btn-hover-lift bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
         {loading ? (
           <div className="btn-hover-lift flex items-center justify-center py-20">
-            <svg className="btn-hover-lift animate-spin w-6 h-6 text-[#2979FF]" fill="none" viewBox="0 0 24 24">
+            <svg className="btn-hover-lift animate-spin w-6 h-6 text-[#005CFF]" fill="none" viewBox="0 0 24 24">
               <circle className="btn-hover-lift opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
               <path className="btn-hover-lift opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
             </svg>
@@ -199,12 +199,12 @@ export default function AdminAffiliatesPage() {
                   return (
                     <tr key={affiliate._id} className="btn-hover-lift hover:bg-[#F8FAFC] transition-colors">
                       <td className="btn-hover-lift px-3 sm:px-6 py-4">
-                        <span className="btn-hover-lift text-[13px] font-mono font-bold text-[#2979FF]">#{affiliate.affiliateId}</span>
+                        <span className="btn-hover-lift text-[13px] font-mono font-bold text-[#005CFF]">#{affiliate.affiliateId}</span>
                       </td>
                       <td className="btn-hover-lift px-3 sm:px-6 py-4">
                         <button onClick={() => setViewAffiliate(affiliate)} className="btn-hover-lift text-left">
                           <div className="btn-hover-lift flex items-center gap-3">
-                            <div className="btn-hover-lift w-9 h-9 rounded-full bg-gradient-to-br from-[#2979FF] to-[#5ec5dc] flex items-center justify-center text-white text-[12px] font-bold flex-shrink-0">
+                            <div className="btn-hover-lift w-9 h-9 rounded-full bg-gradient-to-br from-[#005CFF] to-[#5ec5dc] flex items-center justify-center text-white text-[12px] font-bold flex-shrink-0">
                               {affiliate.name.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2)}
                             </div>
                             <div>
@@ -237,7 +237,7 @@ export default function AdminAffiliatesPage() {
                         <div className="btn-hover-lift flex items-center gap-1">
                           <button
                             onClick={() => setViewAffiliate(affiliate)}
-                            className="btn-hover-lift p-1.5 rounded-lg hover:bg-gray-100 transition-colors text-gray-400 hover:text-[#2979FF]"
+                            className="btn-hover-lift p-1.5 rounded-lg hover:bg-gray-100 transition-colors text-gray-400 hover:text-[#005CFF]"
                             title="View Details"
                           >
                             <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -294,7 +294,7 @@ export default function AdminAffiliatesPage() {
             {/* Header */}
             <div className="btn-hover-lift flex items-center justify-between px-4 sm:px-6 py-4 sm:py-5 border-b border-gray-100 sticky top-0 bg-white z-10">
               <div className="btn-hover-lift flex items-center gap-3">
-                <div className="btn-hover-lift w-11 h-11 rounded-full bg-gradient-to-br from-[#2979FF] to-[#5ec5dc] flex items-center justify-center text-white text-[14px] font-bold">
+                <div className="btn-hover-lift w-11 h-11 rounded-full bg-gradient-to-br from-[#005CFF] to-[#5ec5dc] flex items-center justify-center text-white text-[14px] font-bold">
                   {viewAffiliate.name.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2)}
                 </div>
                 <div>
@@ -319,7 +319,7 @@ export default function AdminAffiliatesPage() {
               <div className="btn-hover-lift grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <p className="btn-hover-lift text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-1">Email</p>
-                  <a href={`mailto:${viewAffiliate.email}`} className="btn-hover-lift text-[13px] text-[#2979FF] font-medium">{viewAffiliate.email}</a>
+                  <a href={`mailto:${viewAffiliate.email}`} className="btn-hover-lift text-[13px] text-[#005CFF] font-medium">{viewAffiliate.email}</a>
                 </div>
                 <div>
                   <p className="btn-hover-lift text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-1">Phone</p>
@@ -335,7 +335,7 @@ export default function AdminAffiliatesPage() {
                 </div>
                 <div>
                   <p className="btn-hover-lift text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-1">Affiliate ID</p>
-                  <p className="btn-hover-lift text-[13px] text-[#2979FF] font-mono font-bold">#{viewAffiliate.affiliateId}</p>
+                  <p className="btn-hover-lift text-[13px] text-[#005CFF] font-mono font-bold">#{viewAffiliate.affiliateId}</p>
                 </div>
                 <div>
                   <p className="btn-hover-lift text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-1">Username</p>
@@ -356,7 +356,7 @@ export default function AdminAffiliatesPage() {
               {viewAffiliate.website && (
                 <div>
                   <p className="btn-hover-lift text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-1">Website</p>
-                  <a href={viewAffiliate.website} target="_blank" rel="noopener noreferrer" className="btn-hover-lift text-[13px] text-[#2979FF] font-medium underline">{viewAffiliate.website}</a>
+                  <a href={viewAffiliate.website} target="_blank" rel="noopener noreferrer" className="btn-hover-lift text-[13px] text-[#005CFF] font-medium underline">{viewAffiliate.website}</a>
                 </div>
               )}
 
@@ -379,12 +379,12 @@ export default function AdminAffiliatesPage() {
                 <div className="btn-hover-lift bg-[#F0F4F8] rounded-xl p-4">
                   <p className="btn-hover-lift text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-2">Affiliate Referral Link</p>
                   <div className="btn-hover-lift flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
-                    <code className="btn-hover-lift flex-1 text-[11px] sm:text-[12px] bg-white px-3 py-2 rounded-lg font-mono text-[#2979FF] border border-gray-200 truncate">
+                    <code className="btn-hover-lift flex-1 text-[11px] sm:text-[12px] bg-white px-3 py-2 rounded-lg font-mono text-[#005CFF] border border-gray-200 truncate">
                       https://onwardtickets.com/?ref={viewAffiliate.affiliateId}
                     </code>
                     <button
                       onClick={() => navigator.clipboard.writeText(`https://onwardtickets.com/?ref=${viewAffiliate.affiliateId}`)}
-                      className="btn-hover-lift px-3 py-2 bg-[#2979FF] text-white text-[12px] font-medium rounded-lg hover:bg-[#1565C0] transition-colors flex-shrink-0"
+                      className="btn-hover-lift px-3 py-2 bg-[#005CFF] text-white text-[12px] font-medium rounded-lg hover:bg-[#0047CC] transition-colors flex-shrink-0"
                     >
                       Copy
                     </button>

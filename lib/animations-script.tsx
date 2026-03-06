@@ -99,7 +99,7 @@ export default function PageAnimations() {
     const inputs = document.querySelectorAll('input, textarea, select');
     inputs.forEach(input => {
       if (!input.classList.contains('transition-all')) {
-        input.classList.add('transition-all', 'duration-300', 'focus:shadow-lg', 'focus:ring-2', 'focus:ring-[#2979FF]/20');
+        input.classList.add('transition-all', 'duration-300', 'focus:shadow-lg', 'focus:ring-2', 'focus:ring-[#005CFF]/20');
       }
     });
   }, []);

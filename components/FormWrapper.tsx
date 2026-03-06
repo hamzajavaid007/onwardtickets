@@ -18,7 +18,7 @@ export default function FormWrapper({ children, title, description }: FormWrappe
         {title && (
           <div className="text-center mb-10 reveal">
             <h1
-              className="text-[#2979FF] glow-text"
+              className="text-[#005CFF] glow-text"
               style={{ fontFamily: font, fontSize: '42px', fontWeight: 700, lineHeight: '1.2' }}
             >
               {title}
@@ -33,7 +33,7 @@ export default function FormWrapper({ children, title, description }: FormWrappe
             )}
             <div
               className="mx-auto mt-6 animate-gradient"
-              style={{ width: '100px', height: '4px', background: 'linear-gradient(90deg, #2979FF, #005BFE, #2979FF)' }}
+              style={{ width: '100px', height: '4px', background: 'linear-gradient(90deg, #005CFF, #005CFF, #005CFF)' }}
             />
           </div>
         )}

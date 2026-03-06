@@ -22,7 +22,7 @@ export default async function Home() {
           className="hidden lg:block absolute rounded-full pointer-events-none"
           style={{
             width: '1126px', height: '1126px',
-            border: '72px solid #005BFE',
+            border: '72px solid #005CFF',
             opacity: 0.06,
             right: '-10%', top: '-25%',
             transform: 'translate(0, 0)',
@@ -32,7 +32,7 @@ export default async function Home() {
           className="hidden lg:block absolute rounded-full pointer-events-none"
           style={{
             width: '815px', height: '815px',
-            border: '72px solid #005BFE',
+            border: '72px solid #005CFF',
             opacity: 0.08,
             right: '2%', top: '-5%',
             transform: 'translate(0, 0)',
@@ -160,7 +160,7 @@ export default async function Home() {
               <div className="flex gap-[20px]">
                 <a
                   href={heroCtaLink}
-                  className="inline-flex items-center justify-center bg-[#005CFF] text-white font-semibold text-[16px] rounded-[16px] hover:bg-[#0048d4] transition-colors"
+                  className="inline-flex items-center justify-center bg-[#005CFF] text-white font-semibold text-[16px] rounded-[16px] hover:bg-[#0047CC] transition-colors"
                   style={{ fontFamily: 'var(--font-plus-jakarta), Plus Jakarta Sans, sans-serif', padding: '17px 30px', lineHeight: '24px' }}
                 >
                   {heroCtaText}
@@ -194,7 +194,7 @@ export default async function Home() {
                 {heroSubheading}
               </p>
               <div className="flex flex-wrap gap-4">
-                <a href={heroCtaLink} className="inline-flex items-center justify-center bg-[#005CFF] text-white font-semibold text-[16px] rounded-[16px] hover:bg-[#0048d4] transition-colors" style={{ fontFamily: 'var(--font-plus-jakarta), Plus Jakarta Sans, sans-serif', padding: '17px 30px' }}>
+                <a href={heroCtaLink} className="inline-flex items-center justify-center bg-[#005CFF] text-white font-semibold text-[16px] rounded-[16px] hover:bg-[#0047CC] transition-colors" style={{ fontFamily: 'var(--font-plus-jakarta), Plus Jakarta Sans, sans-serif', padding: '17px 30px' }}>
                   {heroCtaText}
                 </a>
                 <a href={heroSecondaryCtaLink} className="inline-flex items-center justify-center border border-[#434343] text-[#2D2B2B] font-semibold text-[16px] rounded-[16px] hover:bg-gray-100 transition-colors" style={{ fontFamily: 'var(--font-plus-jakarta), Plus Jakarta Sans, sans-serif', padding: '17px 30px' }}>
@@ -204,8 +204,8 @@ export default async function Home() {
             </div>
             {/* Illustration */}
             <div className="relative h-[400px] md:h-[500px] mt-8 overflow-hidden">
-              <div className="absolute rounded-full pointer-events-none" style={{ width: '600px', height: '600px', border: '50px solid #005BFE', opacity: 0.06, left: '50%', top: '50%', transform: 'translate(-50%, -50%)' }} />
-              <div className="absolute rounded-full pointer-events-none" style={{ width: '420px', height: '420px', border: '50px solid #005BFE', opacity: 0.08, left: '50%', top: '50%', transform: 'translate(-50%, -50%)' }} />
+              <div className="absolute rounded-full pointer-events-none" style={{ width: '600px', height: '600px', border: '50px solid #005CFF', opacity: 0.06, left: '50%', top: '50%', transform: 'translate(-50%, -50%)' }} />
+              <div className="absolute rounded-full pointer-events-none" style={{ width: '420px', height: '420px', border: '50px solid #005CFF', opacity: 0.08, left: '50%', top: '50%', transform: 'translate(-50%, -50%)' }} />
               <div className="absolute rounded-full bg-gradient-to-b from-[#005CFF] to-[#003799] overflow-hidden" style={{ left: '10%', top: '10%', width: '280px', height: '280px' }}>
                 <img src="/world-map-dots.svg" alt="" className="absolute pointer-events-none" style={{ left: '-2%', top: '24%', width: '102%', height: '50%', objectFit: 'contain' }} />
               </div>
@@ -361,7 +361,7 @@ export default async function Home() {
             {/* Card 1 - Blue Gradient */}
             <div
               className="rounded-[36px] pt-[20px] pb-[20px] px-[30px] flex flex-col gap-[12px] text-white lg:min-h-[331px]"
-              style={{ background: 'linear-gradient(180deg, #005bfe 0%, #003798 100%)' }}
+              style={{ background: 'linear-gradient(180deg, #005CFF 0%, #003798 100%)' }}
             >
               {/* Icon - Airplane */}
               <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
@@ -1156,7 +1156,7 @@ export default async function Home() {
             <div className="rounded-[20px] border border-[#E3E3E3] bg-white flex flex-col overflow-hidden">
               <div className="pt-[28px] px-[24px] pb-[20px]">
                 {/* Icon */}
-                <div className="w-[56px] h-[56px] rounded-full bg-[#2979FF] flex items-center justify-center mb-[16px]">
+                <div className="w-[56px] h-[56px] rounded-full bg-[#005CFF] flex items-center justify-center mb-[16px]">
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M21 16V14L13 9V3.5C13 2.67 12.33 2 11.5 2C10.67 2 10 2.67 10 3.5V9L2 14V16L10 13.5V19L8 20.5V22L11.5 21L15 22V20.5L13 19V13.5L21 16Z" fill="white"/>
                   </svg>
@@ -1185,7 +1185,7 @@ export default async function Home() {
                   ].map((feature, i) => (
                     <div key={i} className="flex items-start gap-[8px]">
                       <svg className="w-[18px] h-[18px] flex-shrink-0 mt-[2px]" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="9" cy="9" r="9" fill="#2979FF"/>
+                        <circle cx="9" cy="9" r="9" fill="#005CFF"/>
                         <path d="M5.5 9L8 11.5L12.5 7" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
                       <span
@@ -1207,7 +1207,7 @@ export default async function Home() {
                 {/* Button */}
                 <a
                   href="/flight-itinerary"
-                  className="inline-block text-center bg-[#005CFF] text-white font-semibold text-[16px] rounded-[16px] hover:bg-[#0048d4] transition-colors"
+                  className="inline-block text-center bg-[#005CFF] text-white font-semibold text-[16px] rounded-[16px] hover:bg-[#0047CC] transition-colors"
                   style={{ fontFamily: 'var(--font-plus-jakarta), Plus Jakarta Sans, sans-serif', padding: '17px 30px', lineHeight: '24px' }}
                 >
                   Order Now
@@ -1219,7 +1219,7 @@ export default async function Home() {
             <div className="rounded-[20px] border border-[#E3E3E3] bg-white flex flex-col overflow-hidden">
               <div className="pt-[28px] px-[24px] pb-[20px]">
                 {/* Icon */}
-                <div className="w-[56px] h-[56px] rounded-full bg-[#2979FF] flex items-center justify-center mb-[16px]">
+                <div className="w-[56px] h-[56px] rounded-full bg-[#005CFF] flex items-center justify-center mb-[16px]">
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M4 21V7C4 5.9 4.9 5 6 5H18C19.1 5 20 5.9 20 7V21H4Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M4 21H20" stroke="white" strokeWidth="2" strokeLinecap="round"/>
@@ -1254,7 +1254,7 @@ export default async function Home() {
                   ].map((feature, i) => (
                     <div key={i} className="flex items-start gap-[8px]">
                       <svg className="w-[18px] h-[18px] flex-shrink-0 mt-[2px]" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="9" cy="9" r="9" fill="#2979FF"/>
+                        <circle cx="9" cy="9" r="9" fill="#005CFF"/>
                         <path d="M5.5 9L8 11.5L12.5 7" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
                       <span
@@ -1276,7 +1276,7 @@ export default async function Home() {
                 {/* Button */}
                 <a
                   href="/hotel-reservation"
-                  className="inline-block text-center bg-[#005CFF] text-white font-semibold text-[16px] rounded-[16px] hover:bg-[#0048d4] transition-colors"
+                  className="inline-block text-center bg-[#005CFF] text-white font-semibold text-[16px] rounded-[16px] hover:bg-[#0047CC] transition-colors"
                   style={{ fontFamily: 'var(--font-plus-jakarta), Plus Jakarta Sans, sans-serif', padding: '17px 30px', lineHeight: '24px' }}
                 >
                   Order Now
@@ -1288,7 +1288,7 @@ export default async function Home() {
             <div className="rounded-[20px] border border-[#E3E3E3] bg-white flex flex-col overflow-hidden">
               <div className="pt-[28px] px-[24px] pb-[20px]">
                 {/* Icon */}
-                <div className="w-[56px] h-[56px] rounded-full bg-[#2979FF] flex items-center justify-center mb-[16px]">
+                <div className="w-[56px] h-[56px] rounded-full bg-[#005CFF] flex items-center justify-center mb-[16px]">
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M9 5H7C5.9 5 5 5.9 5 7V19C5 20.1 5.9 21 7 21H17C18.1 21 19 20.1 19 19V7C19 5.9 18.1 5 17 5H15" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M9 5C9 3.9 9.9 3 11 3H13C14.1 3 15 3.9 15 5C15 6.1 14.1 7 13 7H11C9.9 7 9 6.1 9 5Z" stroke="white" strokeWidth="2"/>
@@ -1320,7 +1320,7 @@ export default async function Home() {
                   ].map((feature, i) => (
                     <div key={i} className="flex items-start gap-[8px]">
                       <svg className="w-[18px] h-[18px] flex-shrink-0 mt-[2px]" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="9" cy="9" r="9" fill="#2979FF"/>
+                        <circle cx="9" cy="9" r="9" fill="#005CFF"/>
                         <path d="M5.5 9L8 11.5L12.5 7" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
                       <span
@@ -1342,7 +1342,7 @@ export default async function Home() {
                 {/* Button */}
                 <a
                   href="/travel-plan"
-                  className="inline-block text-center bg-[#005CFF] text-white font-semibold text-[16px] rounded-[16px] hover:bg-[#0048d4] transition-colors"
+                  className="inline-block text-center bg-[#005CFF] text-white font-semibold text-[16px] rounded-[16px] hover:bg-[#0047CC] transition-colors"
                   style={{ fontFamily: 'var(--font-plus-jakarta), Plus Jakarta Sans, sans-serif', padding: '17px 30px', lineHeight: '24px' }}
                 >
                   Order Now
@@ -1354,7 +1354,7 @@ export default async function Home() {
             <div className="rounded-[20px] border border-[#E3E3E3] bg-white flex flex-col overflow-hidden">
               <div className="pt-[28px] px-[24px] pb-[20px]">
                 {/* Icon */}
-                <div className="w-[56px] h-[56px] rounded-full bg-[#2979FF] flex items-center justify-center mb-[16px]">
+                <div className="w-[56px] h-[56px] rounded-full bg-[#005CFF] flex items-center justify-center mb-[16px]">
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M22 6L12 13L2 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -1384,7 +1384,7 @@ export default async function Home() {
                   ].map((feature, i) => (
                     <div key={i} className="flex items-start gap-[8px]">
                       <svg className="w-[18px] h-[18px] flex-shrink-0 mt-[2px]" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="9" cy="9" r="9" fill="#2979FF"/>
+                        <circle cx="9" cy="9" r="9" fill="#005CFF"/>
                         <path d="M5.5 9L8 11.5L12.5 7" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
                       <span
@@ -1406,7 +1406,7 @@ export default async function Home() {
                 {/* Button */}
                 <a
                   href="/cover-letter"
-                  className="inline-block text-center bg-[#005CFF] text-white font-semibold text-[16px] rounded-[16px] hover:bg-[#0048d4] transition-colors"
+                  className="inline-block text-center bg-[#005CFF] text-white font-semibold text-[16px] rounded-[16px] hover:bg-[#0047CC] transition-colors"
                   style={{ fontFamily: 'var(--font-plus-jakarta), Plus Jakarta Sans, sans-serif', padding: '17px 30px', lineHeight: '24px' }}
                 >
                   Order Now

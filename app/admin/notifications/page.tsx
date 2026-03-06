@@ -61,13 +61,13 @@ export default function NotificationsPage() {
         <div>
           <h2 className="btn-hover-lift text-[22px] font-bold text-[#0B1437]">Notifications</h2>
           <p className="btn-hover-lift text-[13px] text-gray-500 mt-1">
-            You have <span className="btn-hover-lift font-semibold text-[#2979FF]">{unreadCount}</span> unread notification{unreadCount !== 1 ? 's' : ''}
+            You have <span className="btn-hover-lift font-semibold text-[#005CFF]">{unreadCount}</span> unread notification{unreadCount !== 1 ? 's' : ''}
           </p>
         </div>
         {unreadCount > 0 && (
           <button
             onClick={markAllRead}
-            className="btn-hover-lift px-4 py-2 text-[13px] font-medium text-[#2979FF] bg-blue-50 hover:bg-blue-100 rounded-xl transition-colors"
+            className="btn-hover-lift px-4 py-2 text-[13px] font-medium text-[#005CFF] bg-blue-50 hover:bg-blue-100 rounded-xl transition-colors"
           >
             Mark all as read
           </button>
@@ -84,7 +84,7 @@ export default function NotificationsPage() {
               onClick={() => setActiveTab(tab.key)}
               className={`px-4 py-2 rounded-xl text-[13px] font-medium transition-all ${
                 activeTab === tab.key
-                  ? 'bg-[#2979FF] text-white shadow-lg shadow-blue-500/20'
+                  ? 'bg-[#005CFF] text-white shadow-lg shadow-blue-500/20'
                   : 'bg-white text-gray-600 hover:bg-gray-50 border border-gray-200'
               }`}
             >
@@ -132,7 +132,7 @@ export default function NotificationsPage() {
                         {notif.title}
                       </p>
                       {!notif.read && (
-                        <span className="btn-hover-lift w-2 h-2 rounded-full bg-[#2979FF] flex-shrink-0" />
+                        <span className="btn-hover-lift w-2 h-2 rounded-full bg-[#005CFF] flex-shrink-0" />
                       )}
                     </div>
                     <p className="btn-hover-lift text-[13px] text-gray-500 mt-0.5 leading-relaxed">{notif.desc}</p>
@@ -145,7 +145,7 @@ export default function NotificationsPage() {
                       <button
                         onClick={() => markAsRead(notif.id)}
                         title="Mark as read"
-                        className="btn-hover-lift p-1.5 rounded-lg hover:bg-blue-100 text-gray-400 hover:text-[#2979FF] transition-colors"
+                        className="btn-hover-lift p-1.5 rounded-lg hover:bg-blue-100 text-gray-400 hover:text-[#005CFF] transition-colors"
                       >
                         <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />

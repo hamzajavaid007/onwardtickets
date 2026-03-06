@@ -34,7 +34,7 @@ const Footer = () => {
             {/* Middle - Quick Links */}
             <div className="flex flex-col gap-5 reveal">
               <h3
-                className="text-[20px] font-bold text-[#2979FF]"
+                className="text-[20px] font-bold text-[#005CFF]"
                 style={{ fontFamily: 'var(--font-poppins), Poppins, sans-serif' }}
               >
                 Quick Links
@@ -49,7 +49,7 @@ const Footer = () => {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="flex items-center gap-2 text-[15px] text-[#333333] hover:text-[#2979FF] transition-all duration-300 hover:translate-x-1 link-underline"
+                    className="flex items-center gap-2 text-[15px] text-[#333333] hover:text-[#005CFF] transition-all duration-300 hover:translate-x-1 link-underline"
                     style={{ fontFamily: 'var(--font-poppins), Poppins, sans-serif', animationDelay: `${index * 0.05}s` }}
                   >
                     <svg
@@ -74,7 +74,7 @@ const Footer = () => {
             {/* Right - Contact Us */}
             <div className="flex flex-col gap-5 reveal-right">
               <h3
-                className="text-[20px] font-bold text-[#2979FF]"
+                className="text-[20px] font-bold text-[#005CFF]"
                 style={{ fontFamily: 'var(--font-poppins), Poppins, sans-serif' }}
               >
                 Contact Us
@@ -83,7 +83,7 @@ const Footer = () => {
                 {/* Phone */}
                 <a
                   href="tel:+4477561525115"
-                  className="flex items-center gap-2 text-[15px] text-[#333333] hover:text-[#2979FF] transition-all duration-300 hover:translate-x-1 hover:scale-105"
+                  className="flex items-center gap-2 text-[15px] text-[#333333] hover:text-[#005CFF] transition-all duration-300 hover:translate-x-1 hover:scale-105"
                   style={{ fontFamily: 'var(--font-poppins), Poppins, sans-serif' }}
                 >
                   <svg
@@ -100,7 +100,7 @@ const Footer = () => {
                 {/* Email */}
                 <a
                   href="mailto:contact@onwardtickets.com"
-                  className="flex items-center gap-2 text-[15px] text-[#333333] hover:text-[#2979FF] transition-all duration-300 hover:translate-x-1 hover:scale-105"
+                  className="flex items-center gap-2 text-[15px] text-[#333333] hover:text-[#005CFF] transition-all duration-300 hover:translate-x-1 hover:scale-105"
                   style={{ fontFamily: 'var(--font-poppins), Poppins, sans-serif' }}
                 >
                   <svg
@@ -124,7 +124,7 @@ const Footer = () => {
               {/* Follow Us */}
               <div className="flex flex-col gap-3 mt-2">
                 <h4
-                  className="text-[16px] font-bold text-[#2979FF]"
+                  className="text-[16px] font-bold text-[#005CFF]"
                   style={{ fontFamily: 'var(--font-poppins), Poppins, sans-serif' }}
                 >
                   Follow Us
@@ -135,7 +135,7 @@ const Footer = () => {
                     href="https://www.facebook.com/onwardtickets"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-[36px] h-[36px] rounded-full bg-[#1D1D1D] hover:bg-[#2979FF] flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-[#2979FF]/30"
+                    className="w-[36px] h-[36px] rounded-full bg-[#1D1D1D] hover:bg-[#005CFF] flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-[#005CFF]/30"
                     aria-label="Facebook"
                   >
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
@@ -147,7 +147,7 @@ const Footer = () => {
                     href="https://twitter.com/onwardtickets"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-[36px] h-[36px] rounded-full bg-[#1D1D1D] hover:bg-[#2979FF] flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-[#2979FF]/30"
+                    className="w-[36px] h-[36px] rounded-full bg-[#1D1D1D] hover:bg-[#005CFF] flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-[#005CFF]/30"
                     aria-label="Twitter"
                   >
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
@@ -189,7 +189,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="bg-[#2979FF] hover:bg-[#1565C0] transition-colors duration-300">
+      <div className="bg-[#005CFF] hover:bg-[#0047CC] transition-colors duration-300">
         <div className="mx-auto max-w-[1240px] px-6 lg:px-0 py-4 flex items-center justify-center">
           <p
             className="text-[15px] text-white text-center hover:text-[#5ec5dc] transition-colors duration-300"

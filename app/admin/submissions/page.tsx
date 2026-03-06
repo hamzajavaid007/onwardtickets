@@ -215,14 +215,14 @@ function SubmissionsPage() {
             placeholder="Search by name, email, phone or order ID..."
             value={searchQuery}
             onChange={(e) => { setSearchQuery(e.target.value); setPage(1); }}
-            className="btn-hover-lift w-full pl-9 pr-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[13px] border border-transparent focus:border-[#2979FF] focus:outline-none transition-colors"
+            className="btn-hover-lift w-full pl-9 pr-4 py-2.5 bg-[#F8FAFC] rounded-xl text-[13px] border border-transparent focus:border-[#005CFF] focus:outline-none transition-colors"
           />
         </div>
         <div className="btn-hover-lift relative">
           <select
             value={serviceFilter}
             onChange={(e) => { setServiceFilter(e.target.value); setPage(1); }}
-            className="btn-hover-lift appearance-none bg-[#F8FAFC] rounded-xl text-[13px] pl-4 pr-10 py-2.5 border border-transparent focus:border-[#2979FF] focus:outline-none cursor-pointer font-medium text-gray-700"
+            className="btn-hover-lift appearance-none bg-[#F8FAFC] rounded-xl text-[13px] pl-4 pr-10 py-2.5 border border-transparent focus:border-[#005CFF] focus:outline-none cursor-pointer font-medium text-gray-700"
           >
             {serviceOptions.map((opt) => (
               <option key={opt.key} value={opt.key}>{opt.label}</option>
@@ -234,7 +234,7 @@ function SubmissionsPage() {
         </div>
         <button
           onClick={exportCSV}
-          className="btn-hover-lift flex items-center gap-2 bg-[#2979FF] hover:bg-[#1565C0] text-white px-4 py-2.5 rounded-xl text-[13px] font-medium transition-colors"
+          className="btn-hover-lift flex items-center gap-2 bg-[#005CFF] hover:bg-[#0047CC] text-white px-4 py-2.5 rounded-xl text-[13px] font-medium transition-colors"
         >
           <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -400,12 +400,12 @@ function SubmissionsPage() {
                       onChange={(e) => setCommentText(e.target.value)}
                       onKeyDown={(e) => { if (e.key === 'Enter') addComment(sub._id); }}
                       onClick={(e) => e.stopPropagation()}
-                      className="btn-hover-lift flex-1 bg-white border border-gray-200 rounded-lg px-3.5 py-2 text-[13px] focus:border-[#2979FF] focus:outline-none transition-colors"
+                      className="btn-hover-lift flex-1 bg-white border border-gray-200 rounded-lg px-3.5 py-2 text-[13px] focus:border-[#005CFF] focus:outline-none transition-colors"
                     />
                     <button
                       onClick={(e) => { e.stopPropagation(); addComment(sub._id); }}
                       disabled={commentLoading || !commentText.trim()}
-                      className="btn-hover-lift flex items-center gap-1.5 bg-[#2979FF] hover:bg-[#1565C0] disabled:bg-gray-300 text-white px-4 py-2 rounded-lg text-[12px] font-medium transition-colors"
+                      className="btn-hover-lift flex items-center gap-1.5 bg-[#005CFF] hover:bg-[#0047CC] disabled:bg-gray-300 text-white px-4 py-2 rounded-lg text-[12px] font-medium transition-colors"
                     >
                       {commentLoading ? 'Adding...' : 'Add'}
                     </button>
@@ -442,17 +442,17 @@ function SubmissionsPage() {
               <button
                 disabled={page <= 1}
                 onClick={() => setPage(page - 1)}
-                className={`px-3 py-1.5 rounded-lg text-[13px] font-medium ${page <= 1 ? 'bg-gray-100 text-gray-400 cursor-not-allowed' : 'bg-[#2979FF] text-white hover:bg-[#1565C0]'}`}
+                className={`px-3 py-1.5 rounded-lg text-[13px] font-medium ${page <= 1 ? 'bg-gray-100 text-gray-400 cursor-not-allowed' : 'bg-[#005CFF] text-white hover:bg-[#0047CC]'}`}
               >
                 Previous
               </button>
-              <button className="btn-hover-lift px-3 py-1.5 rounded-lg text-[13px] font-medium bg-[#2979FF] text-white">
+              <button className="btn-hover-lift px-3 py-1.5 rounded-lg text-[13px] font-medium bg-[#005CFF] text-white">
                 {page}
               </button>
               <button
                 disabled={page >= totalPages}
                 onClick={() => setPage(page + 1)}
-                className={`px-3 py-1.5 rounded-lg text-[13px] font-medium ${page >= totalPages ? 'bg-gray-100 text-gray-400 cursor-not-allowed' : 'bg-[#2979FF] text-white hover:bg-[#1565C0]'}`}
+                className={`px-3 py-1.5 rounded-lg text-[13px] font-medium ${page >= totalPages ? 'bg-gray-100 text-gray-400 cursor-not-allowed' : 'bg-[#005CFF] text-white hover:bg-[#0047CC]'}`}
               >
                 Next
               </button>

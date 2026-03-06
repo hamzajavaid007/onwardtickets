@@ -28,7 +28,7 @@ interface TravelerInfo {
 const SectionHeading = ({ children }: { children: React.ReactNode }) => (
   <div className="mb-6 text-center">
     <h2
-      className="text-[#2979FF] mb-2"
+      className="text-[#005CFF] mb-2"
       style={{
         fontFamily: 'var(--font-poppins), Poppins, sans-serif',
         fontSize: '22px',
@@ -277,7 +277,7 @@ const FlightItinerary = () => {
   };
 
   const inputClass =
-    'w-full bg-[#EFECEC] border-none rounded-[3px] focus:outline-none focus:ring-2 focus:ring-[#2979FF]';
+    'w-full bg-[#EFECEC] border-none rounded-[3px] focus:outline-none focus:ring-2 focus:ring-[#005CFF]';
   const inputStyle = {
     fontFamily: 'var(--font-poppins), Poppins, sans-serif',
     fontSize: '16px',
@@ -295,7 +295,7 @@ const FlightItinerary = () => {
   const sublabelStyle = {
     fontFamily: 'var(--font-poppins), Poppins, sans-serif',
     fontSize: '13px',
-    color: '#2979FF',
+    color: '#005CFF',
   };
 
   return (
@@ -449,7 +449,7 @@ const FlightItinerary = () => {
                       </label>
                       <div className="flex items-center gap-2">
                         <div
-                          className="flex items-center justify-center rounded-full bg-[#2979FF] text-white"
+                          className="flex items-center justify-center rounded-full bg-[#005CFF] text-white"
                           style={{ width: '28px', height: '28px', fontSize: '14px', fontWeight: 600 }}
                         >
                           {index + 1}
@@ -457,7 +457,7 @@ const FlightItinerary = () => {
                         <select
                           value={traveler.salutation}
                           onChange={(e) => updateTraveler(index, 'salutation', e.target.value)}
-                          className="bg-[#EFECEC] border-none rounded-[3px] focus:outline-none focus:ring-2 focus:ring-[#2979FF]"
+                          className="bg-[#EFECEC] border-none rounded-[3px] focus:outline-none focus:ring-2 focus:ring-[#005CFF]"
                           style={{ ...inputStyle, width: '70px' }}
                         >
                           <option value="Mr.">Mr.</option>
@@ -536,7 +536,7 @@ const FlightItinerary = () => {
                   </label>
                   <div
                     className={`border-2 border-dashed rounded-[3px] flex flex-col items-center justify-center cursor-pointer transition-colors ${
-                      dragOver ? 'border-[#2979FF] bg-blue-50' : 'border-gray-300'
+                      dragOver ? 'border-[#005CFF] bg-blue-50' : 'border-gray-300'
                     }`}
                     style={{ height: '140px' }}
                     onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
@@ -547,7 +547,7 @@ const FlightItinerary = () => {
                     <svg className="w-8 h-8 text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
                     </svg>
-                    <p className="text-sm text-gray-500">Drag & Drop or <span className="text-[#2979FF] font-medium">Choose Files</span></p>
+                    <p className="text-sm text-gray-500">Drag & Drop or <span className="text-[#005CFF] font-medium">Choose Files</span></p>
                     <p className="text-xs text-gray-400 mt-1">Max 4 files</p>
                     <input
                       ref={fileInputRef}
@@ -618,7 +618,7 @@ const FlightItinerary = () => {
                       value="oneway"
                       checked={flightRoute === 'oneway'}
                       onChange={(e) => setFlightRoute(e.target.value)}
-                      style={{ width: '18px', height: '18px', accentColor: '#2979FF' }}
+                      style={{ width: '18px', height: '18px', accentColor: '#005CFF' }}
                     />
                     <span style={{ ...labelStyle, fontWeight: 400 }}>One-Way</span>
                   </label>
@@ -629,7 +629,7 @@ const FlightItinerary = () => {
                       value="Return"
                       checked={flightRoute === 'Return'}
                       onChange={(e) => setFlightRoute(e.target.value)}
-                      style={{ width: '18px', height: '18px', accentColor: '#2979FF' }}
+                      style={{ width: '18px', height: '18px', accentColor: '#005CFF' }}
                     />
                     <span style={{ ...labelStyle, fontWeight: 400 }}>Return</span>
                   </label>
@@ -640,7 +640,7 @@ const FlightItinerary = () => {
                       value="multicity"
                       checked={flightRoute === 'multicity'}
                       onChange={(e) => setFlightRoute(e.target.value)}
-                      style={{ width: '18px', height: '18px', accentColor: '#2979FF' }}
+                      style={{ width: '18px', height: '18px', accentColor: '#005CFF' }}
                     />
                     <span style={{ ...labelStyle, fontWeight: 400 }}>Multi City (+£4.99)</span>
                   </label>
@@ -663,13 +663,13 @@ const FlightItinerary = () => {
                     type="checkbox"
                     checked={urgentService === 'urgent'}
                     onChange={() => setUrgentService(urgentService === 'urgent' ? '' : 'urgent')}
-                    style={{ width: '18px', height: '18px', accentColor: '#2979FF' }}
+                    style={{ width: '18px', height: '18px', accentColor: '#005CFF' }}
                   />
                   <div>
-                    <span style={{ ...labelStyle, color: '#2979FF', fontWeight: 500 }}>
+                    <span style={{ ...labelStyle, color: '#005CFF', fontWeight: 500 }}>
                       Urgent Services - £2.99
                     </span>
-                    <p style={{ ...sublabelStyle, color: '#2979FF', fontSize: '12px' }}>
+                    <p style={{ ...sublabelStyle, color: '#005CFF', fontSize: '12px' }}>
                       Get your Flight Itinerary in 8-10 Hours
                     </p>
                   </div>
@@ -680,13 +680,13 @@ const FlightItinerary = () => {
                     type="checkbox"
                     checked={urgentService === 'superfast'}
                     onChange={() => setUrgentService(urgentService === 'superfast' ? '' : 'superfast')}
-                    style={{ width: '18px', height: '18px', accentColor: '#2979FF' }}
+                    style={{ width: '18px', height: '18px', accentColor: '#005CFF' }}
                   />
                   <div>
-                    <span style={{ ...labelStyle, color: '#2979FF', fontWeight: 500 }}>
+                    <span style={{ ...labelStyle, color: '#005CFF', fontWeight: 500 }}>
                       Super Fast Services - £4.99
                     </span>
-                    <p style={{ ...sublabelStyle, color: '#2979FF', fontSize: '12px' }}>
+                    <p style={{ ...sublabelStyle, color: '#005CFF', fontSize: '12px' }}>
                       Get your Flight Itinerary in 1-2 Hours
                     </p>
                   </div>
@@ -796,7 +796,7 @@ const FlightItinerary = () => {
                 <div className="flex items-center justify-end">
                   <button
                     type="submit"
-                    className="bg-[#005CFF] text-white font-semibold text-[16px] rounded-[16px] hover:bg-[#0048d4] transition-colors disabled:opacity-50"
+                    className="bg-[#005CFF] text-white font-semibold text-[16px] rounded-[16px] hover:bg-[#0047CC] transition-colors disabled:opacity-50"
                     style={{
                       fontFamily: 'var(--font-plus-jakarta), Plus Jakarta Sans, sans-serif',
                       padding: '17px 30px',

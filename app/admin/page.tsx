@@ -352,7 +352,7 @@ export default function AdminDashboard() {
         <div className="xl:col-span-2 bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
           <div className="flex items-center justify-between px-6 py-5 border-b border-gray-100">
             <h2 className="text-[16px] font-semibold text-[#0B1437]">Recent Submissions</h2>
-            <Link href="/admin/submissions" className="text-[13px] text-[#2979FF] hover:text-[#0052CC] font-medium transition-colors">
+            <Link href="/admin/submissions" className="text-[13px] text-[#005CFF] hover:text-[#0052CC] font-medium transition-colors">
               View All →
             </Link>
           </div>
@@ -458,7 +458,7 @@ export default function AdminDashboard() {
         </div>
 
         {/* Quick Actions */}
-        <div className="bg-gradient-to-br from-[#2979FF] to-[#0052CC] rounded-2xl p-6 shadow-sm text-white">
+        <div className="bg-gradient-to-br from-[#005CFF] to-[#0052CC] rounded-2xl p-6 shadow-sm text-white">
           <h3 className="text-[15px] font-semibold mb-2">Quick Actions</h3>
           <p className="text-[13px] text-white/70 mb-5">Manage your submissions efficiently</p>
           <div className="space-y-3">

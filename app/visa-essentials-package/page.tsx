@@ -26,7 +26,7 @@ interface TravelerInfo {
 const SectionHeading = ({ children }: { children: React.ReactNode }) => (
   <div className="mb-6 text-center">
     <h2
-      className="text-[#2979FF] mb-2"
+      className="text-[#005CFF] mb-2"
       style={{
         fontFamily: 'var(--font-poppins), Poppins, sans-serif',
         fontSize: '22px',
@@ -268,7 +268,7 @@ const VisaEssentialsPackage = () => {
   };
 
   const inputClass =
-    'w-full bg-[#EFECEC] border-none rounded-[3px] focus:outline-none focus:ring-2 focus:ring-[#2979FF]';
+    'w-full bg-[#EFECEC] border-none rounded-[3px] focus:outline-none focus:ring-2 focus:ring-[#005CFF]';
   const inputStyle = {
     fontFamily: 'var(--font-poppins), Poppins, sans-serif',
     fontSize: '16px',
@@ -286,7 +286,7 @@ const VisaEssentialsPackage = () => {
   const sublabelStyle = {
     fontFamily: 'var(--font-poppins), Poppins, sans-serif',
     fontSize: '13px',
-    color: '#2979FF',
+    color: '#005CFF',
   };
   const cardStyle = {
     padding: '30px 28px',
@@ -310,7 +310,7 @@ const VisaEssentialsPackage = () => {
       <label style={labelStyle}>Attachments</label>
       <div
         className={`mt-1 border-2 border-dashed rounded-[3px] text-center cursor-pointer transition-colors ${
-          dragOver ? 'border-[#2979FF] bg-blue-50' : 'border-gray-300 bg-[#EFECEC]'
+          dragOver ? 'border-[#005CFF] bg-blue-50' : 'border-gray-300 bg-[#EFECEC]'
         }`}
         style={{ padding: '24px 14px' }}
         onDragOver={(e) => {
@@ -322,7 +322,7 @@ const VisaEssentialsPackage = () => {
         onClick={() => fileRef.current?.click()}
       >
         <p style={{ ...sublabelStyle, color: '#54595F' }}>
-          Drag & Drop or <span className="text-[#2979FF] underline">Browse</span>
+          Drag & Drop or <span className="text-[#005CFF] underline">Browse</span>
         </p>
         <input
           ref={fileRef}
@@ -408,7 +408,7 @@ const VisaEssentialsPackage = () => {
                   max={10}
                   value={travelers}
                   onChange={(e) => handleTravelerChange(Number(e.target.value))}
-                  className="w-full mt-2 accent-[#2979FF]"
+                  className="w-full mt-2 accent-[#005CFF]"
                 />
                 <div className="flex justify-between" style={{ ...sublabelStyle, fontSize: '12px', color: '#999' }}>
                   <span>1</span>
@@ -467,7 +467,7 @@ const VisaEssentialsPackage = () => {
                       fontFamily: 'var(--font-poppins), Poppins, sans-serif',
                       fontSize: '15px',
                       fontWeight: 600,
-                      color: '#2979FF',
+                      color: '#005CFF',
                       marginBottom: '8px',
                     }}
                   >
@@ -486,7 +486,7 @@ const VisaEssentialsPackage = () => {
                             value={s}
                             checked={t.salutation === s}
                             onChange={() => updateTraveler(idx, 'salutation', s)}
-                            className="accent-[#2979FF]"
+                            className="accent-[#005CFF]"
                           />
                           <span style={{ ...labelStyle, fontWeight: 400 }}>{s}</span>
                         </label>
@@ -610,7 +610,7 @@ const VisaEssentialsPackage = () => {
                         value={opt.label}
                         checked={applyFor === opt.label}
                         onChange={() => setApplyFor(opt.label)}
-                        className="accent-[#2979FF]"
+                        className="accent-[#005CFF]"
                       />
                       <span style={{ ...labelStyle, fontWeight: 400 }}>
                         {opt.label} ({opt.price})
@@ -653,7 +653,7 @@ const VisaEssentialsPackage = () => {
                         value={r}
                         checked={flightRoute === r}
                         onChange={() => setFlightRoute(r)}
-                        className="accent-[#2979FF]"
+                        className="accent-[#005CFF]"
                       />
                       <span style={{ ...labelStyle, fontWeight: 400 }}>{r}</span>
                     </label>
@@ -685,7 +685,7 @@ const VisaEssentialsPackage = () => {
                     max={5}
                     value={noOfHotels}
                     onChange={(e) => setNoOfHotels(Number(e.target.value))}
-                    className="w-full mt-2 accent-[#2979FF]"
+                    className="w-full mt-2 accent-[#005CFF]"
                   />
                   <div className="flex justify-between" style={{ ...sublabelStyle, fontSize: '12px', color: '#999' }}>
                     <span>1</span>
@@ -702,7 +702,7 @@ const VisaEssentialsPackage = () => {
                     max={5}
                     value={noOfRooms}
                     onChange={(e) => setNoOfRooms(Number(e.target.value))}
-                    className="w-full mt-2 accent-[#2979FF]"
+                    className="w-full mt-2 accent-[#005CFF]"
                   />
                   <div className="flex justify-between" style={{ ...sublabelStyle, fontSize: '12px', color: '#999' }}>
                     <span>1</span>
@@ -827,7 +827,7 @@ const VisaEssentialsPackage = () => {
                     fontFamily: 'var(--font-poppins), Poppins, sans-serif',
                     fontSize: '15px',
                     fontWeight: 600,
-                    color: '#2979FF',
+                    color: '#005CFF',
                     marginBottom: '12px',
                   }}
                 >
@@ -913,7 +913,7 @@ const VisaEssentialsPackage = () => {
                   type="checkbox"
                   checked={speedyService}
                   onChange={(e) => setSpeedyService(e.target.checked)}
-                  className="accent-[#2979FF] w-5 h-5"
+                  className="accent-[#005CFF] w-5 h-5"
                 />
                 <span style={{ ...labelStyle, fontWeight: 400 }}>
                   Speedy Services (£9.99)
@@ -996,7 +996,7 @@ const VisaEssentialsPackage = () => {
                       fontSize: '14px',
                       fontWeight: 600,
                       height: '43px',
-                      background: '#2979FF',
+                      background: '#005CFF',
                     }}
                   >
                     {couponApplying ? '...' : 'Apply'}
@@ -1049,7 +1049,7 @@ const VisaEssentialsPackage = () => {
                     fontWeight: 600,
                     lineHeight: '22px',
                     height: '52px',
-                    background: '#2979FF',
+                    background: '#005CFF',
                   }}
                 >
                   Proceed to Payment

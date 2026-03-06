@@ -77,7 +77,7 @@ export const PAGE_DEFAULTS: PageDefault[] = [
         order: 2,
         fields: [
           { key: 'message', label: 'Banner Message', type: 'text', value: 'Get 10% OFF your first order with code WELCOME10' },
-          { key: 'bgColor', label: 'Background Color', type: 'text', value: '#2979FF' },
+          { key: 'bgColor', label: 'Background Color', type: 'text', value: '#005CFF' },
           { key: 'textColor', label: 'Text Color', type: 'text', value: '#ffffff' },
         ],
       },

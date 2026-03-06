@@ -79,7 +79,7 @@ function CheckoutForm({
           disabled={!stripe || processing || disabled}
           className={
             buttonClassName ||
-            'bg-[#005CFF] text-white font-semibold text-[16px] rounded-[16px] hover:bg-[#0048d4] transition-colors disabled:opacity-50'
+            'bg-[#005CFF] text-white font-semibold text-[16px] rounded-[16px] hover:bg-[#0047CC] transition-colors disabled:opacity-50'
           }
           style={
             buttonStyle || {

@@ -124,7 +124,7 @@ export default function AffiliateLayout({ children }: { children: React.ReactNod
         {/* Profile Card */}
         <div className="px-4 py-4 border-b border-white/10">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#2979FF] to-[#5ec5dc] flex items-center justify-center text-white text-[13px] font-bold flex-shrink-0">
+            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#005CFF] to-[#5ec5dc] flex items-center justify-center text-white text-[13px] font-bold flex-shrink-0">
               {initials}
             </div>
             <div className="min-w-0">
@@ -144,7 +144,7 @@ export default function AffiliateLayout({ children }: { children: React.ReactNod
                 href={item.href}
                 className={`flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all text-[14px] font-medium ${
                   isActive
-                    ? 'bg-gradient-to-r from-[#2979FF] to-[#0052CC] text-white shadow-lg shadow-blue-500/20'
+                    ? 'bg-gradient-to-r from-[#005CFF] to-[#0052CC] text-white shadow-lg shadow-blue-500/20'
                     : 'text-gray-400 hover:text-white hover:bg-white/5'
                 }`}
               >
@@ -195,7 +195,7 @@ export default function AffiliateLayout({ children }: { children: React.ReactNod
             {pathname === '/affiliate/profile' && 'Profile'}
           </h1>
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 md:w-9 md:h-9 rounded-full bg-gradient-to-br from-[#2979FF] to-[#5ec5dc] flex items-center justify-center text-white text-[12px] md:text-[13px] font-semibold">
+            <div className="w-8 h-8 md:w-9 md:h-9 rounded-full bg-gradient-to-br from-[#005CFF] to-[#5ec5dc] flex items-center justify-center text-white text-[12px] md:text-[13px] font-semibold">
               {initials}
             </div>
           </div>

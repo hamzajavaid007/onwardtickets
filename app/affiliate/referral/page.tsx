@@ -55,7 +55,7 @@ export default function AffiliateReferralPage() {
       </div>
 
       {/* Referral Info + Format Toggle */}
-      <div className="btn-hover-lift bg-gradient-to-r from-[#2979FF] to-[#0052CC] rounded-2xl p-4 sm:p-6 text-white">
+      <div className="btn-hover-lift bg-gradient-to-r from-[#005CFF] to-[#0052CC] rounded-2xl p-4 sm:p-6 text-white">
         <div className="btn-hover-lift flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
           <div className="btn-hover-lift flex items-center gap-3">
             <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -67,13 +67,13 @@ export default function AffiliateReferralPage() {
             <span className="btn-hover-lift text-[12px] text-white/60">Link format:</span>
             <button
               onClick={() => setLinkMode('id')}
-              className={`px-3 py-1 rounded-lg text-[12px] font-medium transition-all ${linkMode === 'id' ? 'bg-white text-[#2979FF]' : 'bg-white/10 text-white/80 hover:bg-white/20'}`}
+              className={`px-3 py-1 rounded-lg text-[12px] font-medium transition-all ${linkMode === 'id' ? 'bg-white text-[#005CFF]' : 'bg-white/10 text-white/80 hover:bg-white/20'}`}
             >
               ID ({affiliate.affiliateId})
             </button>
             <button
               onClick={() => setLinkMode('username')}
-              className={`px-3 py-1 rounded-lg text-[12px] font-medium transition-all ${linkMode === 'username' ? 'bg-white text-[#2979FF]' : 'bg-white/10 text-white/80 hover:bg-white/20'}`}
+              className={`px-3 py-1 rounded-lg text-[12px] font-medium transition-all ${linkMode === 'username' ? 'bg-white text-[#005CFF]' : 'bg-white/10 text-white/80 hover:bg-white/20'}`}
             >
               Username ({affiliate.referralCode})
             </button>
@@ -109,7 +109,7 @@ export default function AffiliateReferralPage() {
                 className={`px-4 py-2 rounded-lg text-[12px] font-medium transition-all flex-shrink-0 self-start sm:self-auto ${
                   copied === link.label
                     ? 'bg-emerald-100 text-emerald-700'
-                    : 'bg-[#F0F4F8] text-[#2979FF] hover:bg-[#2979FF] hover:text-white'
+                    : 'bg-[#F0F4F8] text-[#005CFF] hover:bg-[#005CFF] hover:text-white'
                 }`}
               >
                 {copied === link.label ? 'Copied!' : 'Copy'}
