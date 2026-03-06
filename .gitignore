@@ -49,3 +49,6 @@ next-env.d.ts
 # Codex CLI local state
 .codex-dev.log
 .codex-dev.pid
+
+# Local audit artifacts
+tmp/
